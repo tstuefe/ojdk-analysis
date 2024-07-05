@@ -1,0 +1,16 @@
+
+ Performance counter stats for '/shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java -XX:+UseG1GC -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 16384 -n 4096 --cycles 100 --randomize -y --nowait':
+
+    83,224,201,234      L1-dcache-load-misses     #    5.51% of all L1-dcache accesses
+ 1,509,450,447,694      L1-dcache-loads                                             
+   <not supported>      LLC-load-misses                                             
+   <not supported>      LLC-loads                                                   
+     7,006,204,961      dTLB-load-misses          #   30.48% of all dTLB cache accesses
+    22,985,649,479      dTLB-loads                                                  
+
+     162.134426539 seconds time elapsed
+
+     565.705730000 seconds user
+       4.510036000 seconds sys
+
+

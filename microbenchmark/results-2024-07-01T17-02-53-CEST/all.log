@@ -1,0 +1,240 @@
+**** -XX:+UseSerialGC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 16 -n 4194304 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 16 -n 4194304 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 16 -n 4194304 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	177325.727	1722.8095	230.99110315784
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	186786.436	1835.011	186.90778967183
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	173311.903	1690.1055	178.72869986452
+GC Times, Sum, B to A: 105.33%
+GC Times, Sum, C to A: 97.73%
+GC Times, Standard Deviation, A: +-230.99110315784 (+-13.40%)
+**** -XX:+UseSerialGC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 64 -n 1048576 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 64 -n 1048576 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 64 -n 1048576 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	192298.67	1879.1325	178.64518968454
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	195691.071	1910.6025	200.84467298002
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	172753.216	1694.431	162.29017880457
+GC Times, Sum, B to A: 101.76%
+GC Times, Sum, C to A: 89.83%
+GC Times, Standard Deviation, A: +-178.64518968454 (+-9.50%)
+**** -XX:+UseSerialGC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 256 -n 262144 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 256 -n 262144 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 256 -n 262144 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	202947.831	1991.472	178.62878631389
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	198121.558	1937.2835	162.12280436626
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	184978.832	1805.47	189.62873356731
+GC Times, Sum, B to A: 97.62%
+GC Times, Sum, C to A: 91.14%
+GC Times, Standard Deviation, A: +-178.62878631389 (+-8.96%)
+**** -XX:+UseSerialGC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 1024 -n 65536 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 1024 -n 65536 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 1024 -n 65536 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	287840.58	2797.425	257.50486733527
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	226243.087	2223.499	158.69320389315
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	219946.685	2155.2695	182.14154554245
+GC Times, Sum, B to A: 78.60%
+GC Times, Sum, C to A: 76.41%
+GC Times, Standard Deviation, A: +-257.50486733527 (+-9.20%)
+**** -XX:+UseSerialGC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 4096 -n 16384 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 4096 -n 16384 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 4096 -n 16384 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	331456.951	3225.257	321.51882614222
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	241886.592	2373.6425	166.90231716239
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	296622.163	2903.2195	211.97818606571
+GC Times, Sum, B to A: 72.97%
+GC Times, Sum, C to A: 89.49%
+GC Times, Standard Deviation, A: +-321.51882614222 (+-9.96%)
+**** -XX:+UseParallelGC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 16 -n 4194304 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 16 -n 4194304 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 16 -n 4194304 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	37243.296	363.0065	30.505418181078
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	39782.685	388.0025	29.964846912211
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+200	66508.997	593.85	358.94863768824
+GC Times, Sum, B to A: 106.81%
+GC Times, Sum, C to A: 178.57%
+GC Times, Standard Deviation, A: +-30.505418181078 (+-8.40%)
+**** -XX:+UseParallelGC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 64 -n 1048576 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 64 -n 1048576 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 64 -n 1048576 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	40035.432	390.008	32.173434883136
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	39960.308	390.662	33.08362313244
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+200	66130.915	596.0445	357.11831223816
+GC Times, Sum, B to A: 99.81%
+GC Times, Sum, C to A: 165.18%
+GC Times, Standard Deviation, A: +-32.173434883136 (+-8.24%)
+**** -XX:+UseParallelGC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 256 -n 262144 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 256 -n 262144 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 256 -n 262144 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	43079.739	421.7995	30.36582709244
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	40646.248	397.4075	31.923675995098
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+200	67802.757	612.0725	363.52405646401
+GC Times, Sum, B to A: 94.35%
+GC Times, Sum, C to A: 157.38%
+GC Times, Standard Deviation, A: +-30.36582709244 (+-7.19%)
+**** -XX:+UseParallelGC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 1024 -n 65536 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 1024 -n 65536 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 1024 -n 65536 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	58277.54	569.7765	55.643720774916
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	44471.86	436.965	28.334758641512
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+200	72839.726	631.1125	388.63206980391
+GC Times, Sum, B to A: 76.31%
+GC Times, Sum, C to A: 124.98%
+GC Times, Standard Deviation, A: +-55.643720774916 (+-9.76%)
+**** -XX:+UseParallelGC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 4096 -n 16384 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 4096 -n 16384 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 4096 -n 16384 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	74784.254	736.5475	46.603685953722
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	52377.211	509.902	42.007019754855
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+200	97624.328	779.987	496.32286160713
+GC Times, Sum, B to A: 70.03%
+GC Times, Sum, C to A: 130.54%
+GC Times, Standard Deviation, A: +-46.603685953722 (+-6.32%)
+**** -XX:+UseG1GC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 16 -n 4194304 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 16 -n 4194304 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 16 -n 4194304 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	29483.465	291.501	15.382551098911
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	34330.167	341	16.270615416182
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	29580.968	290.116	17.014580138531
+GC Times, Sum, B to A: 116.43%
+GC Times, Sum, C to A: 100.33%
+GC Times, Standard Deviation, A: +-15.382551098911 (+-5.27%)
+**** -XX:+UseG1GC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 64 -n 1048576 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 64 -n 1048576 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 64 -n 1048576 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	32111.111	317.074	15.010434468974
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	34469.117	340.7935	18.439552745543
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	29480.716	290.396	15.653546909983
+GC Times, Sum, B to A: 107.34%
+GC Times, Sum, C to A: 91.80%
+GC Times, Standard Deviation, A: +-15.010434468974 (+-4.73%)
+**** -XX:+UseG1GC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 256 -n 262144 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 256 -n 262144 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 256 -n 262144 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	34412.893	338.5105	21.894866185891
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	35495.803	350.4255	19.372757422489
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	31493.877	313.2675	15.493053303456
+GC Times, Sum, B to A: 103.14%
+GC Times, Sum, C to A: 91.51%
+GC Times, Standard Deviation, A: +-21.894866185891 (+-6.46%)
+**** -XX:+UseG1GC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 1024 -n 65536 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 1024 -n 65536 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 1024 -n 65536 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	49239.507	488.0365	27.38527683922
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	39965.667	396.028	23.904916464038
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	37949.824	379.2005	22.32418360475
+GC Times, Sum, B to A: 81.16%
+GC Times, Sum, C to A: 77.07%
+GC Times, Standard Deviation, A: +-27.38527683922 (+-5.61%)
+**** -XX:+UseG1GC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 4096 -n 16384 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-with-oopmap-lu-table/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders  -XX:+UseOopMapLUTable -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 4096 -n 16384 --cycles 100 --randomize -y --nowait
+Running chrt -r 1 taskset 0xFF00     /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/../jdk-22bit-staggered-klass-ON/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders   -cp /shared/projects/openjdk/benchmarks/test-oopmaplutable/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.InterleaveKlassRefsInHeap -C 4096 -n 16384 --cycles 100 --randomize -y --nowait
+A (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	58900.172	590.5645	21.933753420993
+B (jdk-with-oopmap-lu-table) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	45285.303	452.3415	19.432254677926
+C (jdk-22bit-staggered-klass-ON) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+100	50046.706	493.679	21.633467625684
+GC Times, Sum, B to A: 76.88%
+GC Times, Sum, C to A: 84.96%
+GC Times, Standard Deviation, A: +-21.933753420993 (+-3.71%)
