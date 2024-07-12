@@ -1,18 +1,18 @@
 
- Performance counter stats for '/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-with-oopmap-lu-table-v2/bin/java -XX:+UseParallelGC -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseOopMapLUTable -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10 -y --nowait --flat-mode':
+ Performance counter stats for '/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java -XX:+UseParallelGC -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10 -y --nowait --flat-mode':
 
-    12,851,445,001      L1-dcache-load-misses     #    5.42% of all L1-dcache accesses  (83.38%)
-   237,055,592,180      L1-dcache-loads                                               (83.34%)
+    12,958,410,584      L1-dcache-load-misses     #    5.72% of all L1-dcache accesses  (83.36%)
+   226,603,954,785      L1-dcache-loads                                               (83.31%)
    <not supported>      LLC-load-misses                                             
    <not supported>      LLC-loads                                                   
-        88,344,095      dTLB-load-misses          #    2.85% of all dTLB cache accesses  (83.32%)
-     3,103,559,641      dTLB-loads                                                    (83.31%)
-   518,875,159,313      instructions                                                  (83.35%)
-    89,602,660,648      branches                                                      (83.31%)
+        93,557,649      dTLB-load-misses          #    2.73% of all dTLB cache accesses  (83.33%)
+     3,424,726,501      dTLB-loads                                                    (83.35%)
+   503,697,237,819      instructions                                                  (83.28%)
+    84,546,937,360      branches                                                      (83.37%)
 
-      18.197753015 seconds time elapsed
+      13.771912419 seconds time elapsed
 
-      81.622963000 seconds user
-       3.234336000 seconds sys
+      92.664998000 seconds user
+       7.705712000 seconds sys
 
 

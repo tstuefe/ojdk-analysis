@@ -23,23 +23,23 @@ BASE_DIR=${BASE_DIR:-$PWD}
 
 # A +COH
 JDK_A_NAME_DEFAULT="jdk-with-oopmap-lu-table-v2"
-OPTION_A_DEFAULT="-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseOopMapLUTable "
+OPTIONS_A_DEFAULT="-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseOopMapLUTable "
 
 # B: +COH +LUT
 JDK_B_NAME_DEFAULT=$JDK_A_NAME_DEFAULT
-OPTION_B_DEFAULT="-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseOopMapLUTable "
+OPTIONS_B_DEFAULT="-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseOopMapLUTable "
 
 # C: Stock (-COH)
 JDK_C_NAME_DEFAULT=$JDK_A_NAME_DEFAULT
-OPTION_C_DEFAULT=" "
+OPTIONS_C_DEFAULT=" "
 
 JDK_A_NAME=${JDK_A_NAME:-$JDK_A_NAME_DEFAULT}
 JDK_B_NAME=${JDK_B_NAME:-$JDK_B_NAME_DEFAULT}
 JDK_C_NAME=${JDK_C_NAME:-$JDK_C_NAME_DEFAULT}
 
-OPTION_A=${OPTION_A:-$OPTION_A_DEFAULT}
-OPTION_B=${OPTION_B:-$OPTION_B_DEFAULT}
-OPTION_C=${OPTION_C:-$OPTION_C_DEFAULT}
+OPTIONS_A=${OPTIONS_A:-$OPTIONS_A_DEFAULT}
+OPTIONS_B=${OPTIONS_B:-$OPTIONS_B_DEFAULT}
+OPTIONS_C=${OPTIONS_C:-$OPTIONS_C_DEFAULT}
 
 JDK_A="${BASE_DIR}/../${JDK_A_NAME}"
 JDK_B="${BASE_DIR}/../${JDK_B_NAME}"
@@ -95,9 +95,9 @@ if [[ $ONLY_POST_PROCESSING -eq 0 ]]; then
 	rm times-run*
 	rm gc-times*
 
-	run A "${JDK_A}" "${OPTION_A}"
-	run B "${JDK_B}" "${OPTION_B}"
-	run C "${JDK_C}" "${OPTION_C}"
+	run A "${JDK_A}" "${OPTIONS_A}"
+	run B "${JDK_B}" "${OPTIONS_B}"
+	run C "${JDK_C}" "${OPTIONS_C}"
 #	run D "${JDK_D}" "${OPTION_D}"
 
 fi
