@@ -1,5 +1,17 @@
 [
   {
+    "name" : "de.stuefe.repros.metaspace.GenerateSources",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "numClasses" },
+      { "name" : "outputDir" },
+      { "name" : "realistic" }
+    ]
+  },
+  {
     "name" : "de.stuefe.repros.metaspace.StressGCWithManyClasses",
     "allDeclaredConstructors" : true,
     "allPublicConstructors" : true,
@@ -7,14 +19,14 @@
     "allPublicMethods" : true,
     "fields" : [
       { "name" : "auto_yes" },
-      { "name" : "classStride" },
       { "name" : "cycles" },
-      { "name" : "dont_randomize" },
-      { "name" : "flatMode" },
       { "name" : "nowait" },
       { "name" : "numClasses" },
-      { "name" : "numObjectsPerClass" },
+      { "name" : "numObjects" },
+      { "name" : "percentOAK" },
+      { "name" : "percentTAK" },
       { "name" : "printHashes" },
+      { "name" : "randomizerSeed" },
       { "name" : "verbose" }
     ]
   },

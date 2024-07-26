@@ -21,7 +21,7 @@ export USEGC="-XX:+UseParallelGC"
 export NUM_CLASSES=1024
 export NUM_FULL_GC=10
 
-export EXTRA_TEST_OPTIONS=" --percent-TAK=0 --percent-OAK=0 "
+#export EXTRA_TEST_OPTIONS=" --wire-up"
 
 bash ./measure.sh
 

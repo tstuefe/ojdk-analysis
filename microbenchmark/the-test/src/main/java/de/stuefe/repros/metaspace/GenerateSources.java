@@ -109,7 +109,7 @@ public class GenerateSources implements Callable<Integer> {
             baseClass = "DERIVED" + (numOMBs - 1);
         }
 
-        bld.append("public class " + classname + " extends " + baseClass + "{\n");
+        bld.append("public class " + classname + " extends " + baseClass + " implements IsGenerated {\n");
 
         int size = realistic ? getProbableOopSize() : 40;
         int numVars = (size - 16) / 4; // we just assume narrowOOp here
@@ -129,7 +129,7 @@ public class GenerateSources implements Callable<Integer> {
 
     String generateBaseClassSource(String classname, String baseclass, String field_prefix, int numOops, int numNonOops) {
         StringBuilder bld = new StringBuilder();
-        bld.append("public class " + classname + " extends " + baseclass + " {\n");
+        bld.append("public class " + classname + " extends " + baseclass + " implements IsGenerated {\n");
         for (int i = 0; i < numOops; i++) {
             bld.append("public Object " + field_prefix + "_o_" + i + ";\n");
         }
@@ -140,12 +140,16 @@ public class GenerateSources implements Callable<Integer> {
         return bld.toString();
     }
 
-    void generateAndWriteBaseClass(File packageDir, String classname, String baseclass, String field_prefix, int numOops, int numNonOops) throws IOException {
+    void writeJavaFile(File packageDir, String classname, String source) throws IOException {
         File sourceFile = new File(packageDir.getAbsolutePath() + File.separator + classname + ".java");
-        String source = generateBaseClassSource(classname, baseclass, field_prefix, numOops, numNonOops);
         BufferedWriter writer = new BufferedWriter(new FileWriter(sourceFile));
         writer.write(source);
         writer.close();
+    }
+
+    void generateAndWriteBaseClass(File packageDir, String classname, String baseclass, String field_prefix, int numOops, int numNonOops) throws IOException {
+        String source = generateBaseClassSource(classname, baseclass, field_prefix, numOops, numNonOops);
+        writeJavaFile(packageDir, classname, source);
     }
 
     @Override
@@ -162,6 +166,9 @@ public class GenerateSources implements Callable<Integer> {
         System.out.print("Generate " + numClasses + " class sources into " + packageDir.getName() + "...");
 
         // Generate base classes first...
+
+        // Marker interface to recognize all objects
+        writeJavaFile(packageDir, "IsGenerated", "public interface IsGenerated {}");
 
         for (int level = 0; level < 10; level++) {
             String baseclass = level > 0 ? "DERIVED" + (level - 1) : "java.lang.Object";
