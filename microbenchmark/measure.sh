@@ -22,12 +22,12 @@ fi
 BASE_DIR=${BASE_DIR:-$PWD}
 
 # A +COH
-JDK_A_NAME_DEFAULT="jdk-with-oopmap-lu-table-v2"
-OPTIONS_A_DEFAULT="-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseOopMapLUTable "
+JDK_A_NAME_DEFAULT="jdk-v4"
+OPTIONS_A_DEFAULT="-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT "
 
 # B: +COH +LUT
 JDK_B_NAME_DEFAULT=$JDK_A_NAME_DEFAULT
-OPTIONS_B_DEFAULT="-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseOopMapLUTable "
+OPTIONS_B_DEFAULT="-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT "
 
 # C: Stock (-COH)
 JDK_C_NAME_DEFAULT=$JDK_A_NAME_DEFAULT
@@ -53,14 +53,21 @@ export LANG=en_US.UTF-8
 
 # test options
 NUM_CLASSES=${NUM_CLASSES:-"1024"}
-NUM_OBJECTS=`echo "scale=0; 67108864 / $NUM_CLASSES" | bc`
+NUM_OBJECTS=${NUM_OBJECTS:-"67108864"}
 NUM_FULL_GC=${NUM_FULL_GC:-"10"}
 
-# CLASSSTRIDE_OPTION="--randomize"
-#CLASSSTRIDE_OPTION="--class-stride 1"
-#CLASSSTRIDE_OPTION="--class-stride 9"
+CLASSPATH="${BASE_DIR}/the-test/target/repros8-1.0.jar"
 
-TEST_OPTIONS="-C $NUM_CLASSES -n $NUM_OBJECTS --cycles $NUM_FULL_GC $CLASSSTRIDE_OPTION -y --nowait --flat-mode "
+# Location of test jar
+TESTJAR="${BASE_DIR}/the-test/generated-test-sources/TESTDATA.jar"
+
+# enable to to test with boot classloader
+BOOTCLASSPATH_OPTION="-Xbootclasspath/a:${TESTJAR}"
+
+# enable to test with app classloader
+#CLASSPATH="${CLASSPATH}:${TESTJAR}"
+
+TEST_OPTIONS="-C $NUM_CLASSES -n $NUM_OBJECTS --cycles $NUM_FULL_GC -y --nowait ${EXTRA_TEST_OPTIONS}"
 
 # GC
 USEGC=${USEGC:-"-XX:+UseParallelGC"}
@@ -82,7 +89,7 @@ function run() {
 	local LETTER=$1
 	local JDK=$2
 	local OPTIONS=$3
-	COMMAND="${JDK}/bin/java  ${USEGC} ${COMMON_OPTIONS} ${OPTIONS} -cp ${BASE_DIR}/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses $TEST_OPTIONS"
+	COMMAND="${JDK}/bin/java  ${USEGC} ${COMMON_OPTIONS} ${OPTIONS} ${BOOTCLASSPATH_OPTION} -cp ${CLASSPATH} de.stuefe.repros.metaspace.StressGCWithManyClasses $TEST_OPTIONS"
 	echo "Running $PRECOMMAND $COMMAND"
 	#/usr/bin/time -f="%e" -a -o times-run${LETTER}.txt $PRECOMMAND  $COMMAND  >> outlog-${LETTER}.txt
 	$PRECOMMAND  $COMMAND  >> outlog-${LETTER}.txt 2>>errlog-${LETTER}.txt
@@ -95,9 +102,9 @@ if [[ $ONLY_POST_PROCESSING -eq 0 ]]; then
 	rm times-run*
 	rm gc-times*
 
-	run A "${JDK_A}" "${OPTIONS_A}"
-	run B "${JDK_B}" "${OPTIONS_B}"
 	run C "${JDK_C}" "${OPTIONS_C}"
+	run B "${JDK_B}" "${OPTIONS_B}"
+	run A "${JDK_A}" "${OPTIONS_A}"
 #	run D "${JDK_D}" "${OPTION_D}"
 
 fi
@@ -167,6 +174,12 @@ function post_process_perf_L1_hits() {
     local L1_LOADS_LINE=`cat "errlog-${LETTER}.txt" | ack ' *[0-9,.]* L1-dcache-loads'`
     echo "    $L1_LOADS_LINE"
 
+    local dTLB_MISSES_LINE=`cat "errlog-${LETTER}.txt" | ack ' *[0-9,.]* dTLB-load-misses'`
+    echo "    $dTLB_MISSES_LINE"
+
+    local dTLB_LOADS_LINE=`cat "errlog-${LETTER}.txt" | ack ' *[0-9,.]* dTLB-loads'`
+    echo "    $dTLB_LOADS_LINE"
+
     local INSTRUCTIONS_LINE=`cat "errlog-${LETTER}.txt" | ack ' *[0-9,.]* instructions '`
     echo "    $INSTRUCTIONS_LINE"
 
@@ -175,6 +188,10 @@ function post_process_perf_L1_hits() {
 
     echo "$L1_MISSES_LINE" | sed 's/ *\([0-9,.]*\) L1-dcache-load-misses.*/\1/g' | sed 's/[.,]//g' > "perf-l1-misses-${LETTER}.txt"
     echo "$L1_LOADS_LINE" | sed 's/ *\([0-9,.]*\) L1-dcache-loads.*/\1/g' | sed 's/[.,]//g' > "perf-l1-loads-${LETTER}.txt"
+
+    echo "$dTLB_MISSES_LINE" | sed 's/ *\([0-9,.]*\) dTLB-load-misses.*/\1/g' | sed 's/[.,]//g' > "perf-dTLB-misses-${LETTER}.txt"
+    echo "$dTLB_LOADS_LINE" | sed 's/ *\([0-9,.]*\) dTLB-loads.*/\1/g' | sed 's/[.,]//g' > "perf-dTLB-loads-${LETTER}.txt"
+
     echo "$INSTRUCTIONS_LINE" | sed 's/ *\([0-9,.]*\) instructions.*/\1/g' | sed 's/[.,]//g' > "perf-instructions-${LETTER}.txt"
     echo "$BRANCHES_LINE" | sed 's/ *\([0-9,.]*\) branches.*/\1/g' | sed 's/[.,]//g' > "perf-branches-${LETTER}.txt"
 
@@ -193,8 +210,38 @@ function post_process_perf_times_all() {
 	local B_TO_A_l1_misses=`echo "scale=2; ($B_l1_misses * 100) / $A_l1_misses" | bc`
 	echo "L1 Misses, B to A: $B_TO_A_l1_misses%"
 	local C_l1_misses=`cat perf-l1-misses-C.txt`
-	local C_TO_A_l1_misses=`echo "scale=2; ($C_l1_misses * 100) / $C_l1_misses" | bc`
+	local C_TO_A_l1_misses=`echo "scale=2; ($C_l1_misses * 100) / $A_l1_misses" | bc`
 	echo "L1 Misses, C to A: $C_TO_A_l1_misses%"
+
+
+	local A_l1_loads=`cat perf-l1-loads-A.txt`
+	if [ -z "$A_l1_loads" ]; then return; fi
+ 	local B_l1_loads=`cat perf-l1-loads-B.txt`
+	local B_TO_A_l1_loads=`echo "scale=2; ($B_l1_loads * 100) / $A_l1_loads" | bc`
+	echo "L1 Loads, B to A: $B_TO_A_l1_loads%"
+	local C_l1_loads=`cat perf-l1-loads-C.txt`
+	local C_TO_A_l1_loads=`echo "scale=2; ($C_l1_loads * 100) / $A_l1_loads" | bc`
+	echo "L1 Loads, C to A: $C_TO_A_l1_loads%"
+
+
+	local A_dTLB_misses=`cat perf-dTLB-misses-A.txt`
+	if [ -z "$A_dTLB_misses" ]; then return; fi
+ 	local B_dTLB_misses=`cat perf-dTLB-misses-B.txt`
+	local B_TO_A_dTLB_misses=`echo "scale=2; ($B_dTLB_misses * 100) / $A_dTLB_misses" | bc`
+	echo "dTLB Misses, B to A: $B_TO_A_dTLB_misses%"
+	local C_dTLB_misses=`cat perf-dTLB-misses-C.txt`
+	local C_TO_A_dTLB_misses=`echo "scale=2; ($C_dTLB_misses * 100) / $A_dTLB_misses" | bc`
+	echo "dTLB Misses, C to A: $C_TO_A_dTLB_misses%"
+
+
+	local A_dTLB_loads=`cat perf-dTLB-loads-A.txt`
+	if [ -z "$A_dTLB_loads" ]; then return; fi
+ 	local B_dTLB_loads=`cat perf-dTLB-loads-B.txt`
+	local B_TO_A_dTLB_loads=`echo "scale=2; ($B_dTLB_loads * 100) / $A_dTLB_loads" | bc`
+	echo "dTLB Loads, B to A: $B_TO_A_dTLB_loads%"
+	local C_dTLB_loads=`cat perf-dTLB-loads-C.txt`
+	local C_TO_A_dTLB_loads=`echo "scale=2; ($C_dTLB_loads * 100) / $A_dTLB_loads" | bc`
+	echo "dTLB Loads, C to A: $C_TO_A_dTLB_loads%"
 
 
 	local A_instructions=`cat perf-instructions-A.txt`
