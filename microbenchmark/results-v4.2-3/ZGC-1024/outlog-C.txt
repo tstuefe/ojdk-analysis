@@ -1,0 +1,337 @@
+[0.002s][info][metaspace]  - commit_granule_bytes: 65536.
+[0.002s][info][metaspace]  - commit_granule_words: 8192.
+[0.002s][info][metaspace]  - virtual_space_node_default_size: 8388608.
+[0.002s][info][metaspace]  - enlarge_chunks_in_place: 1.
+[0.002s][info][metaspace]  - use_allocation_guard: 0.
+[0.397s][info][gc       ] Using The Z Garbage Collector
+[0.397s][info][metaspace] Reserving compressed class space anywhere
+[0.397s][info][gc,metaspace] CDS archive(s) not mapped
+[0.397s][info][gc,metaspace] Compressed class space mapped at: 0x0000000016000000-0x00000000d6000000, reserved size: 3221225472
+[0.397s][info][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 0, narrow klass pointer bits 32, max shift 3
+[0.397s][info][gc,metaspace] Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0xd6000000
+Random Seed: 12345678
+Num Classes: 1024
+Num Objects: 67108864
+Percent IK Objects: 83.0%)
+Percent OAK Objects: 5.0%)
+Percent TAK Objects: 12.0%)
+Cycles: 50
+Loading 1024 pre-generated classes ...
+Materialize pre-generated constructors ...
+Creating objects...
+[0.674s][info][gc          ] GC(0) Major Collection (System.gc())
+[0.694s][info][gc,metaspace] GC(0) Y: Metaspace: 12M used, 12M committed, 3136M reserved
+[0.698s][info][gc,metaspace] GC(0) Y: Metaspace: 12M used, 12M committed, 3136M reserved
+[0.713s][info][gc,metaspace] GC(0) O: Metaspace: 12M used, 12M committed, 3136M reserved
+[0.713s][info][gc          ] GC(0) Major Collection (System.gc()) 54M(1%)->40M(1%) 0.039s
+[0.931s][info][gc          ] GC(1) Major Collection (Warmup)
+[1.057s][info][gc,metaspace] GC(1) Y: Metaspace: 14M used, 15M committed, 3136M reserved
+[1.074s][info][gc,metaspace] GC(1) O: Metaspace: 14M used, 15M committed, 3136M reserved
+[1.074s][info][gc          ] GC(1) Major Collection (Warmup) 616M(10%)->630M(10%) 0.143s
+[1.733s][info][gc          ] GC(2) Major Collection (Warmup)
+[2.996s][info][gc,metaspace] GC(2) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[2.997s][info][gc          ] GC(3) Minor Collection (Allocation Rate)
+[3.601s][info][gc,metaspace] GC(3) y: Metaspace: 16M used, 17M committed, 3136M reserved
+[3.601s][info][gc          ] GC(3) Minor Collection (Allocation Rate) 1946M(32%)->1472M(24%) 0.604s
+[3.797s][info][gc          ] GC(4) Minor Collection (Allocation Rate)
+[4.714s][info][gc,metaspace] GC(4) y: Metaspace: 16M used, 17M committed, 3136M reserved
+[4.714s][info][gc          ] GC(4) Minor Collection (Allocation Rate) 1782M(29%)->2222M(36%) 0.918s
+[4.714s][info][gc,metaspace] GC(2) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[4.714s][info][gc          ] GC(2) Major Collection (Warmup) 1238M(20%)->2222M(36%) 2.981s
+[4.724s][info][gc          ] GC(5) Major Collection (Warmup)
+[5.728s][info][gc,metaspace] GC(5) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[5.735s][info][gc          ] GC(6) Minor Collection (Allocation Rate)
+[7.026s][info][gc,metaspace] GC(6) y: Metaspace: 16M used, 17M committed, 3136M reserved
+[7.026s][info][gc          ] GC(6) Minor Collection (Allocation Rate) 2494M(41%)->3102M(50%) 1.291s
+[7.448s][info][gc          ] GC(7) Minor Collection (Allocation Rate)
+[8.616s][info][gc,metaspace] GC(7) y: Metaspace: 16M used, 17M committed, 3136M reserved
+[8.616s][info][gc          ] GC(7) Minor Collection (Allocation Rate) 3732M(61%)->3138M(51%) 1.167s
+[8.620s][info][gc,metaspace] GC(5) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[8.620s][info][gc          ] GC(5) Major Collection (Warmup) 2238M(36%)->3144M(51%) 3.896s
+[8.630s][info][gc          ] GC(8) Minor Collection (Allocation Rate)
+[10.882s][info][gc,metaspace] GC(8) y: Metaspace: 16M used, 17M committed, 3136M reserved
+[10.882s][info][gc          ] GC(8) Minor Collection (Allocation Rate) 3154M(51%)->5136M(84%) 2.252s
+[10.882s][info][gc          ] GC(9) Major Collection (Allocation Rate)
+[12.376s][info][gc          ] Allocation Stall (main) 827.503ms
+[12.787s][info][gc,metaspace] GC(9) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[12.787s][info][gc          ] GC(10) Minor Collection (Allocation Stall)
+67108864 Objects created
+ - IK: 55699211 (82.99829%)
+ - OAK: 3355627 (5.0002737%)
+ - TAK: 8054026 (12.001434%)
+Preparatory GC...
+[14.844s][info][gc,metaspace] GC(10) y: Metaspace: 16M used, 17M committed, 3136M reserved
+[14.844s][info][gc          ] GC(10) Minor Collection (Allocation Stall) 3334M(54%)->5126M(83%) 2.058s
+[14.844s][info][gc          ] GC(11) Minor Collection (Allocation Rate)
+[17.263s][info][gc,metaspace] GC(11) y: Metaspace: 16M used, 17M committed, 3136M reserved
+[17.263s][info][gc          ] GC(11) Minor Collection (Allocation Rate) 5126M(83%)->2454M(40%) 2.418s
+[17.263s][info][gc          ] GC(12) Minor Collection (Allocation Rate)
+[19.125s][info][gc,metaspace] GC(12) y: Metaspace: 16M used, 17M committed, 3136M reserved
+[19.125s][info][gc          ] GC(12) Minor Collection (Allocation Rate) 2454M(40%)->2454M(40%) 1.862s
+[19.305s][info][gc          ] GC(13) Minor Collection (Allocation Rate)
+[20.883s][info][gc,metaspace] GC(13) y: Metaspace: 16M used, 17M committed, 3136M reserved
+[20.883s][info][gc          ] GC(13) Minor Collection (Allocation Rate) 2454M(40%)->2446M(40%) 1.578s
+[20.883s][info][gc,metaspace] GC(9) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[20.883s][info][gc          ] GC(9) Major Collection (Allocation Rate) 5136M(84%)->2446M(40%) 10.001s
+[20.883s][info][gc          ] GC(14) Major Collection (System.gc())
+[22.214s][info][gc,metaspace] GC(14) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[22.412s][info][gc,metaspace] GC(14) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[25.177s][info][gc,metaspace] GC(14) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[25.177s][info][gc          ] GC(14) Major Collection (System.gc()) 2446M(40%)->2440M(40%) 4.294s
+[25.177s][info][gc          ] GC(15) Major Collection (System.gc())
+[25.184s][info][gc,metaspace] GC(15) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[25.192s][info][gc,metaspace] GC(15) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[27.613s][info][gc,metaspace] GC(15) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[27.613s][info][gc          ] GC(15) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.436s
+Done; will start GCs... 
+[27.613s][info][gc          ] GC(16) Major Collection (System.gc())
+[27.620s][info][gc,metaspace] GC(16) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[27.628s][info][gc,metaspace] GC(16) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[30.290s][info][gc,metaspace] GC(16) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[30.290s][info][gc          ] GC(16) Major Collection (System.gc()) 2442M(40%)->2440M(40%) 2.677s
+[30.290s][info][gc          ] GC(17) Major Collection (System.gc())
+[30.297s][info][gc,metaspace] GC(17) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[30.305s][info][gc,metaspace] GC(17) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[32.716s][info][gc,metaspace] GC(17) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[32.716s][info][gc          ] GC(17) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.426s
+[32.720s][info][gc          ] GC(18) Major Collection (System.gc())
+[32.728s][info][gc,metaspace] GC(18) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[32.735s][info][gc,metaspace] GC(18) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[35.041s][info][gc,metaspace] GC(18) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[35.041s][info][gc          ] GC(18) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.321s
+[35.042s][info][gc          ] GC(19) Major Collection (System.gc())
+[35.049s][info][gc,metaspace] GC(19) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[35.056s][info][gc,metaspace] GC(19) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[37.505s][info][gc,metaspace] GC(19) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[37.505s][info][gc          ] GC(19) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.463s
+[37.505s][info][gc          ] GC(20) Major Collection (System.gc())
+[37.512s][info][gc,metaspace] GC(20) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[37.519s][info][gc,metaspace] GC(20) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[40.270s][info][gc,metaspace] GC(20) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[40.270s][info][gc          ] GC(20) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.765s
+[40.270s][info][gc          ] GC(21) Major Collection (System.gc())
+[40.277s][info][gc,metaspace] GC(21) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[40.284s][info][gc,metaspace] GC(21) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[42.878s][info][gc,metaspace] GC(21) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[42.879s][info][gc          ] GC(21) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.608s
+[42.879s][info][gc          ] GC(22) Major Collection (System.gc())
+[42.886s][info][gc,metaspace] GC(22) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[42.893s][info][gc,metaspace] GC(22) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[45.510s][info][gc,metaspace] GC(22) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[45.510s][info][gc          ] GC(22) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.631s
+[45.515s][info][gc          ] GC(23) Major Collection (System.gc())
+[45.522s][info][gc,metaspace] GC(23) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[45.530s][info][gc,metaspace] GC(23) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[47.834s][info][gc,metaspace] GC(23) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[47.834s][info][gc          ] GC(23) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.320s
+[47.834s][info][gc          ] GC(24) Major Collection (System.gc())
+[47.841s][info][gc,metaspace] GC(24) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[47.848s][info][gc,metaspace] GC(24) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[50.480s][info][gc,metaspace] GC(24) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[50.480s][info][gc          ] GC(24) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.646s
+[50.480s][info][gc          ] GC(25) Major Collection (System.gc())
+[50.487s][info][gc,metaspace] GC(25) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[50.495s][info][gc,metaspace] GC(25) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[53.249s][info][gc,metaspace] GC(25) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[53.249s][info][gc          ] GC(25) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.769s
+[53.249s][info][gc          ] GC(26) Major Collection (System.gc())
+[53.256s][info][gc,metaspace] GC(26) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[53.263s][info][gc,metaspace] GC(26) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[55.704s][info][gc,metaspace] GC(26) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[55.704s][info][gc          ] GC(26) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.455s
+[55.704s][info][gc          ] GC(27) Major Collection (System.gc())
+[55.711s][info][gc,metaspace] GC(27) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[55.719s][info][gc,metaspace] GC(27) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[58.361s][info][gc,metaspace] GC(27) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[58.361s][info][gc          ] GC(27) Major Collection (System.gc()) 2440M(40%)->2440M(40%) 2.657s
+[58.366s][info][gc          ] GC(28) Major Collection (System.gc())
+[58.373s][info][gc,metaspace] GC(28) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[58.381s][info][gc,metaspace] GC(28) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[60.732s][info][gc,metaspace] GC(28) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[60.733s][info][gc          ] GC(28) Major Collection (System.gc()) 2440M(40%)->2442M(40%) 2.367s
+[60.733s][info][gc          ] GC(29) Major Collection (System.gc())
+[60.740s][info][gc,metaspace] GC(29) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[60.747s][info][gc,metaspace] GC(29) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[63.606s][info][gc,metaspace] GC(29) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[63.606s][info][gc          ] GC(29) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.874s
+[63.607s][info][gc          ] GC(30) Major Collection (System.gc())
+[63.613s][info][gc,metaspace] GC(30) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[63.620s][info][gc,metaspace] GC(30) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[65.901s][info][gc,metaspace] GC(30) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[65.901s][info][gc          ] GC(30) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.295s
+[65.902s][info][gc          ] GC(31) Major Collection (System.gc())
+[65.908s][info][gc,metaspace] GC(31) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[65.915s][info][gc,metaspace] GC(31) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[68.694s][info][gc,metaspace] GC(31) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[68.695s][info][gc          ] GC(31) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.793s
+[68.695s][info][gc          ] GC(32) Major Collection (System.gc())
+[68.701s][info][gc,metaspace] GC(32) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[68.708s][info][gc,metaspace] GC(32) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[71.543s][info][gc,metaspace] GC(32) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[71.543s][info][gc          ] GC(32) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.848s
+[71.543s][info][gc          ] GC(33) Major Collection (System.gc())
+[71.550s][info][gc,metaspace] GC(33) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[71.557s][info][gc,metaspace] GC(33) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[74.287s][info][gc,metaspace] GC(33) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[74.287s][info][gc          ] GC(33) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.744s
+[74.287s][info][gc          ] GC(34) Major Collection (System.gc())
+[74.294s][info][gc,metaspace] GC(34) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[74.301s][info][gc,metaspace] GC(34) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[76.821s][info][gc,metaspace] GC(34) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[76.821s][info][gc          ] GC(34) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.534s
+[76.821s][info][gc          ] GC(35) Major Collection (System.gc())
+[76.828s][info][gc,metaspace] GC(35) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[76.835s][info][gc,metaspace] GC(35) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[79.264s][info][gc,metaspace] GC(35) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[79.264s][info][gc          ] GC(35) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.443s
+[79.264s][info][gc          ] GC(36) Major Collection (System.gc())
+[79.271s][info][gc,metaspace] GC(36) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[79.278s][info][gc,metaspace] GC(36) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[81.668s][info][gc,metaspace] GC(36) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[81.668s][info][gc          ] GC(36) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.404s
+[81.668s][info][gc          ] GC(37) Major Collection (System.gc())
+[81.675s][info][gc,metaspace] GC(37) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[81.682s][info][gc,metaspace] GC(37) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[84.153s][info][gc,metaspace] GC(37) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[84.153s][info][gc          ] GC(37) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.484s
+[84.153s][info][gc          ] GC(38) Major Collection (System.gc())
+[84.159s][info][gc,metaspace] GC(38) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[84.166s][info][gc,metaspace] GC(38) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[86.573s][info][gc,metaspace] GC(38) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[86.573s][info][gc          ] GC(38) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.420s
+[86.573s][info][gc          ] GC(39) Major Collection (System.gc())
+[86.581s][info][gc,metaspace] GC(39) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[86.588s][info][gc,metaspace] GC(39) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[89.262s][info][gc,metaspace] GC(39) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[89.262s][info][gc          ] GC(39) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.689s
+[89.262s][info][gc          ] GC(40) Major Collection (System.gc())
+[89.268s][info][gc,metaspace] GC(40) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[89.275s][info][gc,metaspace] GC(40) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[91.935s][info][gc,metaspace] GC(40) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[91.935s][info][gc          ] GC(40) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.673s
+[91.935s][info][gc          ] GC(41) Major Collection (System.gc())
+[91.942s][info][gc,metaspace] GC(41) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[91.949s][info][gc,metaspace] GC(41) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[94.741s][info][gc,metaspace] GC(41) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[94.741s][info][gc          ] GC(41) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.806s
+[94.741s][info][gc          ] GC(42) Major Collection (System.gc())
+[94.748s][info][gc,metaspace] GC(42) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[94.754s][info][gc,metaspace] GC(42) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[97.206s][info][gc,metaspace] GC(42) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[97.206s][info][gc          ] GC(42) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.465s
+[97.206s][info][gc          ] GC(43) Major Collection (System.gc())
+[97.213s][info][gc,metaspace] GC(43) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[97.219s][info][gc,metaspace] GC(43) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[99.642s][info][gc,metaspace] GC(43) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[99.642s][info][gc          ] GC(43) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.436s
+[99.643s][info][gc          ] GC(44) Major Collection (System.gc())
+[99.650s][info][gc,metaspace] GC(44) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[99.656s][info][gc,metaspace] GC(44) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[102.527s][info][gc,metaspace] GC(44) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[102.527s][info][gc          ] GC(44) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.885s
+[102.527s][info][gc          ] GC(45) Major Collection (System.gc())
+[102.534s][info][gc,metaspace] GC(45) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[102.541s][info][gc,metaspace] GC(45) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[104.853s][info][gc,metaspace] GC(45) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[104.853s][info][gc          ] GC(45) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.326s
+[104.853s][info][gc          ] GC(46) Major Collection (System.gc())
+[104.860s][info][gc,metaspace] GC(46) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[104.867s][info][gc,metaspace] GC(46) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[107.699s][info][gc,metaspace] GC(46) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[107.699s][info][gc          ] GC(46) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.846s
+[107.699s][info][gc          ] GC(47) Major Collection (System.gc())
+[107.705s][info][gc,metaspace] GC(47) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[107.712s][info][gc,metaspace] GC(47) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[110.175s][info][gc,metaspace] GC(47) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[110.175s][info][gc          ] GC(47) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.476s
+[110.176s][info][gc          ] GC(48) Major Collection (System.gc())
+[110.182s][info][gc,metaspace] GC(48) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[110.189s][info][gc,metaspace] GC(48) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[112.947s][info][gc,metaspace] GC(48) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[112.947s][info][gc          ] GC(48) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.772s
+[112.947s][info][gc          ] GC(49) Major Collection (System.gc())
+[112.954s][info][gc,metaspace] GC(49) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[112.961s][info][gc,metaspace] GC(49) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[115.759s][info][gc,metaspace] GC(49) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[115.759s][info][gc          ] GC(49) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.811s
+[115.759s][info][gc          ] GC(50) Major Collection (System.gc())
+[115.766s][info][gc,metaspace] GC(50) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[115.773s][info][gc,metaspace] GC(50) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[118.484s][info][gc,metaspace] GC(50) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[118.484s][info][gc          ] GC(50) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.725s
+[118.484s][info][gc          ] GC(51) Major Collection (System.gc())
+[118.491s][info][gc,metaspace] GC(51) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[118.498s][info][gc,metaspace] GC(51) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[121.002s][info][gc,metaspace] GC(51) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[121.002s][info][gc          ] GC(51) Major Collection (System.gc()) 2442M(40%)->2444M(40%) 2.518s
+[121.003s][info][gc          ] GC(52) Major Collection (System.gc())
+[121.009s][info][gc,metaspace] GC(52) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[121.016s][info][gc,metaspace] GC(52) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[123.483s][info][gc,metaspace] GC(52) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[123.483s][info][gc          ] GC(52) Major Collection (System.gc()) 2444M(40%)->2442M(40%) 2.480s
+[123.483s][info][gc          ] GC(53) Major Collection (System.gc())
+[123.490s][info][gc,metaspace] GC(53) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[123.497s][info][gc,metaspace] GC(53) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[126.038s][info][gc,metaspace] GC(53) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[126.038s][info][gc          ] GC(53) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.555s
+[126.038s][info][gc          ] GC(54) Major Collection (System.gc())
+[126.045s][info][gc,metaspace] GC(54) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[126.052s][info][gc,metaspace] GC(54) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[128.495s][info][gc,metaspace] GC(54) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[128.495s][info][gc          ] GC(54) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.456s
+[128.495s][info][gc          ] GC(55) Major Collection (System.gc())
+[128.502s][info][gc,metaspace] GC(55) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[128.508s][info][gc,metaspace] GC(55) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[131.017s][info][gc,metaspace] GC(55) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[131.017s][info][gc          ] GC(55) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.522s
+[131.017s][info][gc          ] GC(56) Major Collection (System.gc())
+[131.024s][info][gc,metaspace] GC(56) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[131.033s][info][gc,metaspace] GC(56) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[133.697s][info][gc,metaspace] GC(56) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[133.697s][info][gc          ] GC(56) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.680s
+[133.697s][info][gc          ] GC(57) Major Collection (System.gc())
+[133.703s][info][gc,metaspace] GC(57) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[133.710s][info][gc,metaspace] GC(57) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[136.560s][info][gc,metaspace] GC(57) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[136.560s][info][gc          ] GC(57) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.863s
+[136.560s][info][gc          ] GC(58) Major Collection (System.gc())
+[136.567s][info][gc,metaspace] GC(58) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[136.573s][info][gc,metaspace] GC(58) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[138.883s][info][gc,metaspace] GC(58) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[138.883s][info][gc          ] GC(58) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.323s
+[138.888s][info][gc          ] GC(59) Major Collection (System.gc())
+[138.895s][info][gc,metaspace] GC(59) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[138.902s][info][gc,metaspace] GC(59) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[141.207s][info][gc,metaspace] GC(59) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[141.207s][info][gc          ] GC(59) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.319s
+[141.207s][info][gc          ] GC(60) Major Collection (System.gc())
+[141.214s][info][gc,metaspace] GC(60) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[141.221s][info][gc,metaspace] GC(60) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[143.570s][info][gc,metaspace] GC(60) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[143.570s][info][gc          ] GC(60) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.363s
+[143.571s][info][gc          ] GC(61) Major Collection (System.gc())
+[143.577s][info][gc,metaspace] GC(61) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[143.584s][info][gc,metaspace] GC(61) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[146.067s][info][gc,metaspace] GC(61) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[146.067s][info][gc          ] GC(61) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.496s
+[146.067s][info][gc          ] GC(62) Major Collection (System.gc())
+[146.074s][info][gc,metaspace] GC(62) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[146.081s][info][gc,metaspace] GC(62) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[148.848s][info][gc,metaspace] GC(62) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[148.848s][info][gc          ] GC(62) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.781s
+[148.848s][info][gc          ] GC(63) Major Collection (System.gc())
+[148.854s][info][gc,metaspace] GC(63) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[148.862s][info][gc,metaspace] GC(63) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[151.677s][info][gc,metaspace] GC(63) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[151.677s][info][gc          ] GC(63) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.829s
+[151.677s][info][gc          ] GC(64) Major Collection (System.gc())
+[151.684s][info][gc,metaspace] GC(64) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[151.691s][info][gc,metaspace] GC(64) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[154.348s][info][gc,metaspace] GC(64) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[154.348s][info][gc          ] GC(64) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.671s
+[154.348s][info][gc          ] GC(65) Major Collection (System.gc())
+[154.355s][info][gc,metaspace] GC(65) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[154.361s][info][gc,metaspace] GC(65) Y: Metaspace: 16M used, 17M committed, 3136M reserved
+[156.733s][info][gc,metaspace] GC(65) O: Metaspace: 16M used, 17M committed, 3136M reserved
+[156.733s][info][gc          ] GC(65) Major Collection (System.gc()) 2442M(40%)->2442M(40%) 2.385s
+After GCs... 

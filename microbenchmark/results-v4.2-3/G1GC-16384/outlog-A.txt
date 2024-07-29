@@ -1,0 +1,196 @@
+[0.002s][info][metaspace]  - commit_granule_bytes: 65536.
+[0.002s][info][metaspace]  - commit_granule_words: 8192.
+[0.002s][info][metaspace]  - virtual_space_node_default_size: 8388608.
+[0.002s][info][metaspace]  - enlarge_chunks_in_place: 1.
+[0.002s][info][metaspace]  - use_allocation_guard: 0.
+[0.004s][info][gc       ] Using G1
+[0.332s][info][metaspace] Reserving compressed class space anywhere
+[0.332s][info][gc,metaspace] CDS archive(s) not mapped
+[0.332s][info][gc,metaspace] Compressed class space mapped at: 0x000000000b000000-0x00000000cb000000, reserved size: 3221225472
+[0.332s][info][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 1, narrow klass pointer bits 22, max shift 10
+[0.332s][info][gc,metaspace] Narrow klass base: 0x000000000b000000, Narrow klass shift: 10, Narrow klass range: 0xc0000000
+Random Seed: 12345678
+Num Classes: 16384
+Num Objects: 67108864
+Percent IK Objects: 83.0%)
+Percent OAK Objects: 5.0%)
+Percent TAK Objects: 12.0%)
+Cycles: 50
+Loading 16384 pre-generated classes ...
+Materialize pre-generated constructors ...
+Creating objects...
+[1.096s][info][gc,metaspace] GC(0) Metaspace: 36843K(37184K)->36843K(37184K) NonClass: 18677K(18880K)->18677K(18880K) Class: 18166K(18304K)->18166K(18304K)
+[1.096s][info][gc          ] GC(0) Pause Full (System.gc()) 70M->11M(6144M) 20.675ms
+[1.798s][info][gc,metaspace] GC(1) Metaspace: 37684K(38016K)->37684K(38016K) NonClass: 19517K(19712K)->19517K(19712K) Class: 18166K(18304K)->18166K(18304K)
+[1.798s][info][gc          ] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 575M->300M(6144M) 27.329ms
+[2.371s][info][gc,metaspace] GC(2) Metaspace: 39930K(41408K)->39930K(41408K) NonClass: 21210K(22016K)->21210K(22016K) Class: 18719K(19392K)->18719K(19392K)
+[2.371s][info][gc          ] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 572M->322M(6144M) 30.912ms
+[2.959s][info][gc,metaspace] GC(3) Metaspace: 52193K(60288K)->52193K(60288K) NonClass: 30164K(34624K)->30164K(34624K) Class: 22028K(25664K)->22028K(25664K)
+[2.959s][info][gc          ] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 602M->330M(6144M) 19.751ms
+[3.445s][info][gc,metaspace] GC(4) Metaspace: 64896K(80000K)->64896K(80000K) NonClass: 39435K(47744K)->39435K(47744K) Class: 25460K(32256K)->25460K(32256K)
+[3.445s][info][gc          ] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 602M->339M(6144M) 22.159ms
+[4.449s][info][gc,metaspace] GC(5) Metaspace: 69662K(87360K)->69662K(87360K) NonClass: 42914K(52672K)->42914K(52672K) Class: 26748K(34688K)->26748K(34688K)
+[4.449s][info][gc          ] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 623M->357M(6144M) 26.601ms
+[5.604s][info][gc,metaspace] GC(6) Metaspace: 69664K(87360K)->69664K(87360K) NonClass: 42915K(52672K)->42915K(52672K) Class: 26748K(34688K)->26748K(34688K)
+[5.604s][info][gc          ] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 625M->379M(6144M) 41.487ms
+[6.909s][info][gc,metaspace] GC(7) Metaspace: 69664K(87360K)->69664K(87360K) NonClass: 42915K(52672K)->42915K(52672K) Class: 26748K(34688K)->26748K(34688K)
+[6.909s][info][gc          ] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 643M->405M(6144M) 84.637ms
+[8.457s][info][gc,metaspace] GC(8) Metaspace: 71710K(89024K)->71710K(89024K) NonClass: 44962K(54336K)->44962K(54336K) Class: 26748K(34688K)->26748K(34688K)
+[8.457s][info][gc          ] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 705M->430M(6144M) 36.064ms
+[9.739s][info][gc,metaspace] GC(9) Metaspace: 82210K(97536K)->82210K(97536K) NonClass: 55461K(62848K)->55461K(62848K) Class: 26748K(34688K)->26748K(34688K)
+[9.739s][info][gc          ] GC(9) Pause Young (Concurrent Start) (CodeCache GC Threshold) 706M->455M(6144M) 48.576ms
+[9.739s][info][gc          ] GC(10) Concurrent Mark Cycle
+[10.085s][info][gc          ] GC(10) Pause Remark 521M->521M(6144M) 9.458ms
+[10.340s][info][gc          ] GC(10) Pause Cleanup 573M->573M(6144M) 0.021ms
+[10.346s][info][gc          ] GC(10) Concurrent Mark Cycle 606.950ms
+[11.475s][info][gc,metaspace] GC(11) Metaspace: 84690K(99520K)->84690K(99520K) NonClass: 57941K(64832K)->57941K(64832K) Class: 26748K(34688K)->26748K(34688K)
+[11.475s][info][gc          ] GC(11) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 843M->492M(6144M) 52.849ms
+[12.740s][info][gc,metaspace] GC(12) Metaspace: 89666K(103552K)->89666K(103552K) NonClass: 62917K(68864K)->62917K(68864K) Class: 26748K(34688K)->26748K(34688K)
+[12.740s][info][gc          ] GC(12) Pause Young (Mixed) (G1 Evacuation Pause) 828M->526M(6144M) 60.631ms
+[14.104s][info][gc,metaspace] GC(13) Metaspace: 89859K(103744K)->89859K(103744K) NonClass: 63111K(69056K)->63111K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[14.104s][info][gc          ] GC(13) Pause Young (Mixed) (G1 Evacuation Pause) 926M->559M(6144M) 43.111ms
+[15.376s][info][gc,metaspace] GC(14) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[15.376s][info][gc          ] GC(14) Pause Young (Normal) (G1 Evacuation Pause) 931M->598M(6144M) 60.264ms
+[17.093s][info][gc,metaspace] GC(15) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[17.093s][info][gc          ] GC(15) Pause Young (Normal) (G1 Evacuation Pause) 1098M->637M(6144M) 57.393ms
+[18.539s][info][gc,metaspace] GC(16) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[18.539s][info][gc          ] GC(16) Pause Young (Normal) (G1 Evacuation Pause) 1077M->678M(6144M) 70.997ms
+[20.564s][info][gc,metaspace] GC(17) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[20.564s][info][gc          ] GC(17) Pause Young (Normal) (G1 Evacuation Pause) 1274M->729M(6144M) 68.264ms
+[22.394s][info][gc,metaspace] GC(18) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[22.394s][info][gc          ] GC(18) Pause Young (Normal) (G1 Evacuation Pause) 1257M->781M(6144M) 83.573ms
+[24.683s][info][gc,metaspace] GC(19) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[24.683s][info][gc          ] GC(19) Pause Young (Normal) (G1 Evacuation Pause) 1481M->841M(6144M) 81.290ms
+[26.760s][info][gc,metaspace] GC(20) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[26.760s][info][gc          ] GC(20) Pause Young (Normal) (G1 Evacuation Pause) 1457M->901M(6144M) 100.300ms
+[29.461s][info][gc,metaspace] GC(21) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[29.461s][info][gc          ] GC(21) Pause Young (Normal) (G1 Evacuation Pause) 1701M->965M(6144M) 90.900ms
+[31.909s][info][gc,metaspace] GC(22) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[31.909s][info][gc          ] GC(22) Pause Young (Normal) (G1 Evacuation Pause) 1673M->1033M(6144M) 148.851ms
+[34.909s][info][gc,metaspace] GC(23) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[34.909s][info][gc          ] GC(23) Pause Young (Normal) (G1 Evacuation Pause) 1917M->1109M(6144M) 148.913ms
+[37.554s][info][gc,metaspace] GC(24) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[37.554s][info][gc          ] GC(24) Pause Young (Normal) (G1 Evacuation Pause) 1877M->1190M(6144M) 130.583ms
+[40.801s][info][gc,metaspace] GC(25) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[40.801s][info][gc          ] GC(25) Pause Young (Normal) (G1 Evacuation Pause) 2150M->1265M(6144M) 109.946ms
+[43.735s][info][gc,metaspace] GC(26) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[43.735s][info][gc          ] GC(26) Pause Young (Normal) (G1 Evacuation Pause) 2105M->1348M(6144M) 141.081ms
+[47.286s][info][gc,metaspace] GC(27) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[47.286s][info][gc          ] GC(27) Pause Young (Normal) (G1 Evacuation Pause) 2408M->1433M(6144M) 114.190ms
+[50.417s][info][gc,metaspace] GC(28) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[50.417s][info][gc          ] GC(28) Pause Young (Normal) (G1 Evacuation Pause) 2345M->1526M(6144M) 157.181ms
+[54.250s][info][gc,metaspace] GC(29) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[54.251s][info][gc          ] GC(29) Pause Young (Normal) (G1 Evacuation Pause) 2658M->1613M(6144M) 130.982ms
+[57.500s][info][gc,metaspace] GC(30) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[57.500s][info][gc          ] GC(30) Pause Young (Normal) (G1 Evacuation Pause) 2561M->1706M(6144M) 164.530ms
+67108864 Objects created
+ - IK: 55699211 (82.99829%)
+ - OAK: 3355627 (5.0002737%)
+ - TAK: 8054026 (12.001434%)
+Preparatory GC...
+[60.278s][info][gc,metaspace] GC(31) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[60.278s][info][gc          ] GC(31) Pause Full (System.gc()) 2176M->1607M(6144M) 1230.240ms
+[61.445s][info][gc,metaspace] GC(32) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[61.445s][info][gc          ] GC(32) Pause Full (System.gc()) 1607M->1607M(6144M) 1166.870ms
+Done; will start GCs... 
+[62.571s][info][gc,metaspace] GC(33) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[62.571s][info][gc          ] GC(33) Pause Full (System.gc()) 1611M->1607M(6144M) 1125.954ms
+[63.860s][info][gc,metaspace] GC(34) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[63.860s][info][gc          ] GC(34) Pause Full (System.gc()) 1607M->1607M(6144M) 1288.460ms
+[64.972s][info][gc,metaspace] GC(35) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[64.972s][info][gc          ] GC(35) Pause Full (System.gc()) 1607M->1607M(6144M) 1112.305ms
+[66.074s][info][gc,metaspace] GC(36) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[66.074s][info][gc          ] GC(36) Pause Full (System.gc()) 1607M->1607M(6144M) 1102.007ms
+[67.174s][info][gc,metaspace] GC(37) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[67.174s][info][gc          ] GC(37) Pause Full (System.gc()) 1607M->1607M(6144M) 1099.779ms
+[68.275s][info][gc,metaspace] GC(38) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[68.275s][info][gc          ] GC(38) Pause Full (System.gc()) 1607M->1607M(6144M) 1100.582ms
+[69.365s][info][gc,metaspace] GC(39) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[69.365s][info][gc          ] GC(39) Pause Full (System.gc()) 1607M->1607M(6144M) 1090.127ms
+[70.469s][info][gc,metaspace] GC(40) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[70.469s][info][gc          ] GC(40) Pause Full (System.gc()) 1607M->1607M(6144M) 1104.239ms
+[71.576s][info][gc,metaspace] GC(41) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[71.576s][info][gc          ] GC(41) Pause Full (System.gc()) 1607M->1607M(6144M) 1106.251ms
+[72.708s][info][gc,metaspace] GC(42) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[72.708s][info][gc          ] GC(42) Pause Full (System.gc()) 1607M->1607M(6144M) 1131.845ms
+[73.822s][info][gc,metaspace] GC(43) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[73.822s][info][gc          ] GC(43) Pause Full (System.gc()) 1607M->1607M(6144M) 1114.439ms
+[74.960s][info][gc,metaspace] GC(44) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[74.960s][info][gc          ] GC(44) Pause Full (System.gc()) 1607M->1607M(6144M) 1138.228ms
+[76.068s][info][gc,metaspace] GC(45) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[76.068s][info][gc          ] GC(45) Pause Full (System.gc()) 1607M->1607M(6144M) 1107.442ms
+[77.185s][info][gc,metaspace] GC(46) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[77.185s][info][gc          ] GC(46) Pause Full (System.gc()) 1607M->1607M(6144M) 1116.983ms
+[78.286s][info][gc,metaspace] GC(47) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[78.286s][info][gc          ] GC(47) Pause Full (System.gc()) 1607M->1607M(6144M) 1100.675ms
+[79.449s][info][gc,metaspace] GC(48) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[79.449s][info][gc          ] GC(48) Pause Full (System.gc()) 1607M->1607M(6144M) 1163.396ms
+[80.591s][info][gc,metaspace] GC(49) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[80.591s][info][gc          ] GC(49) Pause Full (System.gc()) 1607M->1607M(6144M) 1141.310ms
+[81.703s][info][gc,metaspace] GC(50) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[81.703s][info][gc          ] GC(50) Pause Full (System.gc()) 1607M->1607M(6144M) 1112.776ms
+[82.815s][info][gc,metaspace] GC(51) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[82.815s][info][gc          ] GC(51) Pause Full (System.gc()) 1607M->1607M(6144M) 1111.257ms
+[83.950s][info][gc,metaspace] GC(52) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[83.950s][info][gc          ] GC(52) Pause Full (System.gc()) 1607M->1607M(6144M) 1135.277ms
+[85.047s][info][gc,metaspace] GC(53) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[85.047s][info][gc          ] GC(53) Pause Full (System.gc()) 1607M->1607M(6144M) 1096.995ms
+[86.204s][info][gc,metaspace] GC(54) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[86.204s][info][gc          ] GC(54) Pause Full (System.gc()) 1607M->1607M(6144M) 1157.006ms
+[87.299s][info][gc,metaspace] GC(55) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[87.299s][info][gc          ] GC(55) Pause Full (System.gc()) 1607M->1607M(6144M) 1094.728ms
+[88.400s][info][gc,metaspace] GC(56) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[88.400s][info][gc          ] GC(56) Pause Full (System.gc()) 1607M->1607M(6144M) 1100.519ms
+[89.516s][info][gc,metaspace] GC(57) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[89.516s][info][gc          ] GC(57) Pause Full (System.gc()) 1607M->1607M(6144M) 1116.650ms
+[90.636s][info][gc,metaspace] GC(58) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[90.636s][info][gc          ] GC(58) Pause Full (System.gc()) 1607M->1607M(6144M) 1119.623ms
+[91.760s][info][gc,metaspace] GC(59) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[91.760s][info][gc          ] GC(59) Pause Full (System.gc()) 1607M->1607M(6144M) 1124.078ms
+[92.875s][info][gc,metaspace] GC(60) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[92.875s][info][gc          ] GC(60) Pause Full (System.gc()) 1607M->1607M(6144M) 1114.987ms
+[94.020s][info][gc,metaspace] GC(61) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[94.020s][info][gc          ] GC(61) Pause Full (System.gc()) 1607M->1607M(6144M) 1144.474ms
+[95.125s][info][gc,metaspace] GC(62) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[95.125s][info][gc          ] GC(62) Pause Full (System.gc()) 1607M->1607M(6144M) 1105.239ms
+[96.217s][info][gc,metaspace] GC(63) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[96.217s][info][gc          ] GC(63) Pause Full (System.gc()) 1607M->1607M(6144M) 1092.144ms
+[97.319s][info][gc,metaspace] GC(64) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[97.319s][info][gc          ] GC(64) Pause Full (System.gc()) 1607M->1607M(6144M) 1101.858ms
+[98.409s][info][gc,metaspace] GC(65) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[98.409s][info][gc          ] GC(65) Pause Full (System.gc()) 1607M->1607M(6144M) 1089.587ms
+[99.528s][info][gc,metaspace] GC(66) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[99.528s][info][gc          ] GC(66) Pause Full (System.gc()) 1607M->1607M(6144M) 1119.035ms
+[100.640s][info][gc,metaspace] GC(67) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[100.640s][info][gc          ] GC(67) Pause Full (System.gc()) 1607M->1607M(6144M) 1112.011ms
+[101.750s][info][gc,metaspace] GC(68) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[101.750s][info][gc          ] GC(68) Pause Full (System.gc()) 1607M->1607M(6144M) 1110.216ms
+[102.913s][info][gc,metaspace] GC(69) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[102.913s][info][gc          ] GC(69) Pause Full (System.gc()) 1607M->1607M(6144M) 1162.632ms
+[104.015s][info][gc,metaspace] GC(70) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[104.015s][info][gc          ] GC(70) Pause Full (System.gc()) 1607M->1607M(6144M) 1101.701ms
+[105.129s][info][gc,metaspace] GC(71) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[105.129s][info][gc          ] GC(71) Pause Full (System.gc()) 1607M->1607M(6144M) 1114.235ms
+[106.242s][info][gc,metaspace] GC(72) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[106.242s][info][gc          ] GC(72) Pause Full (System.gc()) 1607M->1607M(6144M) 1112.749ms
+[107.328s][info][gc,metaspace] GC(73) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[107.328s][info][gc          ] GC(73) Pause Full (System.gc()) 1607M->1607M(6144M) 1085.967ms
+[108.451s][info][gc,metaspace] GC(74) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[108.451s][info][gc          ] GC(74) Pause Full (System.gc()) 1607M->1607M(6144M) 1123.392ms
+[109.566s][info][gc,metaspace] GC(75) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[109.566s][info][gc          ] GC(75) Pause Full (System.gc()) 1607M->1607M(6144M) 1114.770ms
+[110.671s][info][gc,metaspace] GC(76) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[110.671s][info][gc          ] GC(76) Pause Full (System.gc()) 1607M->1607M(6144M) 1104.578ms
+[111.795s][info][gc,metaspace] GC(77) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[111.795s][info][gc          ] GC(77) Pause Full (System.gc()) 1607M->1607M(6144M) 1124.325ms
+[112.918s][info][gc,metaspace] GC(78) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[112.918s][info][gc          ] GC(78) Pause Full (System.gc()) 1607M->1607M(6144M) 1122.725ms
+[114.012s][info][gc,metaspace] GC(79) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[114.012s][info][gc          ] GC(79) Pause Full (System.gc()) 1607M->1607M(6144M) 1094.223ms
+[115.138s][info][gc,metaspace] GC(80) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[115.138s][info][gc          ] GC(80) Pause Full (System.gc()) 1607M->1607M(6144M) 1125.705ms
+[116.237s][info][gc,metaspace] GC(81) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[116.237s][info][gc          ] GC(81) Pause Full (System.gc()) 1607M->1607M(6144M) 1098.833ms
+[117.339s][info][gc,metaspace] GC(82) Metaspace: 89888K(103744K)->89888K(103744K) NonClass: 63139K(69056K)->63139K(69056K) Class: 26748K(34688K)->26748K(34688K)
+[117.339s][info][gc          ] GC(82) Pause Full (System.gc()) 1607M->1607M(6144M) 1101.804ms
+After GCs... 
