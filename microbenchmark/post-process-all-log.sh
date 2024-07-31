@@ -19,7 +19,9 @@ SCRIPT_DIR=$(dirname "$0")
 
 gawk -f "${SCRIPT_DIR}/post-process-build-csv-tables.awk" < "$ALL_LOG"
 
+
 for GC in SerialGC ParallelGC G1GC ShenandoahGC ZGC; do
+
 	for what in gc-pauses l1-misses l1-loads tlb-misses tlb-loads instructions branches; do
 		CSV_FILE="$AUSWERTUNG_DIR/${GC}-${what}.csv"
 
@@ -56,6 +58,10 @@ for GC in SerialGC ParallelGC G1GC ShenandoahGC ZGC; do
 		else
 			gnuplot -c "${SCRIPT_DIR}/post-process-generate-charts.gnuplot" "$CSV_FILE" "$TITLE" "$Y_AXIS_LABEL" "$OUTPUT_FILE_PREFIX"  
 		fi
+
 	done
+
 done
+
+cp "${SCRIPT_DIR}/post-process-summary-template.md" "summary.md"
 
