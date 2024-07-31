@@ -1,0 +1,3 @@
+public class GeneratedClass9608 extends DERIVED1 implements IsGenerated {
+public Object o0;
+};
