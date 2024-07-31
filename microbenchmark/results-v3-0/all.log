@@ -1,0 +1,702 @@
+**** -XX:+UseSerialGC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 4194304 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 4194304 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 4194304 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	24929.832	2433.9155	201.96827629375
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	23433.364	2274.325	200.73834197847
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	25490.158	2480.209	204.81245016236
+GC Times, Sum, B to A: 93.99%
+GC Times, Sum, C to A: 102.24%
+GC Times, Standard Deviation, A: +-201.96827629375 (+-8.29%)
+A (jdk-v3) perf data: 
+         1,882,230,242      L1-dcache-load-misses     #    1.30% of all L1-dcache accesses  (83.36%)
+       145,332,608,789      L1-dcache-loads                                               (83.28%)
+       334,095,855,630      instructions                                                  (83.38%)
+        60,407,117,924      branches                                                      (83.27%)
+B (jdk-v3) perf data: 
+         1,865,304,045      L1-dcache-load-misses     #    1.34% of all L1-dcache accesses  (83.35%)
+       138,931,049,309      L1-dcache-loads                                               (83.30%)
+       316,170,241,973      instructions                                                  (83.30%)
+        56,360,256,687      branches                                                      (83.35%)
+C (jdk-v3) perf data: 
+         2,036,188,157      L1-dcache-load-misses     #    1.41% of all L1-dcache accesses  (83.37%)
+       144,039,470,619      L1-dcache-loads                                               (83.33%)
+       335,962,409,942      instructions                                                  (83.29%)
+        67,141,963,743      branches                                                      (83.38%)
+L1 Misses, B to A: 99.10%
+L1 Misses, C to A: 108.17%
+L1 Loads, B to A: 95.59%
+L1 Loads, C to A: 99.11%
+Instructions, B to A: 94.63%
+Instructions, C to A: 100.55%
+branches, B to A: 93.30%
+branches, C to A: 111.14%
+**** -XX:+UseSerialGC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 1048576 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 1048576 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 1048576 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	29758.695	2913.179	222.98370059678
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	27141.039	2629.2535	225.23469929311
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	28878.924	2792.805	232.832309314
+GC Times, Sum, B to A: 91.20%
+GC Times, Sum, C to A: 97.04%
+GC Times, Standard Deviation, A: +-222.98370059678 (+-7.65%)
+A (jdk-v3) perf data: 
+         7,823,065,252      L1-dcache-load-misses     #    4.84% of all L1-dcache accesses  (83.33%)
+       161,610,220,716      L1-dcache-loads                                               (83.35%)
+       343,541,445,250      instructions                                                  (83.38%)
+        62,541,709,389      branches                                                      (83.28%)
+B (jdk-v3) perf data: 
+         5,160,053,699      L1-dcache-load-misses     #    3.47% of all L1-dcache accesses  (83.34%)
+       148,575,158,441      L1-dcache-loads                                               (83.33%)
+       325,135,421,179      instructions                                                  (83.36%)
+        58,586,197,454      branches                                                      (83.29%)
+C (jdk-v3) perf data: 
+         3,380,165,102      L1-dcache-load-misses     #    2.15% of all L1-dcache accesses  (83.37%)
+       157,412,220,996      L1-dcache-loads                                               (83.33%)
+       345,980,382,286      instructions                                                  (83.31%)
+        69,511,730,019      branches                                                      (83.32%)
+L1 Misses, B to A: 65.95%
+L1 Misses, C to A: 43.20%
+L1 Loads, B to A: 91.93%
+L1 Loads, C to A: 97.40%
+Instructions, B to A: 94.64%
+Instructions, C to A: 100.70%
+branches, B to A: 93.67%
+branches, C to A: 111.14%
+**** -XX:+UseSerialGC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 262144 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 262144 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 262144 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	32181.93	3138.3625	224.78773546566
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	28187.848	2757.287	208.70586728099
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	30891.57	3023.3005	225.81296968509
+GC Times, Sum, B to A: 87.58%
+GC Times, Sum, C to A: 95.99%
+GC Times, Standard Deviation, A: +-224.78773546566 (+-7.16%)
+A (jdk-v3) perf data: 
+        12,166,889,336      L1-dcache-load-misses     #    6.90% of all L1-dcache accesses  (83.35%)
+       176,230,048,048      L1-dcache-loads                                               (83.36%)
+       363,343,411,902      instructions                                                  (83.34%)
+        66,523,370,980      branches                                                      (83.25%)
+B (jdk-v3) perf data: 
+         7,978,507,570      L1-dcache-load-misses     #    4.95% of all L1-dcache accesses  (83.26%)
+       161,022,036,079      L1-dcache-loads                                               (83.36%)
+       346,776,384,818      instructions                                                  (83.33%)
+        62,877,762,020      branches                                                      (83.30%)
+C (jdk-v3) perf data: 
+         9,068,185,850      L1-dcache-load-misses     #    5.24% of all L1-dcache accesses  (83.30%)
+       173,123,478,763      L1-dcache-loads                                               (83.34%)
+       362,514,411,695      instructions                                                  (83.34%)
+        72,863,196,523      branches                                                      (83.35%)
+L1 Misses, B to A: 65.57%
+L1 Misses, C to A: 74.53%
+L1 Loads, B to A: 91.37%
+L1 Loads, C to A: 98.23%
+Instructions, B to A: 95.44%
+Instructions, C to A: 99.77%
+branches, B to A: 94.51%
+branches, C to A: 109.53%
+**** -XX:+UseSerialGC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	44802.473	4276.7165	426.5927180933
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	34669.702	3345.1625	337.1301485542
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	34511.149	3385.543	218.94952848771
+GC Times, Sum, B to A: 77.38%
+GC Times, Sum, C to A: 77.02%
+GC Times, Standard Deviation, A: +-426.5927180933 (+-9.97%)
+A (jdk-v3) perf data: 
+        14,228,186,118      L1-dcache-load-misses     #    7.02% of all L1-dcache accesses  (83.36%)
+       202,803,832,309      L1-dcache-loads                                               (83.34%)
+       399,017,560,679      instructions                                                  (83.31%)
+        73,764,475,454      branches                                                      (83.33%)
+B (jdk-v3) perf data: 
+         9,577,007,021      L1-dcache-load-misses     #    5.45% of all L1-dcache accesses  (83.37%)
+       175,790,813,965      L1-dcache-loads                                               (83.32%)
+       378,953,870,846      instructions                                                  (83.30%)
+        69,406,459,269      branches                                                      (83.37%)
+C (jdk-v3) perf data: 
+        12,782,064,010      L1-dcache-load-misses     #    6.59% of all L1-dcache accesses  (83.30%)
+       193,837,961,811      L1-dcache-loads                                               (83.35%)
+       395,672,885,688      instructions                                                  (83.36%)
+        79,566,076,422      branches                                                      (83.28%)
+L1 Misses, B to A: 67.31%
+L1 Misses, C to A: 89.83%
+L1 Loads, B to A: 86.68%
+L1 Loads, C to A: 95.57%
+Instructions, B to A: 94.97%
+Instructions, C to A: 99.16%
+branches, B to A: 94.09%
+branches, C to A: 107.86%
+**** -XX:+UseSerialGC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 16384 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 16384 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 16384 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	49996.845	4897.2105	555.57705950125
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	37336.323	3535.256	458.15856960034
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	46500.568	4404.2635	540.16007628825
+GC Times, Sum, B to A: 74.67%
+GC Times, Sum, C to A: 93.00%
+GC Times, Standard Deviation, A: +-555.57705950125 (+-11.34%)
+A (jdk-v3) perf data: 
+        16,567,860,844      L1-dcache-load-misses     #    6.69% of all L1-dcache accesses  (83.33%)
+       247,662,371,156      L1-dcache-loads                                               (83.34%)
+       494,829,505,968      instructions                                                  (83.35%)
+        92,236,571,837      branches                                                      (83.30%)
+B (jdk-v3) perf data: 
+        12,291,587,532      L1-dcache-load-misses     #    5.60% of all L1-dcache accesses  (83.29%)
+       219,569,120,842      L1-dcache-loads                                               (83.32%)
+       476,730,366,619      instructions                                                  (83.31%)
+        88,345,328,272      branches                                                      (83.38%)
+C (jdk-v3) perf data: 
+        16,406,536,876      L1-dcache-load-misses     #    6.40% of all L1-dcache accesses  (83.28%)
+       256,460,270,783      L1-dcache-loads                                               (83.35%)
+       507,838,841,582      instructions                                                  (83.35%)
+       101,764,891,621      branches                                                      (83.34%)
+L1 Misses, B to A: 74.18%
+L1 Misses, C to A: 99.02%
+L1 Loads, B to A: 88.65%
+L1 Loads, C to A: 103.55%
+Instructions, B to A: 96.34%
+Instructions, C to A: 102.62%
+branches, B to A: 95.78%
+branches, C to A: 110.33%
+**** -XX:+UseSerialGC and 16384 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 4096 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 4096 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseSerialGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 4096 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	79080.856	7844.1855	503.67639487918
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	54633.85	5309.1605	437.37442081153
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	49809.515	4904.237	249.3132067475
+GC Times, Sum, B to A: 69.08%
+GC Times, Sum, C to A: 62.98%
+GC Times, Standard Deviation, A: +-503.67639487918 (+-6.42%)
+A (jdk-v3) perf data: 
+        23,025,239,089      L1-dcache-load-misses     #    6.12% of all L1-dcache accesses  (83.31%)
+       376,523,590,402      L1-dcache-loads                                               (83.35%)
+       794,471,316,104      instructions                                                  (83.32%)
+       152,220,012,648      branches                                                      (83.33%)
+B (jdk-v3) perf data: 
+        20,010,563,653      L1-dcache-load-misses     #    5.73% of all L1-dcache accesses  (83.35%)
+       349,042,479,230      L1-dcache-loads                                               (83.32%)
+       772,530,518,591      instructions                                                  (83.31%)
+       147,115,415,940      branches                                                      (83.33%)
+C (jdk-v3) perf data: 
+        22,973,427,590      L1-dcache-load-misses     #    6.14% of all L1-dcache accesses  (83.35%)
+       374,335,417,329      L1-dcache-loads                                               (83.31%)
+       786,667,544,083      instructions                                                  (83.35%)
+       158,301,126,913      branches                                                      (83.30%)
+L1 Misses, B to A: 86.90%
+L1 Misses, C to A: 99.77%
+L1 Loads, B to A: 92.70%
+L1 Loads, C to A: 99.41%
+Instructions, B to A: 97.23%
+Instructions, C to A: 99.01%
+branches, B to A: 96.64%
+branches, C to A: 103.99%
+**** -XX:+UseParallelGC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 4194304 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 4194304 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 4194304 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4553.928	452.8805	18.617019858184
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4419.04	436.5995	21.887041371551
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4702.292	466.2175	17.529327887223
+GC Times, Sum, B to A: 97.03%
+GC Times, Sum, C to A: 103.25%
+GC Times, Standard Deviation, A: +-18.617019858184 (+-4.11%)
+A (jdk-v3) perf data: 
+         1,932,440,194      L1-dcache-load-misses     #    1.08% of all L1-dcache accesses  (83.34%)
+       179,108,358,649      L1-dcache-loads                                               (83.42%)
+       437,992,453,534      instructions                                                  (83.31%)
+        71,056,085,642      branches                                                      (83.35%)
+B (jdk-v3) perf data: 
+         1,920,060,470      L1-dcache-load-misses     #    1.07% of all L1-dcache accesses  (83.38%)
+       179,033,849,725      L1-dcache-loads                                               (83.32%)
+       431,506,067,157      instructions                                                  (83.39%)
+        72,597,849,733      branches                                                      (83.41%)
+C (jdk-v3) perf data: 
+         2,068,792,388      L1-dcache-load-misses     #    1.14% of all L1-dcache accesses  (83.39%)
+       182,156,361,020      L1-dcache-loads                                               (83.30%)
+       448,521,949,258      instructions                                                  (83.33%)
+        79,247,533,697      branches                                                      (83.33%)
+L1 Misses, B to A: 99.35%
+L1 Misses, C to A: 107.05%
+L1 Loads, B to A: 99.95%
+L1 Loads, C to A: 101.70%
+Instructions, B to A: 98.51%
+Instructions, C to A: 102.40%
+branches, B to A: 102.16%
+branches, C to A: 111.52%
+**** -XX:+UseParallelGC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 1048576 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 1048576 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 1048576 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	5251.174	524.1725	16.028678424762
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4948.624	491.941	21.405977852512
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	5446.437	549.7875	16.792856021072
+GC Times, Sum, B to A: 94.23%
+GC Times, Sum, C to A: 103.71%
+GC Times, Standard Deviation, A: +-16.028678424762 (+-3.05%)
+A (jdk-v3) perf data: 
+         6,948,027,798      L1-dcache-load-misses     #    3.54% of all L1-dcache accesses  (83.40%)
+       196,326,320,780      L1-dcache-loads                                               (83.32%)
+       449,107,599,578      instructions                                                  (83.34%)
+        73,514,259,709      branches                                                      (83.35%)
+B (jdk-v3) perf data: 
+         4,355,079,279      L1-dcache-load-misses     #    2.26% of all L1-dcache accesses  (83.35%)
+       192,328,643,067      L1-dcache-loads                                               (83.35%)
+       444,185,201,440      instructions                                                  (83.30%)
+        75,533,429,921      branches                                                      (83.39%)
+C (jdk-v3) perf data: 
+         3,980,162,393      L1-dcache-load-misses     #    1.91% of all L1-dcache accesses  (83.37%)
+       207,922,231,100      L1-dcache-loads                                               (83.34%)
+       480,450,727,953      instructions                                                  (83.31%)
+        85,200,158,988      branches                                                      (83.35%)
+L1 Misses, B to A: 62.68%
+L1 Misses, C to A: 57.28%
+L1 Loads, B to A: 97.96%
+L1 Loads, C to A: 105.90%
+Instructions, B to A: 98.90%
+Instructions, C to A: 106.97%
+branches, B to A: 102.74%
+branches, C to A: 115.89%
+**** -XX:+UseParallelGC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 262144 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 262144 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 262144 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	5759.248	561.853	35.689682062654
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	5255.33	526.3015	20.170073728725
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	5904.034	590.63	26.22655239426
+GC Times, Sum, B to A: 91.25%
+GC Times, Sum, C to A: 102.51%
+GC Times, Standard Deviation, A: +-35.689682062654 (+-6.35%)
+A (jdk-v3) perf data: 
+        10,775,100,746      L1-dcache-load-misses     #    5.08% of all L1-dcache accesses  (83.34%)
+       212,029,326,931      L1-dcache-loads                                               (83.31%)
+       466,590,175,938      instructions                                                  (83.34%)
+        77,174,675,422      branches                                                      (83.36%)
+B (jdk-v3) perf data: 
+         6,633,947,795      L1-dcache-load-misses     #    3.22% of all L1-dcache accesses  (83.34%)
+       206,094,589,979      L1-dcache-loads                                               (83.34%)
+       466,287,318,690      instructions                                                  (83.34%)
+        79,972,195,865      branches                                                      (83.37%)
+C (jdk-v3) perf data: 
+         9,727,553,281      L1-dcache-load-misses     #    4.28% of all L1-dcache accesses  (83.31%)
+       227,276,950,915      L1-dcache-loads                                               (83.32%)
+       499,955,527,508      instructions                                                  (83.33%)
+        89,133,523,092      branches                                                      (83.34%)
+L1 Misses, B to A: 61.56%
+L1 Misses, C to A: 90.27%
+L1 Loads, B to A: 97.20%
+L1 Loads, C to A: 107.19%
+Instructions, B to A: 99.93%
+Instructions, C to A: 107.15%
+branches, B to A: 103.62%
+branches, C to A: 115.49%
+**** -XX:+UseParallelGC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	7200.192	719.922	19.986676599953
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	6226.307	599.0465	43.494669188176
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	6628.975	660.196	30.211614187814
+GC Times, Sum, B to A: 86.47%
+GC Times, Sum, C to A: 92.06%
+GC Times, Standard Deviation, A: +-19.986676599953 (+-2.77%)
+A (jdk-v3) perf data: 
+        12,699,005,317      L1-dcache-load-misses     #    5.31% of all L1-dcache accesses  (83.33%)
+       239,203,889,388      L1-dcache-loads                                               (83.27%)
+       502,653,699,447      instructions                                                  (83.32%)
+        84,302,304,980      branches                                                      (83.42%)
+B (jdk-v3) perf data: 
+         8,073,271,992      L1-dcache-load-misses     #    3.67% of all L1-dcache accesses  (83.34%)
+       220,190,692,171      L1-dcache-loads                                               (83.31%)
+       499,401,735,072      instructions                                                  (83.29%)
+        86,808,516,155      branches                                                      (83.35%)
+C (jdk-v3) perf data: 
+        13,484,457,002      L1-dcache-load-misses     #    5.41% of all L1-dcache accesses  (83.36%)
+       249,325,263,290      L1-dcache-loads                                               (83.30%)
+       533,072,234,105      instructions                                                  (83.35%)
+        96,005,468,267      branches                                                      (83.33%)
+L1 Misses, B to A: 63.57%
+L1 Misses, C to A: 106.18%
+L1 Loads, B to A: 92.05%
+L1 Loads, C to A: 104.23%
+Instructions, B to A: 99.35%
+Instructions, C to A: 106.05%
+branches, B to A: 102.97%
+branches, C to A: 113.88%
+**** -XX:+UseParallelGC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 16384 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 16384 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 16384 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	9109.03	917.551	26.59969470585
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	7524.098	740.2755	47.9938113529
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	8602.888	852.9775	40.175741809649
+GC Times, Sum, B to A: 82.60%
+GC Times, Sum, C to A: 94.44%
+GC Times, Standard Deviation, A: +-26.59969470585 (+-2.89%)
+A (jdk-v3) perf data: 
+        14,998,747,397      L1-dcache-load-misses     #    5.30% of all L1-dcache accesses  (83.33%)
+       283,139,110,534      L1-dcache-loads                                               (83.36%)
+       592,226,417,519      instructions                                                  (83.30%)
+       101,939,010,186      branches                                                      (83.34%)
+B (jdk-v3) perf data: 
+        10,654,999,514      L1-dcache-load-misses     #    4.07% of all L1-dcache accesses  (83.34%)
+       261,849,982,882      L1-dcache-loads                                               (83.31%)
+       591,151,678,179      instructions                                                  (83.35%)
+       104,831,238,054      branches                                                      (83.36%)
+C (jdk-v3) perf data: 
+        15,908,847,224      L1-dcache-load-misses     #    5.56% of all L1-dcache accesses  (83.34%)
+       286,205,875,859      L1-dcache-loads                                               (83.34%)
+       599,103,549,223      instructions                                                  (83.38%)
+       109,802,627,982      branches                                                      (83.37%)
+L1 Misses, B to A: 71.03%
+L1 Misses, C to A: 106.06%
+L1 Loads, B to A: 92.48%
+L1 Loads, C to A: 101.08%
+Instructions, B to A: 99.81%
+Instructions, C to A: 101.16%
+branches, B to A: 102.83%
+branches, C to A: 107.71%
+**** -XX:+UseParallelGC and 16384 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 4096 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 4096 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseParallelGC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 4096 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	11820.789	1179.446	18.929814611113
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	9630.899	953.7925	55.556910926145
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	8698.04	864.151	57.698177009523
+GC Times, Sum, B to A: 81.47%
+GC Times, Sum, C to A: 73.58%
+GC Times, Standard Deviation, A: +-18.929814611113 (+-1.60%)
+A (jdk-v3) perf data: 
+        21,460,776,321      L1-dcache-load-misses     #    5.20% of all L1-dcache accesses  (83.32%)
+       412,988,936,050      L1-dcache-loads                                               (83.27%)
+       893,416,834,993      instructions                                                  (83.36%)
+       161,242,815,984      branches                                                      (83.38%)
+B (jdk-v3) perf data: 
+        18,252,408,471      L1-dcache-load-misses     #    4.66% of all L1-dcache accesses  (83.35%)
+       391,900,151,550      L1-dcache-loads                                               (83.33%)
+       885,295,125,209      instructions                                                  (83.34%)
+       163,008,651,489      branches                                                      (83.36%)
+C (jdk-v3) perf data: 
+        22,859,965,031      L1-dcache-load-misses     #    5.51% of all L1-dcache accesses  (83.33%)
+       415,042,259,369      L1-dcache-loads                                               (83.34%)
+       896,755,020,218      instructions                                                  (83.32%)
+       169,872,006,408      branches                                                      (83.33%)
+L1 Misses, B to A: 85.05%
+L1 Misses, C to A: 106.51%
+L1 Loads, B to A: 94.89%
+L1 Loads, C to A: 100.49%
+Instructions, B to A: 99.09%
+Instructions, C to A: 100.37%
+branches, B to A: 101.09%
+branches, C to A: 105.35%
+**** -XX:+UseG1GC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 4194304 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 4194304 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 4194304 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	3844.968	380.9715	16.417804094607
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	3694.279	367.3245	15.260290025277
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4113.747	405.656	24.699364512968
+GC Times, Sum, B to A: 96.08%
+GC Times, Sum, C to A: 106.99%
+GC Times, Standard Deviation, A: +-16.417804094607 (+-4.30%)
+A (jdk-v3) perf data: 
+         1,834,805,388      L1-dcache-load-misses     #    1.01% of all L1-dcache accesses  (83.38%)
+       181,706,649,417      L1-dcache-loads                                               (83.36%)
+       407,247,894,626      instructions                                                  (83.38%)
+        65,169,338,288      branches                                                      (83.36%)
+B (jdk-v3) perf data: 
+         1,767,340,559      L1-dcache-load-misses     #    1.00% of all L1-dcache accesses  (83.32%)
+       175,939,452,985      L1-dcache-loads                                               (83.38%)
+       388,179,186,671      instructions                                                  (83.31%)
+        61,880,007,899      branches                                                      (83.38%)
+C (jdk-v3) perf data: 
+         1,907,515,292      L1-dcache-load-misses     #    1.04% of all L1-dcache accesses  (83.28%)
+       183,783,181,979      L1-dcache-loads                                               (83.31%)
+       416,419,768,329      instructions                                                  (83.48%)
+        73,328,514,514      branches                                                      (83.29%)
+L1 Misses, B to A: 96.32%
+L1 Misses, C to A: 103.96%
+L1 Loads, B to A: 96.82%
+L1 Loads, C to A: 101.14%
+Instructions, B to A: 95.31%
+Instructions, C to A: 102.25%
+branches, B to A: 94.95%
+branches, C to A: 112.51%
+**** -XX:+UseG1GC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 1048576 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 1048576 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 1048576 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4507.418	443.7625	17.459862763875
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4221.594	419.7365	24.545359426535
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4374.19	434.7475	17.166568310398
+GC Times, Sum, B to A: 93.65%
+GC Times, Sum, C to A: 97.04%
+GC Times, Standard Deviation, A: +-17.459862763875 (+-3.93%)
+A (jdk-v3) perf data: 
+         6,929,619,302      L1-dcache-load-misses     #    3.46% of all L1-dcache accesses  (83.38%)
+       200,163,726,474      L1-dcache-loads                                               (83.34%)
+       416,277,992,915      instructions                                                  (83.37%)
+        67,345,451,329      branches                                                      (83.36%)
+B (jdk-v3) perf data: 
+         4,119,546,850      L1-dcache-load-misses     #    2.21% of all L1-dcache accesses  (83.33%)
+       186,672,625,357      L1-dcache-loads                                               (83.33%)
+       399,322,587,540      instructions                                                  (83.28%)
+        64,588,352,938      branches                                                      (83.35%)
+C (jdk-v3) perf data: 
+         3,279,685,711      L1-dcache-load-misses     #    1.67% of all L1-dcache accesses  (83.33%)
+       196,604,382,342      L1-dcache-loads                                               (83.28%)
+       424,820,314,049      instructions                                                  (83.37%)
+        75,237,363,241      branches                                                      (83.33%)
+L1 Misses, B to A: 59.44%
+L1 Misses, C to A: 47.32%
+L1 Loads, B to A: 93.25%
+L1 Loads, C to A: 98.22%
+Instructions, B to A: 95.92%
+Instructions, C to A: 102.05%
+branches, B to A: 95.90%
+branches, C to A: 111.71%
+**** -XX:+UseG1GC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 262144 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 262144 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 262144 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4843.317	490.0295	28.266496894341
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4259.149	425.3415	17.95147716887
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	4812.951	482.777	17.755527392586
+GC Times, Sum, B to A: 87.93%
+GC Times, Sum, C to A: 99.37%
+GC Times, Standard Deviation, A: +-28.266496894341 (+-5.76%)
+A (jdk-v3) perf data: 
+        10,934,828,422      L1-dcache-load-misses     #    5.05% of all L1-dcache accesses  (83.38%)
+       216,388,971,893      L1-dcache-loads                                               (83.34%)
+       437,772,316,756      instructions                                                  (83.32%)
+        71,705,310,912      branches                                                      (83.38%)
+B (jdk-v3) perf data: 
+         6,386,192,654      L1-dcache-load-misses     #    3.20% of all L1-dcache accesses  (83.35%)
+       199,567,219,082      L1-dcache-loads                                               (83.33%)
+       419,678,254,014      instructions                                                  (83.37%)
+        68,887,799,909      branches                                                      (83.37%)
+C (jdk-v3) perf data: 
+         9,330,674,475      L1-dcache-load-misses     #    4.30% of all L1-dcache accesses  (83.36%)
+       217,162,266,380      L1-dcache-loads                                               (83.33%)
+       445,529,996,081      instructions                                                  (83.25%)
+        79,562,640,583      branches                                                      (83.38%)
+L1 Misses, B to A: 58.40%
+L1 Misses, C to A: 85.32%
+L1 Loads, B to A: 92.22%
+L1 Loads, C to A: 100.35%
+Instructions, B to A: 95.86%
+Instructions, C to A: 101.77%
+branches, B to A: 96.07%
+branches, C to A: 110.95%
+**** -XX:+UseG1GC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 65536 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	6767.534	677.0165	22.32531394429
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	5309.282	534.1465	24.049891641244
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	5406.503	542.395	26.884331128621
+GC Times, Sum, B to A: 78.45%
+GC Times, Sum, C to A: 79.88%
+GC Times, Standard Deviation, A: +-22.32531394429 (+-3.29%)
+A (jdk-v3) perf data: 
+        12,855,772,073      L1-dcache-load-misses     #    5.19% of all L1-dcache accesses  (83.32%)
+       247,896,437,270      L1-dcache-loads                                               (83.35%)
+       476,685,258,536      instructions                                                  (83.35%)
+        79,573,176,556      branches                                                      (83.38%)
+B (jdk-v3) perf data: 
+         8,005,177,575      L1-dcache-load-misses     #    3.68% of all L1-dcache accesses  (83.38%)
+       217,729,830,846      L1-dcache-loads                                               (83.34%)
+       458,440,495,036      instructions                                                  (83.31%)
+        76,592,076,113      branches                                                      (83.33%)
+C (jdk-v3) perf data: 
+        13,024,472,217      L1-dcache-load-misses     #    5.41% of all L1-dcache accesses  (83.24%)
+       240,710,054,428      L1-dcache-loads                                               (83.34%)
+       482,406,080,013      instructions                                                  (83.30%)
+        87,081,117,799      branches                                                      (83.34%)
+L1 Misses, B to A: 62.26%
+L1 Misses, C to A: 101.31%
+L1 Loads, B to A: 87.83%
+L1 Loads, C to A: 97.10%
+Instructions, B to A: 96.17%
+Instructions, C to A: 101.20%
+branches, B to A: 96.25%
+branches, C to A: 109.43%
+**** -XX:+UseG1GC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 16384 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 16384 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 16384 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	7778.37	777.312	37.18096059664
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	6097.053	616.4665	21.504427585706
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	7566.584	758.0015	22.561968374531
+GC Times, Sum, B to A: 78.38%
+GC Times, Sum, C to A: 97.27%
+GC Times, Standard Deviation, A: +-37.18096059664 (+-4.78%)
+A (jdk-v3) perf data: 
+        15,136,275,720      L1-dcache-load-misses     #    5.30% of all L1-dcache accesses  (83.33%)
+       285,530,913,078      L1-dcache-loads                                               (83.29%)
+       556,743,636,675      instructions                                                  (83.33%)
+        97,100,921,900      branches                                                      (83.37%)
+B (jdk-v3) perf data: 
+        10,564,985,239      L1-dcache-load-misses     #    4.16% of all L1-dcache accesses  (83.37%)
+       253,690,031,698      L1-dcache-loads                                               (83.36%)
+       538,887,523,546      instructions                                                  (83.36%)
+        94,111,783,566      branches                                                      (83.35%)
+C (jdk-v3) perf data: 
+        16,111,982,303      L1-dcache-load-misses     #    5.56% of all L1-dcache accesses  (83.34%)
+       289,672,870,021      L1-dcache-loads                                               (83.33%)
+       565,399,399,326      instructions                                                  (83.30%)
+       104,945,441,153      branches                                                      (83.35%)
+L1 Misses, B to A: 69.79%
+L1 Misses, C to A: 106.44%
+L1 Loads, B to A: 88.84%
+L1 Loads, C to A: 101.45%
+Instructions, B to A: 96.79%
+Instructions, C to A: 101.55%
+branches, B to A: 96.92%
+branches, C to A: 108.07%
+**** -XX:+UseG1GC and 16384 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g    -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 4096 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 4096 --cycles 10  -y --nowait --flat-mode 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v3/bin/java  -XX:+UseG1GC  -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT  -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 4096 --cycles 10  -y --nowait --flat-mode 
+A (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	10979.246	1089.117	35.681236274048
+B (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	8061.065	810.0065	32.606242869358
+C (jdk-v3) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+10	7203.214	719.3445	17.089185184399
+GC Times, Sum, B to A: 73.42%
+GC Times, Sum, C to A: 65.60%
+GC Times, Standard Deviation, A: +-35.681236274048 (+-3.27%)
+A (jdk-v3) perf data: 
+        22,772,667,715      L1-dcache-load-misses     #    5.07% of all L1-dcache accesses  (83.35%)
+       449,319,012,298      L1-dcache-loads                                               (83.32%)
+       926,977,411,143      instructions                                                  (83.34%)
+       170,053,593,339      branches                                                      (83.34%)
+B (jdk-v3) perf data: 
+        19,583,079,025      L1-dcache-load-misses     #    4.68% of all L1-dcache accesses  (83.38%)
+       418,229,150,758      L1-dcache-loads                                               (83.33%)
+       912,826,648,682      instructions                                                  (83.32%)
+       167,991,793,613      branches                                                      (83.32%)
+C (jdk-v3) perf data: 
+        24,246,719,126      L1-dcache-load-misses     #    5.34% of all L1-dcache accesses  (83.33%)
+       453,727,882,421      L1-dcache-loads                                               (83.36%)
+       935,114,283,225      instructions                                                  (83.35%)
+       179,798,948,952      branches                                                      (83.32%)
+L1 Misses, B to A: 85.99%
+L1 Misses, C to A: 106.47%
+L1 Loads, B to A: 93.08%
+L1 Loads, C to A: 100.98%
+Instructions, B to A: 98.47%
+Instructions, C to A: 100.87%
+branches, B to A: 98.78%
+branches, C to A: 105.73%

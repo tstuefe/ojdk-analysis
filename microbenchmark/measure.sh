@@ -3,11 +3,12 @@
 # JDK_A_NAME .. JDK_D_NAME: name of jdk dir
 # OPTIONS_A .. OPTIONS_D: optional options for JVM A..D
 # NUM_CLASSES: number of classes (default 8192)
+# TESTCLASSES_IN_BOOT_CLASSPATH ("1" or "0")
+# NUM_OBJEXTS: how many objects in total, default is 64 mio
 # USEGC: which GC to use (literally, the -XX:+UseXX option) (default G1)
 # NUM_FULL_GC: How many GCs (default 100)
 # PERF_COMMAND: Perf stat line, optional
 # ISOLATE_CPUS_COMMAND: cpu isolation. Defaults to isolation on core 8..15
-# PERF_STAT_COMMAND: perf stat. Defaults to cache statistics.
 
 ONLY_POST_PROCESSING=0
 if [[ "$#" -eq 1 ]]; then
@@ -22,7 +23,7 @@ fi
 BASE_DIR=${BASE_DIR:-$PWD}
 
 # A +COH
-JDK_A_NAME_DEFAULT="jdk-v4"
+JDK_A_NAME_DEFAULT="jdk-v4.2"
 OPTIONS_A_DEFAULT="-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT "
 
 # B: +COH +LUT
@@ -46,7 +47,7 @@ JDK_B="${BASE_DIR}/../${JDK_B_NAME}"
 JDK_C="${BASE_DIR}/../${JDK_C_NAME}"
 
 # large ccs, to enforce largest possible shift
-COMMON_OPTIONS=" -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g "
+COMMON_OPTIONS="-XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g "
 
 export LC_NUMERIC=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -61,11 +62,14 @@ CLASSPATH="${BASE_DIR}/the-test/target/repros8-1.0.jar"
 # Location of test jar
 TESTJAR="${BASE_DIR}/the-test/generated-test-sources/TESTDATA.jar"
 
-# enable to to test with boot classloader
-BOOTCLASSPATH_OPTION="-Xbootclasspath/a:${TESTJAR}"
+# set to "1" to load test data from boot class path, to "0" to load from normal class path
+TESTCLASSES_IN_BOOT_CLASSPATH=${TESTCLASSES_IN_BOOT_CLASSPATH:-"1"}
+if [ "$TESTCLASSES_IN_BOOT_CLASSPATH" == "1" ]; then
+	BOOTCLASSPATH_OPTION="-Xbootclasspath/a:${TESTJAR}"
+else
+	CLASSPATH="${CLASSPATH}:${TESTJAR}"
+fi
 
-# enable to test with app classloader
-#CLASSPATH="${CLASSPATH}:${TESTJAR}"
 
 TEST_OPTIONS="-C $NUM_CLASSES -n $NUM_OBJECTS --cycles $NUM_FULL_GC -y --nowait ${EXTRA_TEST_OPTIONS}"
 

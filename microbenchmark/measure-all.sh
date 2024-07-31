@@ -1,5 +1,6 @@
 set -e
 
+
 # This script overrides
 # - BASE_DIR
 # - USEGC
@@ -17,7 +18,11 @@ pushd $RESULTS_ROOT
 BASE_LOG="$PWD/all.log"
 touch "$BASE_LOG"
 
-for USEGC in "-XX:+UseSerialGC" "-XX:+UseParallelGC" "-XX:+UseG1GC" ; do
+export TESTCLASSES_IN_BOOT_CLASSPATH="0"
+
+export NUM_FULL_GC=50
+
+for USEGC in "-XX:+UseSerialGC" "-XX:+UseParallelGC" "-XX:+UseG1GC" "-XX:+UseShenandoahGC" "-XX:+UseZGC"; do
 #for USEGC in "-XX:+UseSerialGC"  ; do
 	export USEGC
 	for NUM_CLASSES in 16 64 256 1024 4096 16384 ; do
