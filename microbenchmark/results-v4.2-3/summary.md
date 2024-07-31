@@ -13,16 +13,21 @@ Various metrics by number of classes
 
 ![ParallelGC](./auswertung/ParallelGC-tlb-misses.svg) ![ParallelGC](./auswertung/ParallelGC-tlb-loads.svg)
 
+----------------
+
 ### G1GC
 ![G1GC](./auswertung/G1GC-gc-pauses.svg) ![G1GC](./auswertung/G1GC-l1-misses.svg)
 
 ![G1GC](./auswertung/G1GC-tlb-misses.svg) ![G1GC](./auswertung/G1GC-tlb-loads.svg)
+
+----------------
 
 ### SerialGC
 ![SerialGC](./auswertung/SerialGC-gc-pauses.svg) ![SerialGC](./auswertung/SerialGC-l1-misses.svg)
 
 ![SerialGC](./auswertung/SerialGC-tlb-misses.svg) ![SerialGC](./auswertung/SerialGC-tlb-loads.svg)
 
+----------------
 
 ## All
 

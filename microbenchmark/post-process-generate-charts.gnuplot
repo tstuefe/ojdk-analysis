@@ -79,7 +79,7 @@ set output OUTPUTFILE
 # 6 is C to A
 
 set yrange [0:*]
-set terminal svg enhanced size 600,600 font SVGFONT
+set terminal svg enhanced size 600,600 font SVGFONT background rgb 'white'
 
 plot CSV_FILE \
   using 0:2:xticlabel(1) with lines lc rgb "black" dt 1 lw 3, \
