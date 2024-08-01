@@ -83,8 +83,8 @@ set terminal svg enhanced size 600,600 font SVGFONT background rgb 'white'
 
 plot CSV_FILE \
   using 0:2:xticlabel(1) with lines lc rgb "black" dt 1 lw 3, \
-  '' using 0:3 with lines lc rgb "orange" dt 2 lw 3, \
-  '' using 0:3:(sprintf("%.1f%%", $4)) with labels offset 0,-1 textcolor rgb "orange" notitle, \
+  '' using 0:3 with lines lc rgb "dark-green" dt 2 lw 3, \
+  '' using 0:3:(sprintf("%.1f%%", $4)) with labels offset 0,-1 textcolor rgb "dark-green" notitle, \
   '' using 0:5 with lines lc rgb "blue" dt 3 lw 3
 
 
@@ -98,7 +98,7 @@ set grid back lc rgb '#808080' lt 0 lw 1
 
 plot CSV_FILE \
   using 0:2:xticlabel(1) with lines lc rgb "black" dt 1 lw 2, \
-  '' using 0:3 with lines lc rgb "orange" dt 2 lw 2, \
-  '' using 0:3:(sprintf("%.1f%%", $4)) with labels offset 0,-1 textcolor rgb "orange" notitle, \
+  '' using 0:3 with lines lc rgb "dark-green" dt 2 lw 2, \
+  '' using 0:3:(sprintf("%.1f%%", $4)) with labels offset 0,-1 textcolor rgb "dark-green" notitle, \
   '' using 0:5 with lines lc rgb "blue" dt 3 lw 2
 
