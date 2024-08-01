@@ -1,0 +1,18 @@
+
+ Performance counter stats for '/shared/projects/openjdk/analysis/microbenchmark/../jdk-v4.2/bin/java -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g -cp /shared/projects/openjdk/analysis/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait':
+
+    19,454,973,907      L1-dcache-load-misses            #    4.04% of all L1-dcache accesses   (41.57%)
+   481,596,479,969      L1-dcache-loads                                                         (35.05%)
+     1,104,166,948      LLC-load-misses                  #   17.12% of all LL-cache accesses    (30.09%)
+     6,450,032,780      LLC-loads                                                               (28.47%)
+        63,936,832      dTLB-load-misses                 #    0.01% of all dTLB cache accesses  (38.11%)
+   492,362,692,410      dTLB-loads                                                              (34.51%)
+ 1,598,974,830,458      instructions                                                            (47.02%)
+   292,233,438,913      branches                                                                (44.75%)
+
+     224.492898114 seconds time elapsed
+
+     241.335559000 seconds user
+       1.582232000 seconds sys
+
+

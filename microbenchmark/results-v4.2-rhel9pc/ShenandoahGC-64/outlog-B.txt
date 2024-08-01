@@ -1,0 +1,806 @@
+[0.001s][warning][pagesize] UseLargePages disabled, no large pages configured and available on the system.
+[0.001s][info   ][gc      ] Min heap equals to max heap, disabling ShenandoahUncommit
+[0.001s][info   ][metaspace]  - commit_granule_bytes: 65536.
+[0.001s][info   ][metaspace]  - commit_granule_words: 8192.
+[0.001s][info   ][metaspace]  - virtual_space_node_default_size: 8388608.
+[0.001s][info   ][metaspace]  - enlarge_chunks_in_place: 1.
+[0.001s][info   ][metaspace]  - use_allocation_guard: 0.
+[0.003s][info   ][gc       ] Heuristics ergonomically sets -XX:+ExplicitGCInvokesConcurrent
+[0.003s][info   ][gc       ] Heuristics ergonomically sets -XX:+ShenandoahImplicitGCInvokesConcurrent
+[0.003s][info   ][gc       ] Using Shenandoah
+[0.392s][info   ][metaspace] Reserving compressed class space anywhere
+[0.392s][info   ][gc,metaspace] CDS archive(s) not mapped
+[0.392s][info   ][gc,metaspace] Compressed class space mapped at: 0x000000003d000000-0x00000000fd000000, reserved size: 3221225472
+[0.392s][info   ][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 1, narrow klass pointer bits 22, max shift 10
+[0.392s][info   ][gc,metaspace] Narrow klass base: 0x000000003d000000, Narrow klass shift: 10, Narrow klass range: 0xc0000000
+Random Seed: 12345678
+Num Classes: 64
+Num Objects: 67108864
+Percent IK Objects: 83.0%)
+Percent OAK Objects: 5.0%)
+Percent TAK Objects: 12.0%)
+Cycles: 50
+Loading 64 pre-generated classes ...
+Materialize pre-generated constructors ...
+Creating objects...
+[0.653s][info   ][gc          ] Trigger: GC request (System.gc())
+[0.653s][info   ][gc          ] GC(0) Concurrent reset 0.155ms
+[0.653s][info   ][gc          ] GC(0) Pause Init Mark (unload classes) 0.037ms
+[0.653s][info   ][gc          ] GC(0) Concurrent marking roots 0.311ms
+[0.655s][info   ][gc          ] GC(0) Concurrent marking (unload classes) 1.782ms
+[0.655s][info   ][gc          ] GC(0) Pause Final Mark (unload classes) 0.094ms
+[0.655s][info   ][gc          ] GC(0) Concurrent thread roots 0.068ms
+[0.656s][info   ][gc          ] GC(0) Concurrent weak references 0.054ms
+[0.656s][info   ][gc          ] GC(0) Concurrent weak roots 0.436ms
+[0.656s][info   ][gc          ] GC(0) Concurrent cleanup 16M->16M(6144M) 0.036ms
+[0.658s][info   ][metaspace   ] ChkMgr @0x00007fcda411a870 (non-class-space): : reclaiming memory...
+[0.658s][info   ][metaspace   ] ChkMgr @0x00007fcda411a870 (non-class-space): nothing reclaimed.
+[0.658s][info   ][metaspace   ] ChkMgr @0x00007fcda411a680 (class-space): : reclaiming memory...
+[0.658s][info   ][metaspace   ] ChkMgr @0x00007fcda411a680 (class-space): nothing reclaimed.
+[0.658s][info   ][gc          ] GC(0) Concurrent class unloading 1.765ms
+[0.658s][info   ][gc          ] GC(0) Concurrent strong roots 0.172ms
+[0.659s][info   ][gc          ] GC(0) Concurrent evacuation 0.921ms
+[0.659s][info   ][gc          ] GC(0) Pause Init Update Refs 0.005ms
+[0.659s][info   ][gc          ] GC(0) At start of update refs, moving 14336K to Mutator free partition from Collector Reserve
+[0.660s][info   ][gc          ] GC(0) Concurrent update references 1.193ms
+[0.660s][info   ][gc          ] GC(0) Concurrent update thread roots 0.067ms
+[0.660s][info   ][gc          ] GC(0) Pause Final Update Refs 0.065ms
+[0.660s][info   ][gc          ] GC(0) Concurrent cleanup 18M->4M(6144M) 0.037ms
+[0.661s][info   ][gc,metaspace] Metaspace: 11194K(11328K)->11184K(11328K) NonClass: 9401K(9472K)->9396K(9472K) Class: 1792K(1856K)->1788K(1856K)
+[1.707s][info   ][gc          ] Trigger: Learning 2 of 5. Free (4300M) is below initial threshold (4300M)
+[1.707s][info   ][gc          ] GC(1) Concurrent reset 0.254ms
+[1.707s][info   ][gc          ] GC(1) Pause Init Mark (unload classes) 0.037ms
+[1.708s][info   ][gc          ] GC(1) Concurrent marking roots 0.137ms
+[2.146s][info   ][gc          ] GC(1) Concurrent marking (unload classes) 438.312ms
+[2.146s][info   ][gc          ] GC(1) Pause Final Mark (unload classes) 0.236ms
+[2.146s][info   ][gc          ] GC(1) Concurrent thread roots 0.055ms
+[2.146s][info   ][gc          ] GC(1) Concurrent weak references 0.029ms
+[2.147s][info   ][gc          ] GC(1) Concurrent weak roots 0.551ms
+[2.147s][info   ][gc          ] GC(1) Concurrent cleanup 2225M->2225M(6144M) 0.035ms
+[2.148s][info   ][gc          ] GC(1) Concurrent class unloading 0.791ms
+[2.148s][info   ][gc          ] GC(1) Concurrent strong roots 0.041ms
+[2.394s][info   ][gc          ] GC(1) Concurrent evacuation 246.002ms
+[2.394s][info   ][gc          ] GC(1) Pause Init Update Refs 0.006ms
+[2.394s][info   ][gc          ] GC(1) At start of update refs, moving 158M to Mutator free partition from Collector Reserve
+[2.953s][info   ][gc          ] GC(1) Concurrent update references 559.385ms
+[2.953s][info   ][gc          ] GC(1) Concurrent update thread roots 0.111ms
+[2.954s][info   ][gc          ] GC(1) Pause Final Update Refs 0.098ms
+[2.954s][info   ][gc          ] GC(1) Concurrent cleanup 3665M->2389M(6144M) 0.059ms
+[2.954s][info   ][gc,metaspace] Metaspace: 11446K(11648K)->11447K(11648K) NonClass: 9622K(9728K)->9623K(9728K) Class: 1823K(1920K)->1823K(1920K)
+[2.955s][info   ][gc          ] Trigger: Learning 3 of 5. Free (3443M) is below initial threshold (4300M)
+[2.958s][info   ][gc          ] GC(2) Concurrent reset 3.035ms
+[2.958s][info   ][gc          ] GC(2) Pause Init Mark (unload classes) 0.047ms
+[2.958s][info   ][gc          ] GC(2) Concurrent marking roots 0.132ms
+[3.844s][info   ][gc          ] GC(2) Concurrent marking (unload classes) 885.735ms
+[3.844s][info   ][gc          ] GC(2) Pause Final Mark (unload classes) 0.245ms
+[3.844s][info   ][gc          ] GC(2) Concurrent thread roots 0.069ms
+[3.844s][info   ][gc          ] GC(2) Concurrent weak references 0.040ms
+[3.845s][info   ][gc          ] GC(2) Concurrent weak roots 0.449ms
+[3.845s][info   ][gc          ] GC(2) Concurrent cleanup 3893M->3894M(6144M) 0.042ms
+[3.846s][info   ][gc          ] GC(2) Concurrent class unloading 0.844ms
+[3.846s][info   ][gc          ] GC(2) Concurrent strong roots 0.077ms
+[4.161s][info   ][gc          ] GC(2) Concurrent evacuation 315.299ms
+[4.161s][info   ][gc          ] GC(2) Pause Init Update Refs 0.005ms
+[4.161s][info   ][gc          ] GC(2) At start of update refs, moving 122M to Mutator free partition from Collector Reserve
+[5.595s][info   ][gc          ] GC(2) Concurrent update references 1433.457ms
+[5.595s][info   ][gc          ] GC(2) Concurrent update thread roots 0.135ms
+[5.596s][info   ][gc          ] GC(2) Pause Final Update Refs 0.094ms
+[5.596s][info   ][gc          ] GC(2) Concurrent cleanup 5736M->3748M(6144M) 0.076ms
+[5.596s][info   ][gc,metaspace] Metaspace: 11447K(11648K)->11447K(11648K) NonClass: 9623K(9728K)->9623K(9728K) Class: 1823K(1920K)->1823K(1920K)
+[5.597s][info   ][gc          ] Trigger: Learning 4 of 5. Free (2083M) is below initial threshold (4300M)
+[5.602s][info   ][gc          ] GC(3) Concurrent reset 4.826ms
+[5.602s][info   ][gc          ] GC(3) Pause Init Mark (unload classes) 0.034ms
+[5.602s][info   ][gc          ] GC(3) Concurrent marking roots 0.100ms
+[6.821s][info   ][gc          ] Failed to allocate TLAB, 732K
+[6.821s][info   ][gc          ] Cancelling GC: Allocation Failure
+[6.821s][info   ][gc          ] GC(3) Concurrent marking (unload classes) 1219.127ms
+[6.821s][info   ][gc,metaspace] Metaspace: 11447K(11648K)->11447K(11648K) NonClass: 9623K(9728K)->9623K(9728K) Class: 1823K(1920K)->1823K(1920K)
+[6.822s][info   ][gc          ] Trigger: Handle Allocation Failure
+[7.676s][info   ][gc          ] GC(4) Pause Degenerated GC (Mark) 5834M->3120M(6144M) 854.128ms
+[7.676s][info   ][gc,metaspace] Metaspace: 11447K(11648K)->11447K(11648K) NonClass: 9623K(9728K)->9623K(9728K) Class: 1823K(1920K)->1823K(1920K)
+[7.677s][info   ][gc          ] Trigger: Learning 4 of 5. Free (2712M) is below initial threshold (4300M)
+[7.685s][info   ][gc          ] GC(5) Concurrent reset 7.798ms
+[7.685s][info   ][gc          ] GC(5) Pause Init Mark (unload classes) 0.050ms
+[7.686s][info   ][gc          ] GC(5) Concurrent marking roots 0.105ms
+[10.570s][info   ][gc          ] Failed to allocate TLAB, 952K
+[10.571s][info   ][gc          ] Cancelling GC: Allocation Failure
+[10.571s][info   ][gc          ] GC(5) Concurrent marking (unload classes) 2885.084ms
+[10.571s][info   ][gc,metaspace] Metaspace: 11447K(11648K)->11447K(11648K) NonClass: 9623K(9728K)->9623K(9728K) Class: 1823K(1920K)->1823K(1920K)
+[10.572s][info   ][gc          ] Trigger: Handle Allocation Failure
+[11.436s][info   ][gc          ] GC(6) Pause Degenerated GC (Mark) 5834M->3748M(6144M) 864.565ms
+[11.436s][info   ][gc,metaspace] Metaspace: 11447K(11648K)->11447K(11648K) NonClass: 9623K(9728K)->9623K(9728K) Class: 1823K(1920K)->1823K(1920K)
+[11.437s][info   ][gc          ] Trigger: Learning 4 of 5. Free (2084M) is below initial threshold (4300M)
+[11.447s][info   ][gc          ] GC(7) Concurrent reset 9.236ms
+[11.447s][info   ][gc          ] GC(7) Pause Init Mark (unload classes) 0.044ms
+[11.447s][info   ][gc          ] GC(7) Concurrent marking roots 0.143ms
+[13.078s][info   ][gc          ] Failed to allocate TLAB, 732K
+[13.078s][info   ][gc          ] Cancelling GC: Allocation Failure
+[13.078s][info   ][gc          ] GC(7) Concurrent marking (unload classes) 1631.136ms
+[13.078s][info   ][gc,metaspace] Metaspace: 11447K(11648K)->11447K(11648K) NonClass: 9623K(9728K)->9623K(9728K) Class: 1823K(1920K)->1823K(1920K)
+[13.079s][info   ][gc          ] Trigger: Handle Allocation Failure
+[14.266s][info   ][gc          ] GC(8) Pause Degenerated GC (Mark) 5834M->3354M(6144M) 1186.570ms
+[14.266s][info   ][gc,metaspace] Metaspace: 11447K(11648K)->11447K(11648K) NonClass: 9623K(9728K)->9623K(9728K) Class: 1823K(1920K)->1823K(1920K)
+[14.267s][info   ][gc          ] Trigger: Learning 4 of 5. Free (2478M) is below initial threshold (4300M)
+[14.275s][info   ][gc          ] GC(9) Concurrent reset 8.013ms
+[14.275s][info   ][gc          ] GC(9) Pause Init Mark (unload classes) 0.040ms
+[14.275s][info   ][gc          ] GC(9) Concurrent marking roots 0.095ms
+67108864 Objects created
+ - IK: 55699211 (82.99829%)
+ - OAK: 3355627 (5.0002737%)
+ - TAK: 8054026 (12.001434%)
+Preparatory GC...
+[17.003s][info   ][gc          ] GC(9) Concurrent marking (unload classes) 2727.783ms
+[17.003s][info   ][gc          ] GC(9) Pause Final Mark (unload classes) 0.253ms
+[17.004s][info   ][gc          ] GC(9) Concurrent thread roots 0.169ms
+[17.004s][info   ][gc          ] GC(9) Concurrent weak references 0.029ms
+[17.004s][info   ][gc          ] GC(9) Concurrent weak roots 0.495ms
+[17.004s][info   ][gc          ] GC(9) Concurrent cleanup 4711M->4711M(6144M) 0.036ms
+[17.005s][info   ][gc          ] GC(9) Concurrent class unloading 0.880ms
+[17.005s][info   ][gc          ] GC(9) Concurrent strong roots 0.077ms
+[17.308s][info   ][gc          ] GC(9) Concurrent evacuation 302.872ms
+[17.308s][info   ][gc          ] GC(9) Pause Init Update Refs 0.005ms
+[17.308s][info   ][gc          ] GC(9) At start of update refs, moving 122M to Mutator free partition from Collector Reserve
+[19.397s][info   ][gc          ] GC(9) Concurrent update references 2088.900ms
+[19.397s][info   ][gc          ] GC(9) Concurrent update thread roots 0.122ms
+[19.397s][info   ][gc          ] GC(9) Pause Final Update Refs 0.099ms
+[19.397s][info   ][gc          ] GC(9) Concurrent cleanup 4897M->2801M(6144M) 0.082ms
+[19.398s][info   ][gc,metaspace] Metaspace: 11447K(11648K)->11447K(11648K) NonClass: 9623K(9728K)->9623K(9728K) Class: 1823K(1920K)->1823K(1920K)
+[19.399s][info   ][gc          ] Trigger: GC request (System.gc())
+[19.404s][info   ][gc          ] GC(10) Concurrent reset 5.588ms
+[19.404s][info   ][gc          ] GC(10) Pause Init Mark (unload classes) 0.031ms
+[19.404s][info   ][gc          ] GC(10) Concurrent marking roots 0.110ms
+[22.283s][info   ][gc          ] GC(10) Concurrent marking (unload classes) 2878.595ms
+[22.283s][info   ][gc          ] GC(10) Pause Final Mark (unload classes) 0.202ms
+[22.284s][info   ][gc          ] GC(10) Concurrent thread roots 0.079ms
+[22.284s][info   ][gc          ] GC(10) Concurrent weak references 0.045ms
+[22.285s][info   ][gc          ] GC(10) Concurrent weak roots 0.539ms
+[22.285s][info   ][gc          ] GC(10) Concurrent cleanup 2801M->2801M(6144M) 0.036ms
+[22.287s][info   ][metaspace   ] ChkMgr @0x00007fcda411a870 (non-class-space): : reclaiming memory...
+[22.287s][info   ][metaspace   ] ChkMgr @0x00007fcda411a870 (non-class-space): finished reclaiming memory: 
+[22.287s][info   ][metaspace   ] reserved: 64.00 MB (no change)
+[22.287s][info   ][metaspace   ] committed: 9.50 MB->9.38 MB (-128.00 KB)
+[22.287s][info   ][metaspace   ] ChkMgr @0x00007fcda411a680 (class-space): : reclaiming memory...
+[22.287s][info   ][metaspace   ] ChkMgr @0x00007fcda411a680 (class-space): finished reclaiming memory: 
+[22.287s][info   ][metaspace   ] reserved: 3.00 GB (no change)
+[22.287s][info   ][metaspace   ] committed: 1.88 MB->1.81 MB (-64.00 KB)
+[22.287s][info   ][gc          ] GC(10) Concurrent class unloading 2.164ms
+[22.287s][info   ][gc          ] GC(10) Concurrent strong roots 0.053ms
+[22.483s][info   ][gc          ] GC(10) Concurrent evacuation 196.399ms
+[22.483s][info   ][gc          ] GC(10) Pause Init Update Refs 0.006ms
+[22.483s][info   ][gc          ] GC(10) At start of update refs, moving 190M to Mutator free partition from Collector Reserve
+[24.362s][info   ][gc          ] GC(10) Concurrent update references 1878.588ms
+[24.362s][info   ][gc          ] GC(10) Concurrent update thread roots 0.126ms
+[24.362s][info   ][gc          ] GC(10) Pause Final Update Refs 0.092ms
+[24.362s][info   ][gc          ] GC(10) Concurrent cleanup 2919M->1574M(6144M) 0.069ms
+[24.362s][info   ][gc,metaspace] Metaspace: 11447K(11648K)->11244K(11456K) NonClass: 9623K(9728K)->9453K(9600K) Class: 1823K(1920K)->1790K(1856K)
+[24.363s][info   ][gc          ] Trigger: GC request (System.gc())
+[24.368s][info   ][gc          ] GC(11) Concurrent reset 4.275ms
+[24.368s][info   ][gc          ] GC(11) Pause Init Mark (unload classes) 0.036ms
+[24.368s][info   ][gc          ] GC(11) Concurrent marking roots 0.164ms
+[27.137s][info   ][gc          ] GC(11) Concurrent marking (unload classes) 2768.799ms
+[27.137s][info   ][gc          ] GC(11) Pause Final Mark (unload classes) 0.168ms
+[27.137s][info   ][gc          ] GC(11) Concurrent weak references 0.047ms
+[27.137s][info   ][gc          ] GC(11) Concurrent weak roots 0.460ms
+[27.138s][info   ][gc          ] GC(11) Concurrent cleanup 1574M->1574M(6144M) 0.036ms
+[27.138s][info   ][gc          ] GC(11) Concurrent class unloading 0.768ms
+[27.138s][info   ][gc          ] GC(11) Pause Final Roots 0.002ms
+[27.138s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+Done; will start GCs... 
+[27.140s][info   ][gc          ] Trigger: GC request (System.gc())
+[27.143s][info   ][gc          ] GC(12) Concurrent reset 2.480ms
+[27.143s][info   ][gc          ] GC(12) Pause Init Mark (unload classes) 0.034ms
+[27.143s][info   ][gc          ] GC(12) Concurrent marking roots 0.163ms
+[29.998s][info   ][gc          ] GC(12) Concurrent marking (unload classes) 2855.015ms
+[29.998s][info   ][gc          ] GC(12) Pause Final Mark (unload classes) 0.168ms
+[29.998s][info   ][gc          ] GC(12) Concurrent weak references 0.026ms
+[29.999s][info   ][gc          ] GC(12) Concurrent weak roots 0.462ms
+[29.999s][info   ][gc          ] GC(12) Concurrent cleanup 1575M->1574M(6144M) 0.048ms
+[30.000s][info   ][gc          ] GC(12) Concurrent class unloading 0.952ms
+[30.000s][info   ][gc          ] GC(12) Pause Final Roots 0.002ms
+[30.000s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[30.001s][info   ][gc          ] Trigger: GC request (System.gc())
+[30.004s][info   ][gc          ] GC(13) Concurrent reset 2.474ms
+[30.004s][info   ][gc          ] GC(13) Pause Init Mark (unload classes) 0.027ms
+[30.004s][info   ][gc          ] GC(13) Concurrent marking roots 0.087ms
+[32.833s][info   ][gc          ] GC(13) Concurrent marking (unload classes) 2829.295ms
+[32.833s][info   ][gc          ] GC(13) Pause Final Mark (unload classes) 0.176ms
+[32.833s][info   ][gc          ] GC(13) Concurrent weak references 0.041ms
+[32.834s][info   ][gc          ] GC(13) Concurrent weak roots 0.383ms
+[32.834s][info   ][gc          ] GC(13) Concurrent cleanup 1574M->1574M(6144M) 0.040ms
+[32.835s][info   ][gc          ] GC(13) Concurrent class unloading 0.767ms
+[32.835s][info   ][gc          ] GC(13) Pause Final Roots 0.002ms
+[32.835s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[32.837s][info   ][gc          ] Trigger: GC request (System.gc())
+[32.839s][info   ][gc          ] GC(14) Concurrent reset 2.705ms
+[32.840s][info   ][gc          ] GC(14) Pause Init Mark (unload classes) 0.049ms
+[32.840s][info   ][gc          ] GC(14) Concurrent marking roots 0.125ms
+[35.654s][info   ][gc          ] GC(14) Concurrent marking (unload classes) 2814.407ms
+[35.654s][info   ][gc          ] GC(14) Pause Final Mark (unload classes) 0.168ms
+[35.655s][info   ][gc          ] GC(14) Concurrent weak references 0.053ms
+[35.655s][info   ][gc          ] GC(14) Concurrent weak roots 0.442ms
+[35.656s][info   ][gc          ] GC(14) Concurrent cleanup 1574M->1574M(6144M) 0.037ms
+[35.656s][info   ][gc          ] GC(14) Concurrent class unloading 0.866ms
+[35.656s][info   ][gc          ] GC(14) Pause Final Roots 0.002ms
+[35.656s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[35.660s][info   ][gc          ] Trigger: GC request (System.gc())
+[35.663s][info   ][gc          ] GC(15) Concurrent reset 2.682ms
+[35.663s][info   ][gc          ] GC(15) Pause Init Mark (unload classes) 0.059ms
+[35.663s][info   ][gc          ] GC(15) Concurrent marking roots 0.141ms
+[38.446s][info   ][gc          ] GC(15) Concurrent marking (unload classes) 2782.872ms
+[38.447s][info   ][gc          ] GC(15) Pause Final Mark (unload classes) 0.168ms
+[38.447s][info   ][gc          ] GC(15) Concurrent weak references 0.020ms
+[38.447s][info   ][gc          ] GC(15) Concurrent weak roots 0.395ms
+[38.447s][info   ][gc          ] GC(15) Concurrent cleanup 1574M->1574M(6144M) 0.038ms
+[38.448s][info   ][gc          ] GC(15) Concurrent class unloading 0.847ms
+[38.448s][info   ][gc          ] GC(15) Pause Final Roots 0.002ms
+[38.448s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[38.456s][info   ][gc          ] Trigger: GC request (System.gc())
+[38.459s][info   ][gc          ] GC(16) Concurrent reset 2.483ms
+[38.459s][info   ][gc          ] GC(16) Pause Init Mark (unload classes) 0.030ms
+[38.459s][info   ][gc          ] GC(16) Concurrent marking roots 0.087ms
+[41.271s][info   ][gc          ] GC(16) Concurrent marking (unload classes) 2812.332ms
+[41.271s][info   ][gc          ] GC(16) Pause Final Mark (unload classes) 0.173ms
+[41.271s][info   ][gc          ] GC(16) Concurrent weak references 0.020ms
+[41.272s][info   ][gc          ] GC(16) Concurrent weak roots 0.384ms
+[41.272s][info   ][gc          ] GC(16) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[41.273s][info   ][gc          ] GC(16) Concurrent class unloading 0.798ms
+[41.273s][info   ][gc          ] GC(16) Pause Final Roots 0.002ms
+[41.273s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[41.283s][info   ][gc          ] Trigger: GC request (System.gc())
+[41.285s][info   ][gc          ] GC(17) Concurrent reset 2.479ms
+[41.285s][info   ][gc          ] GC(17) Pause Init Mark (unload classes) 0.038ms
+[41.285s][info   ][gc          ] GC(17) Concurrent marking roots 0.087ms
+[44.049s][info   ][gc          ] GC(17) Concurrent marking (unload classes) 2763.528ms
+[44.049s][info   ][gc          ] GC(17) Pause Final Mark (unload classes) 0.173ms
+[44.049s][info   ][gc          ] GC(17) Concurrent weak references 0.035ms
+[44.050s][info   ][gc          ] GC(17) Concurrent weak roots 0.388ms
+[44.050s][info   ][gc          ] GC(17) Concurrent cleanup 1574M->1574M(6144M) 0.039ms
+[44.051s][info   ][gc          ] GC(17) Concurrent class unloading 0.838ms
+[44.051s][info   ][gc          ] GC(17) Pause Final Roots 0.002ms
+[44.051s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[44.061s][info   ][gc          ] Trigger: GC request (System.gc())
+[44.063s][info   ][gc          ] GC(18) Concurrent reset 2.709ms
+[44.064s][info   ][gc          ] GC(18) Pause Init Mark (unload classes) 0.075ms
+[44.064s][info   ][gc          ] GC(18) Concurrent marking roots 0.094ms
+[46.831s][info   ][gc          ] GC(18) Concurrent marking (unload classes) 2767.230ms
+[46.831s][info   ][gc          ] GC(18) Pause Final Mark (unload classes) 0.160ms
+[46.832s][info   ][gc          ] GC(18) Concurrent weak references 0.032ms
+[46.832s][info   ][gc          ] GC(18) Concurrent weak roots 0.458ms
+[46.832s][info   ][gc          ] GC(18) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[46.833s][info   ][gc          ] GC(18) Concurrent class unloading 0.697ms
+[46.833s][info   ][gc          ] GC(18) Pause Final Roots 0.002ms
+[46.833s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[46.843s][info   ][gc          ] Trigger: GC request (System.gc())
+[46.846s][info   ][gc          ] GC(19) Concurrent reset 2.679ms
+[46.846s][info   ][gc          ] GC(19) Pause Init Mark (unload classes) 0.039ms
+[46.846s][info   ][gc          ] GC(19) Concurrent marking roots 0.130ms
+[49.688s][info   ][gc          ] GC(19) Concurrent marking (unload classes) 2841.965ms
+[49.688s][info   ][gc          ] GC(19) Pause Final Mark (unload classes) 0.164ms
+[49.688s][info   ][gc          ] GC(19) Concurrent weak references 0.024ms
+[49.689s][info   ][gc          ] GC(19) Concurrent weak roots 0.441ms
+[49.689s][info   ][gc          ] GC(19) Concurrent cleanup 1574M->1574M(6144M) 0.047ms
+[49.690s][info   ][gc          ] GC(19) Concurrent class unloading 0.673ms
+[49.690s][info   ][gc          ] GC(19) Pause Final Roots 0.002ms
+[49.690s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[49.700s][info   ][gc          ] Trigger: GC request (System.gc())
+[49.702s][info   ][gc          ] GC(20) Concurrent reset 2.686ms
+[49.702s][info   ][gc          ] GC(20) Pause Init Mark (unload classes) 0.041ms
+[49.703s][info   ][gc          ] GC(20) Concurrent marking roots 0.100ms
+[52.547s][info   ][gc          ] GC(20) Concurrent marking (unload classes) 2844.406ms
+[52.547s][info   ][gc          ] GC(20) Pause Final Mark (unload classes) 0.167ms
+[52.547s][info   ][gc          ] GC(20) Concurrent weak references 0.024ms
+[52.548s][info   ][gc          ] GC(20) Concurrent weak roots 0.383ms
+[52.548s][info   ][gc          ] GC(20) Concurrent cleanup 1574M->1574M(6144M) 0.046ms
+[52.548s][info   ][gc          ] GC(20) Concurrent class unloading 0.666ms
+[52.548s][info   ][gc          ] GC(20) Pause Final Roots 0.002ms
+[52.549s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[52.559s][info   ][gc          ] Trigger: GC request (System.gc())
+[52.561s][info   ][gc          ] GC(21) Concurrent reset 2.692ms
+[52.561s][info   ][gc          ] GC(21) Pause Init Mark (unload classes) 0.035ms
+[52.562s][info   ][gc          ] GC(21) Concurrent marking roots 0.114ms
+[55.406s][info   ][gc          ] GC(21) Concurrent marking (unload classes) 2844.775ms
+[55.407s][info   ][gc          ] GC(21) Pause Final Mark (unload classes) 0.145ms
+[55.407s][info   ][gc          ] GC(21) Concurrent weak references 0.031ms
+[55.407s][info   ][gc          ] GC(21) Concurrent weak roots 0.395ms
+[55.407s][info   ][gc          ] GC(21) Concurrent cleanup 1574M->1574M(6144M) 0.033ms
+[55.408s][info   ][gc          ] GC(21) Concurrent class unloading 0.626ms
+[55.408s][info   ][gc          ] GC(21) Pause Final Roots 0.002ms
+[55.408s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[55.418s][info   ][gc          ] Trigger: GC request (System.gc())
+[55.421s][info   ][gc          ] GC(22) Concurrent reset 2.702ms
+[55.421s][info   ][gc          ] GC(22) Pause Init Mark (unload classes) 0.033ms
+[55.421s][info   ][gc          ] GC(22) Concurrent marking roots 0.113ms
+[58.263s][info   ][gc          ] GC(22) Concurrent marking (unload classes) 2842.635ms
+[58.264s][info   ][gc          ] GC(22) Pause Final Mark (unload classes) 0.164ms
+[58.264s][info   ][gc          ] GC(22) Concurrent weak references 0.028ms
+[58.265s][info   ][gc          ] GC(22) Concurrent weak roots 0.430ms
+[58.265s][info   ][gc          ] GC(22) Concurrent cleanup 1574M->1574M(6144M) 0.047ms
+[58.265s][info   ][gc          ] GC(22) Concurrent class unloading 0.668ms
+[58.265s][info   ][gc          ] GC(22) Pause Final Roots 0.002ms
+[58.266s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[58.276s][info   ][gc          ] Trigger: GC request (System.gc())
+[58.278s][info   ][gc          ] GC(23) Concurrent reset 2.684ms
+[58.278s][info   ][gc          ] GC(23) Pause Init Mark (unload classes) 0.037ms
+[58.279s][info   ][gc          ] GC(23) Concurrent marking roots 0.119ms
+[61.051s][info   ][gc          ] GC(23) Concurrent marking (unload classes) 2772.052ms
+[61.051s][info   ][gc          ] GC(23) Pause Final Mark (unload classes) 0.150ms
+[61.051s][info   ][gc          ] GC(23) Concurrent weak references 0.049ms
+[61.051s][info   ][gc          ] GC(23) Concurrent weak roots 0.392ms
+[61.051s][info   ][gc          ] GC(23) Concurrent cleanup 1575M->1575M(6144M) 0.041ms
+[61.052s][info   ][gc          ] GC(23) Concurrent class unloading 0.803ms
+[61.052s][info   ][gc          ] GC(23) Pause Final Roots 0.002ms
+[61.052s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[61.053s][info   ][gc          ] Trigger: GC request (System.gc())
+[61.056s][info   ][gc          ] GC(24) Concurrent reset 2.668ms
+[61.056s][info   ][gc          ] GC(24) Pause Init Mark (unload classes) 0.040ms
+[61.056s][info   ][gc          ] GC(24) Concurrent marking roots 0.099ms
+[63.914s][info   ][gc          ] GC(24) Concurrent marking (unload classes) 2857.368ms
+[63.914s][info   ][gc          ] GC(24) Pause Final Mark (unload classes) 0.150ms
+[63.914s][info   ][gc          ] GC(24) Concurrent thread roots 0.062ms
+[63.914s][info   ][gc          ] GC(24) Concurrent weak references 0.041ms
+[63.914s][info   ][gc          ] GC(24) Concurrent weak roots 0.459ms
+[63.914s][info   ][gc          ] GC(24) Concurrent cleanup 1575M->1575M(6144M) 0.031ms
+[63.915s][info   ][gc          ] GC(24) Concurrent class unloading 0.704ms
+[63.915s][info   ][gc          ] GC(24) Concurrent strong roots 0.060ms
+[63.915s][info   ][gc          ] GC(24) Concurrent evacuation 0.052ms
+[63.915s][info   ][gc          ] GC(24) Pause Init Update Refs 0.004ms
+[63.915s][info   ][gc          ] GC(24) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[65.753s][info   ][gc          ] GC(24) Concurrent update references 1837.669ms
+[65.753s][info   ][gc          ] GC(24) Concurrent update thread roots 0.129ms
+[65.753s][info   ][gc          ] GC(24) Pause Final Update Refs 0.075ms
+[65.753s][info   ][gc          ] GC(24) Concurrent cleanup 1575M->1574M(6144M) 0.037ms
+[65.753s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[65.754s][info   ][gc          ] Trigger: GC request (System.gc())
+[65.757s][info   ][gc          ] GC(25) Concurrent reset 2.689ms
+[65.757s][info   ][gc          ] GC(25) Pause Init Mark (unload classes) 0.035ms
+[65.757s][info   ][gc          ] GC(25) Concurrent marking roots 0.094ms
+[68.607s][info   ][gc          ] GC(25) Concurrent marking (unload classes) 2849.741ms
+[68.607s][info   ][gc          ] GC(25) Pause Final Mark (unload classes) 0.155ms
+[68.608s][info   ][gc          ] GC(25) Concurrent weak references 0.050ms
+[68.609s][info   ][gc          ] GC(25) Concurrent weak roots 0.445ms
+[68.609s][info   ][gc          ] GC(25) Concurrent cleanup 1574M->1574M(6144M) 0.036ms
+[68.609s][info   ][gc          ] GC(25) Concurrent class unloading 0.723ms
+[68.609s][info   ][gc          ] GC(25) Pause Final Roots 0.002ms
+[68.609s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[68.611s][info   ][gc          ] Trigger: GC request (System.gc())
+[68.614s][info   ][gc          ] GC(26) Concurrent reset 2.708ms
+[68.614s][info   ][gc          ] GC(26) Pause Init Mark (unload classes) 0.043ms
+[68.614s][info   ][gc          ] GC(26) Concurrent marking roots 0.135ms
+[71.465s][info   ][gc          ] GC(26) Concurrent marking (unload classes) 2850.246ms
+[71.465s][info   ][gc          ] GC(26) Pause Final Mark (unload classes) 0.160ms
+[71.465s][info   ][gc          ] GC(26) Concurrent weak references 0.027ms
+[71.465s][info   ][gc          ] GC(26) Concurrent weak roots 0.447ms
+[71.466s][info   ][gc          ] GC(26) Concurrent cleanup 1574M->1574M(6144M) 0.031ms
+[71.466s][info   ][gc          ] GC(26) Concurrent class unloading 0.681ms
+[71.466s][info   ][gc          ] GC(26) Pause Final Roots 0.002ms
+[71.466s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[71.470s][info   ][gc          ] Trigger: GC request (System.gc())
+[71.473s][info   ][gc          ] GC(27) Concurrent reset 2.670ms
+[71.473s][info   ][gc          ] GC(27) Pause Init Mark (unload classes) 0.043ms
+[71.473s][info   ][gc          ] GC(27) Concurrent marking roots 0.095ms
+[74.259s][info   ][gc          ] GC(27) Concurrent marking (unload classes) 2785.821ms
+[74.259s][info   ][gc          ] GC(27) Pause Final Mark (unload classes) 0.160ms
+[74.260s][info   ][gc          ] GC(27) Concurrent weak references 0.052ms
+[74.260s][info   ][gc          ] GC(27) Concurrent weak roots 0.417ms
+[74.260s][info   ][gc          ] GC(27) Concurrent cleanup 1574M->1574M(6144M) 0.054ms
+[74.261s][info   ][gc          ] GC(27) Concurrent class unloading 0.685ms
+[74.261s][info   ][gc          ] GC(27) Pause Final Roots 0.002ms
+[74.261s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[74.269s][info   ][gc          ] Trigger: GC request (System.gc())
+[74.272s][info   ][gc          ] GC(28) Concurrent reset 2.730ms
+[74.272s][info   ][gc          ] GC(28) Pause Init Mark (unload classes) 0.036ms
+[74.272s][info   ][gc          ] GC(28) Concurrent marking roots 0.124ms
+[77.035s][info   ][gc          ] GC(28) Concurrent marking (unload classes) 2763.001ms
+[77.036s][info   ][gc          ] GC(28) Pause Final Mark (unload classes) 0.153ms
+[77.036s][info   ][gc          ] GC(28) Concurrent weak references 0.022ms
+[77.036s][info   ][gc          ] GC(28) Concurrent weak roots 0.424ms
+[77.036s][info   ][gc          ] GC(28) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[77.037s][info   ][gc          ] GC(28) Concurrent class unloading 0.765ms
+[77.037s][info   ][gc          ] GC(28) Pause Final Roots 0.003ms
+[77.037s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[77.047s][info   ][gc          ] Trigger: GC request (System.gc())
+[77.050s][info   ][gc          ] GC(29) Concurrent reset 2.659ms
+[77.050s][info   ][gc          ] GC(29) Pause Init Mark (unload classes) 0.030ms
+[77.050s][info   ][gc          ] GC(29) Concurrent marking roots 0.104ms
+[79.864s][info   ][gc          ] GC(29) Concurrent marking (unload classes) 2814.512ms
+[79.865s][info   ][gc          ] GC(29) Pause Final Mark (unload classes) 0.147ms
+[79.865s][info   ][gc          ] GC(29) Concurrent weak references 0.027ms
+[79.866s][info   ][gc          ] GC(29) Concurrent weak roots 0.463ms
+[79.866s][info   ][gc          ] GC(29) Concurrent cleanup 1574M->1574M(6144M) 0.036ms
+[79.867s][info   ][gc          ] GC(29) Concurrent class unloading 0.771ms
+[79.867s][info   ][gc          ] GC(29) Pause Final Roots 0.002ms
+[79.867s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[79.877s][info   ][gc          ] Trigger: GC request (System.gc())
+[79.879s][info   ][gc          ] GC(30) Concurrent reset 2.660ms
+[79.880s][info   ][gc          ] GC(30) Pause Init Mark (unload classes) 0.036ms
+[79.880s][info   ][gc          ] GC(30) Concurrent marking roots 0.105ms
+[82.715s][info   ][gc          ] GC(30) Concurrent marking (unload classes) 2835.758ms
+[82.716s][info   ][gc          ] GC(30) Pause Final Mark (unload classes) 0.164ms
+[82.716s][info   ][gc          ] GC(30) Concurrent weak references 0.019ms
+[82.716s][info   ][gc          ] GC(30) Concurrent weak roots 0.410ms
+[82.716s][info   ][gc          ] GC(30) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[82.717s][info   ][gc          ] GC(30) Concurrent class unloading 0.841ms
+[82.717s][info   ][gc          ] GC(30) Pause Final Roots 0.002ms
+[82.717s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[82.727s][info   ][gc          ] Trigger: GC request (System.gc())
+[82.730s][info   ][gc          ] GC(31) Concurrent reset 2.724ms
+[82.730s][info   ][gc          ] GC(31) Pause Init Mark (unload classes) 0.066ms
+[82.730s][info   ][gc          ] GC(31) Concurrent marking roots 0.137ms
+[85.547s][info   ][gc          ] GC(31) Concurrent marking (unload classes) 2817.117ms
+[85.548s][info   ][gc          ] GC(31) Pause Final Mark (unload classes) 0.165ms
+[85.548s][info   ][gc          ] GC(31) Concurrent weak references 0.031ms
+[85.548s][info   ][gc          ] GC(31) Concurrent weak roots 0.450ms
+[85.548s][info   ][gc          ] GC(31) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[85.549s][info   ][gc          ] GC(31) Concurrent class unloading 0.663ms
+[85.549s][info   ][gc          ] GC(31) Pause Final Roots 0.003ms
+[85.549s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[85.559s][info   ][gc          ] Trigger: GC request (System.gc())
+[85.562s][info   ][gc          ] GC(32) Concurrent reset 2.512ms
+[85.562s][info   ][gc          ] GC(32) Pause Init Mark (unload classes) 0.029ms
+[85.562s][info   ][gc          ] GC(32) Concurrent marking roots 0.095ms
+[88.380s][info   ][gc          ] GC(32) Concurrent marking (unload classes) 2818.756ms
+[88.381s][info   ][gc          ] GC(32) Pause Final Mark (unload classes) 0.179ms
+[88.381s][info   ][gc          ] GC(32) Concurrent weak references 0.021ms
+[88.381s][info   ][gc          ] GC(32) Concurrent weak roots 0.414ms
+[88.381s][info   ][gc          ] GC(32) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[88.382s][info   ][gc          ] GC(32) Concurrent class unloading 0.702ms
+[88.382s][info   ][gc          ] GC(32) Pause Final Roots 0.002ms
+[88.382s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[88.392s][info   ][gc          ] Trigger: GC request (System.gc())
+[88.395s][info   ][gc          ] GC(33) Concurrent reset 2.633ms
+[88.395s][info   ][gc          ] GC(33) Pause Init Mark (unload classes) 0.042ms
+[88.395s][info   ][gc          ] GC(33) Concurrent marking roots 0.140ms
+[91.166s][info   ][gc          ] GC(33) Concurrent marking (unload classes) 2770.521ms
+[91.166s][info   ][gc          ] GC(33) Pause Final Mark (unload classes) 0.141ms
+[91.166s][info   ][gc          ] GC(33) Concurrent weak references 0.022ms
+[91.166s][info   ][gc          ] GC(33) Concurrent weak roots 0.410ms
+[91.166s][info   ][gc          ] GC(33) Concurrent cleanup 1574M->1574M(6144M) 0.037ms
+[91.167s][info   ][gc          ] GC(33) Concurrent class unloading 0.877ms
+[91.167s][info   ][gc          ] GC(33) Pause Final Roots 0.002ms
+[91.167s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[91.177s][info   ][gc          ] Trigger: GC request (System.gc())
+[91.180s][info   ][gc          ] GC(34) Concurrent reset 2.693ms
+[91.180s][info   ][gc          ] GC(34) Pause Init Mark (unload classes) 0.058ms
+[91.180s][info   ][gc          ] GC(34) Concurrent marking roots 0.131ms
+[94.003s][info   ][gc          ] GC(34) Concurrent marking (unload classes) 2822.670ms
+[94.003s][info   ][gc          ] GC(34) Pause Final Mark (unload classes) 0.173ms
+[94.003s][info   ][gc          ] GC(34) Concurrent weak references 0.023ms
+[94.004s][info   ][gc          ] GC(34) Concurrent weak roots 0.436ms
+[94.004s][info   ][gc          ] GC(34) Concurrent cleanup 1574M->1574M(6144M) 0.037ms
+[94.004s][info   ][gc          ] GC(34) Concurrent class unloading 0.657ms
+[94.004s][info   ][gc          ] GC(34) Pause Final Roots 0.002ms
+[94.004s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[94.015s][info   ][gc          ] Trigger: GC request (System.gc())
+[94.017s][info   ][gc          ] GC(35) Concurrent reset 2.472ms
+[94.017s][info   ][gc          ] GC(35) Pause Init Mark (unload classes) 0.035ms
+[94.017s][info   ][gc          ] GC(35) Concurrent marking roots 0.086ms
+[96.865s][info   ][gc          ] GC(35) Concurrent marking (unload classes) 2847.684ms
+[96.865s][info   ][gc          ] GC(35) Pause Final Mark (unload classes) 0.199ms
+[96.866s][info   ][gc          ] GC(35) Concurrent weak references 0.028ms
+[96.866s][info   ][gc          ] GC(35) Concurrent weak roots 0.465ms
+[96.866s][info   ][gc          ] GC(35) Concurrent cleanup 1574M->1574M(6144M) 0.036ms
+[96.867s][info   ][gc          ] GC(35) Concurrent class unloading 0.964ms
+[96.867s][info   ][gc          ] GC(35) Pause Final Roots 0.002ms
+[96.867s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[96.877s][info   ][gc          ] Trigger: GC request (System.gc())
+[96.880s][info   ][gc          ] GC(36) Concurrent reset 2.467ms
+[96.880s][info   ][gc          ] GC(36) Pause Init Mark (unload classes) 0.035ms
+[96.880s][info   ][gc          ] GC(36) Concurrent marking roots 0.103ms
+[99.694s][info   ][gc          ] GC(36) Concurrent marking (unload classes) 2813.726ms
+[99.694s][info   ][gc          ] GC(36) Pause Final Mark (unload classes) 0.164ms
+[99.694s][info   ][gc          ] GC(36) Concurrent weak references 0.048ms
+[99.695s][info   ][gc          ] GC(36) Concurrent weak roots 0.411ms
+[99.695s][info   ][gc          ] GC(36) Concurrent cleanup 1574M->1574M(6144M) 0.031ms
+[99.695s][info   ][gc          ] GC(36) Concurrent class unloading 0.690ms
+[99.695s][info   ][gc          ] GC(36) Pause Final Roots 0.002ms
+[99.695s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[99.705s][info   ][gc          ] Trigger: GC request (System.gc())
+[99.708s][info   ][gc          ] GC(37) Concurrent reset 2.704ms
+[99.708s][info   ][gc          ] GC(37) Pause Init Mark (unload classes) 0.036ms
+[99.708s][info   ][gc          ] GC(37) Concurrent marking roots 0.111ms
+[102.521s][info   ][gc          ] GC(37) Concurrent marking (unload classes) 2813.012ms
+[102.522s][info   ][gc          ] GC(37) Pause Final Mark (unload classes) 0.183ms
+[102.522s][info   ][gc          ] GC(37) Concurrent weak references 0.021ms
+[102.522s][info   ][gc          ] GC(37) Concurrent weak roots 0.465ms
+[102.522s][info   ][gc          ] GC(37) Concurrent cleanup 1574M->1574M(6144M) 0.048ms
+[102.523s][info   ][gc          ] GC(37) Concurrent class unloading 0.740ms
+[102.523s][info   ][gc          ] GC(37) Pause Final Roots 0.002ms
+[102.523s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[102.533s][info   ][gc          ] Trigger: GC request (System.gc())
+[102.536s][info   ][gc          ] GC(38) Concurrent reset 2.656ms
+[102.536s][info   ][gc          ] GC(38) Pause Init Mark (unload classes) 0.041ms
+[102.536s][info   ][gc          ] GC(38) Concurrent marking roots 0.140ms
+[105.379s][info   ][gc          ] GC(38) Concurrent marking (unload classes) 2842.574ms
+[105.379s][info   ][gc          ] GC(38) Pause Final Mark (unload classes) 0.158ms
+[105.379s][info   ][gc          ] GC(38) Concurrent weak references 0.049ms
+[105.379s][info   ][gc          ] GC(38) Concurrent weak roots 0.392ms
+[105.379s][info   ][gc          ] GC(38) Concurrent cleanup 1574M->1574M(6144M) 0.046ms
+[105.380s][info   ][gc          ] GC(38) Concurrent class unloading 0.925ms
+[105.380s][info   ][gc          ] GC(38) Pause Final Roots 0.002ms
+[105.380s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[105.390s][info   ][gc          ] Trigger: GC request (System.gc())
+[105.393s][info   ][gc          ] GC(39) Concurrent reset 2.661ms
+[105.393s][info   ][gc          ] GC(39) Pause Init Mark (unload classes) 0.074ms
+[105.393s][info   ][gc          ] GC(39) Concurrent marking roots 0.103ms
+[108.158s][info   ][gc          ] GC(39) Concurrent marking (unload classes) 2764.619ms
+[108.158s][info   ][gc          ] GC(39) Pause Final Mark (unload classes) 0.154ms
+[108.158s][info   ][gc          ] GC(39) Concurrent weak references 0.022ms
+[108.159s][info   ][gc          ] GC(39) Concurrent weak roots 0.387ms
+[108.159s][info   ][gc          ] GC(39) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[108.160s][info   ][gc          ] GC(39) Concurrent class unloading 0.769ms
+[108.160s][info   ][gc          ] GC(39) Pause Final Roots 0.003ms
+[108.160s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[108.170s][info   ][gc          ] Trigger: GC request (System.gc())
+[108.172s][info   ][gc          ] GC(40) Concurrent reset 2.469ms
+[108.172s][info   ][gc          ] GC(40) Pause Init Mark (unload classes) 0.030ms
+[108.172s][info   ][gc          ] GC(40) Concurrent marking roots 0.103ms
+[110.983s][info   ][gc          ] GC(40) Concurrent marking (unload classes) 2810.363ms
+[110.983s][info   ][gc          ] GC(40) Pause Final Mark (unload classes) 0.170ms
+[110.983s][info   ][gc          ] GC(40) Concurrent weak references 0.043ms
+[110.984s][info   ][gc          ] GC(40) Concurrent weak roots 0.438ms
+[110.984s][info   ][gc          ] GC(40) Concurrent cleanup 1574M->1574M(6144M) 0.034ms
+[110.984s][info   ][gc          ] GC(40) Concurrent class unloading 0.671ms
+[110.984s][info   ][gc          ] GC(40) Pause Final Roots 0.003ms
+[110.984s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[110.994s][info   ][gc          ] Trigger: GC request (System.gc())
+[110.997s][info   ][gc          ] GC(41) Concurrent reset 2.711ms
+[110.997s][info   ][gc          ] GC(41) Pause Init Mark (unload classes) 0.038ms
+[110.997s][info   ][gc          ] GC(41) Concurrent marking roots 0.132ms
+[113.815s][info   ][gc          ] GC(41) Concurrent marking (unload classes) 2817.848ms
+[113.815s][info   ][gc          ] GC(41) Pause Final Mark (unload classes) 0.162ms
+[113.816s][info   ][gc          ] GC(41) Concurrent weak references 0.030ms
+[113.817s][info   ][gc          ] GC(41) Concurrent weak roots 0.451ms
+[113.817s][info   ][gc          ] GC(41) Concurrent cleanup 1574M->1574M(6144M) 0.036ms
+[113.817s][info   ][gc          ] GC(41) Concurrent class unloading 0.760ms
+[113.817s][info   ][gc          ] GC(41) Pause Final Roots 0.002ms
+[113.817s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[113.828s][info   ][gc          ] Trigger: GC request (System.gc())
+[113.830s][info   ][gc          ] GC(42) Concurrent reset 2.478ms
+[113.830s][info   ][gc          ] GC(42) Pause Init Mark (unload classes) 0.032ms
+[113.830s][info   ][gc          ] GC(42) Concurrent marking roots 0.102ms
+[116.680s][info   ][gc          ] GC(42) Concurrent marking (unload classes) 2849.915ms
+[116.680s][info   ][gc          ] GC(42) Pause Final Mark (unload classes) 0.194ms
+[116.680s][info   ][gc          ] GC(42) Concurrent weak references 0.024ms
+[116.681s][info   ][gc          ] GC(42) Concurrent weak roots 0.459ms
+[116.681s][info   ][gc          ] GC(42) Concurrent cleanup 1574M->1574M(6144M) 0.046ms
+[116.682s][info   ][gc          ] GC(42) Concurrent class unloading 0.749ms
+[116.682s][info   ][gc          ] GC(42) Pause Final Roots 0.002ms
+[116.682s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[116.692s][info   ][gc          ] Trigger: GC request (System.gc())
+[116.694s][info   ][gc          ] GC(43) Concurrent reset 2.469ms
+[116.694s][info   ][gc          ] GC(43) Pause Init Mark (unload classes) 0.025ms
+[116.695s][info   ][gc          ] GC(43) Concurrent marking roots 0.090ms
+[119.510s][info   ][gc          ] GC(43) Concurrent marking (unload classes) 2815.268ms
+[119.510s][info   ][gc          ] GC(43) Pause Final Mark (unload classes) 0.170ms
+[119.510s][info   ][gc          ] GC(43) Concurrent weak references 0.038ms
+[119.511s][info   ][gc          ] GC(43) Concurrent weak roots 0.407ms
+[119.511s][info   ][gc          ] GC(43) Concurrent cleanup 1574M->1574M(6144M) 0.033ms
+[119.511s][info   ][gc          ] GC(43) Concurrent class unloading 0.628ms
+[119.511s][info   ][gc          ] GC(43) Pause Final Roots 0.002ms
+[119.511s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[119.521s][info   ][gc          ] Trigger: GC request (System.gc())
+[119.524s][info   ][gc          ] GC(44) Concurrent reset 2.703ms
+[119.524s][info   ][gc          ] GC(44) Pause Init Mark (unload classes) 0.040ms
+[119.524s][info   ][gc          ] GC(44) Concurrent marking roots 0.145ms
+[122.337s][info   ][gc          ] GC(44) Concurrent marking (unload classes) 2812.760ms
+[122.337s][info   ][gc          ] GC(44) Pause Final Mark (unload classes) 0.173ms
+[122.337s][info   ][gc          ] GC(44) Concurrent weak references 0.023ms
+[122.338s][info   ][gc          ] GC(44) Concurrent weak roots 0.452ms
+[122.338s][info   ][gc          ] GC(44) Concurrent cleanup 1575M->1575M(6144M) 0.041ms
+[122.339s][info   ][gc          ] GC(44) Concurrent class unloading 0.631ms
+[122.339s][info   ][gc          ] GC(44) Pause Final Roots 0.002ms
+[122.339s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[122.340s][info   ][gc          ] Trigger: GC request (System.gc())
+[122.342s][info   ][gc          ] GC(45) Concurrent reset 2.468ms
+[122.342s][info   ][gc          ] GC(45) Pause Init Mark (unload classes) 0.033ms
+[122.342s][info   ][gc          ] GC(45) Concurrent marking roots 0.084ms
+[125.152s][info   ][gc          ] GC(45) Concurrent marking (unload classes) 2809.200ms
+[125.152s][info   ][gc          ] GC(45) Pause Final Mark (unload classes) 0.157ms
+[125.152s][info   ][gc          ] GC(45) Concurrent thread roots 0.063ms
+[125.152s][info   ][gc          ] GC(45) Concurrent weak references 0.055ms
+[125.152s][info   ][gc          ] GC(45) Concurrent weak roots 0.475ms
+[125.152s][info   ][gc          ] GC(45) Concurrent cleanup 1575M->1575M(6144M) 0.048ms
+[125.153s][info   ][gc          ] GC(45) Concurrent class unloading 0.850ms
+[125.153s][info   ][gc          ] GC(45) Concurrent strong roots 0.074ms
+[125.153s][info   ][gc          ] GC(45) Concurrent evacuation 0.024ms
+[125.153s][info   ][gc          ] GC(45) Pause Init Update Refs 0.005ms
+[125.153s][info   ][gc          ] GC(45) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[126.991s][info   ][gc          ] GC(45) Concurrent update references 1837.471ms
+[126.991s][info   ][gc          ] GC(45) Concurrent update thread roots 0.127ms
+[126.991s][info   ][gc          ] GC(45) Pause Final Update Refs 0.086ms
+[126.991s][info   ][gc          ] GC(45) Concurrent cleanup 1575M->1574M(6144M) 0.033ms
+[126.991s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[126.992s][info   ][gc          ] Trigger: GC request (System.gc())
+[126.995s][info   ][gc          ] GC(46) Concurrent reset 2.706ms
+[126.995s][info   ][gc          ] GC(46) Pause Init Mark (unload classes) 0.050ms
+[126.995s][info   ][gc          ] GC(46) Concurrent marking roots 0.107ms
+[129.819s][info   ][gc          ] GC(46) Concurrent marking (unload classes) 2823.775ms
+[129.819s][info   ][gc          ] GC(46) Pause Final Mark (unload classes) 0.173ms
+[129.819s][info   ][gc          ] GC(46) Concurrent weak references 0.023ms
+[129.820s][info   ][gc          ] GC(46) Concurrent weak roots 0.384ms
+[129.820s][info   ][gc          ] GC(46) Concurrent cleanup 1574M->1574M(6144M) 0.031ms
+[129.821s][info   ][gc          ] GC(46) Concurrent class unloading 0.811ms
+[129.821s][info   ][gc          ] GC(46) Pause Final Roots 0.002ms
+[129.821s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[129.823s][info   ][gc          ] Trigger: GC request (System.gc())
+[129.825s][info   ][gc          ] GC(47) Concurrent reset 2.476ms
+[129.825s][info   ][gc          ] GC(47) Pause Init Mark (unload classes) 0.030ms
+[129.825s][info   ][gc          ] GC(47) Concurrent marking roots 0.104ms
+[132.642s][info   ][gc          ] GC(47) Concurrent marking (unload classes) 2816.299ms
+[132.642s][info   ][gc          ] GC(47) Pause Final Mark (unload classes) 0.165ms
+[132.642s][info   ][gc          ] GC(47) Concurrent weak references 0.054ms
+[132.643s][info   ][gc          ] GC(47) Concurrent weak roots 0.432ms
+[132.643s][info   ][gc          ] GC(47) Concurrent cleanup 1574M->1574M(6144M) 0.036ms
+[132.643s][info   ][gc          ] GC(47) Concurrent class unloading 0.854ms
+[132.643s][info   ][gc          ] GC(47) Pause Final Roots 0.002ms
+[132.644s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[132.648s][info   ][gc          ] Trigger: GC request (System.gc())
+[132.650s][info   ][gc          ] GC(48) Concurrent reset 2.721ms
+[132.650s][info   ][gc          ] GC(48) Pause Init Mark (unload classes) 0.059ms
+[132.651s][info   ][gc          ] GC(48) Concurrent marking roots 0.116ms
+[135.504s][info   ][gc          ] GC(48) Concurrent marking (unload classes) 2853.825ms
+[135.505s][info   ][gc          ] GC(48) Pause Final Mark (unload classes) 0.167ms
+[135.505s][info   ][gc          ] GC(48) Concurrent weak references 0.021ms
+[135.505s][info   ][gc          ] GC(48) Concurrent weak roots 0.444ms
+[135.505s][info   ][gc          ] GC(48) Concurrent cleanup 1574M->1574M(6144M) 0.037ms
+[135.506s][info   ][gc          ] GC(48) Concurrent class unloading 0.947ms
+[135.506s][info   ][gc          ] GC(48) Pause Final Roots 0.002ms
+[135.506s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[135.514s][info   ][gc          ] Trigger: GC request (System.gc())
+[135.517s][info   ][gc          ] GC(49) Concurrent reset 2.663ms
+[135.517s][info   ][gc          ] GC(49) Pause Init Mark (unload classes) 0.059ms
+[135.517s][info   ][gc          ] GC(49) Concurrent marking roots 0.127ms
+[138.345s][info   ][gc          ] GC(49) Concurrent marking (unload classes) 2828.190ms
+[138.346s][info   ][gc          ] GC(49) Pause Final Mark (unload classes) 0.192ms
+[138.346s][info   ][gc          ] GC(49) Concurrent weak references 0.019ms
+[138.346s][info   ][gc          ] GC(49) Concurrent weak roots 0.407ms
+[138.346s][info   ][gc          ] GC(49) Concurrent cleanup 1574M->1574M(6144M) 0.042ms
+[138.347s][info   ][gc          ] GC(49) Concurrent class unloading 0.612ms
+[138.347s][info   ][gc          ] GC(49) Pause Final Roots 0.002ms
+[138.347s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[138.357s][info   ][gc          ] Trigger: GC request (System.gc())
+[138.360s][info   ][gc          ] GC(50) Concurrent reset 2.706ms
+[138.360s][info   ][gc          ] GC(50) Pause Init Mark (unload classes) 0.044ms
+[138.360s][info   ][gc          ] GC(50) Concurrent marking roots 0.160ms
+[141.124s][info   ][gc          ] GC(50) Concurrent marking (unload classes) 2764.099ms
+[141.124s][info   ][gc          ] GC(50) Pause Final Mark (unload classes) 0.166ms
+[141.124s][info   ][gc          ] GC(50) Concurrent weak references 0.024ms
+[141.125s][info   ][gc          ] GC(50) Concurrent weak roots 0.418ms
+[141.125s][info   ][gc          ] GC(50) Concurrent cleanup 1574M->1574M(6144M) 0.042ms
+[141.126s][info   ][gc          ] GC(50) Concurrent class unloading 0.923ms
+[141.126s][info   ][gc          ] GC(50) Pause Final Roots 0.002ms
+[141.126s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[141.136s][info   ][gc          ] Trigger: GC request (System.gc())
+[141.138s][info   ][gc          ] GC(51) Concurrent reset 2.465ms
+[141.139s][info   ][gc          ] GC(51) Pause Init Mark (unload classes) 0.030ms
+[141.139s][info   ][gc          ] GC(51) Concurrent marking roots 0.097ms
+[143.956s][info   ][gc          ] GC(51) Concurrent marking (unload classes) 2817.128ms
+[143.956s][info   ][gc          ] GC(51) Pause Final Mark (unload classes) 0.169ms
+[143.957s][info   ][gc          ] GC(51) Concurrent weak references 0.035ms
+[143.957s][info   ][gc          ] GC(51) Concurrent weak roots 0.453ms
+[143.957s][info   ][gc          ] GC(51) Concurrent cleanup 1574M->1574M(6144M) 0.036ms
+[143.958s][info   ][gc          ] GC(51) Concurrent class unloading 0.891ms
+[143.958s][info   ][gc          ] GC(51) Pause Final Roots 0.002ms
+[143.958s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[143.968s][info   ][gc          ] Trigger: GC request (System.gc())
+[143.971s][info   ][gc          ] GC(52) Concurrent reset 2.689ms
+[143.971s][info   ][gc          ] GC(52) Pause Init Mark (unload classes) 0.061ms
+[143.971s][info   ][gc          ] GC(52) Concurrent marking roots 0.121ms
+[146.825s][info   ][gc          ] GC(52) Concurrent marking (unload classes) 2853.425ms
+[146.825s][info   ][gc          ] GC(52) Pause Final Mark (unload classes) 0.149ms
+[146.825s][info   ][gc          ] GC(52) Concurrent weak references 0.054ms
+[146.825s][info   ][gc          ] GC(52) Concurrent weak roots 0.408ms
+[146.825s][info   ][gc          ] GC(52) Concurrent cleanup 1574M->1574M(6144M) 0.040ms
+[146.826s][info   ][gc          ] GC(52) Concurrent class unloading 0.884ms
+[146.826s][info   ][gc          ] GC(52) Pause Final Roots 0.002ms
+[146.826s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[146.836s][info   ][gc          ] Trigger: GC request (System.gc())
+[146.839s][info   ][gc          ] GC(53) Concurrent reset 2.669ms
+[146.839s][info   ][gc          ] GC(53) Pause Init Mark (unload classes) 0.053ms
+[146.839s][info   ][gc          ] GC(53) Concurrent marking roots 0.110ms
+[149.686s][info   ][gc          ] GC(53) Concurrent marking (unload classes) 2846.819ms
+[149.686s][info   ][gc          ] GC(53) Pause Final Mark (unload classes) 0.182ms
+[149.687s][info   ][gc          ] GC(53) Concurrent weak references 0.031ms
+[149.688s][info   ][gc          ] GC(53) Concurrent weak roots 0.492ms
+[149.688s][info   ][gc          ] GC(53) Concurrent cleanup 1574M->1574M(6144M) 0.036ms
+[149.688s][info   ][gc          ] GC(53) Concurrent class unloading 0.717ms
+[149.688s][info   ][gc          ] GC(53) Pause Final Roots 0.002ms
+[149.688s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[149.698s][info   ][gc          ] Trigger: GC request (System.gc())
+[149.701s][info   ][gc          ] GC(54) Concurrent reset 2.477ms
+[149.701s][info   ][gc          ] GC(54) Pause Init Mark (unload classes) 0.035ms
+[149.701s][info   ][gc          ] GC(54) Concurrent marking roots 0.085ms
+[152.511s][info   ][gc          ] GC(54) Concurrent marking (unload classes) 2810.280ms
+[152.512s][info   ][gc          ] GC(54) Pause Final Mark (unload classes) 0.168ms
+[152.512s][info   ][gc          ] GC(54) Concurrent weak references 0.021ms
+[152.512s][info   ][gc          ] GC(54) Concurrent weak roots 0.441ms
+[152.512s][info   ][gc          ] GC(54) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[152.513s][info   ][gc          ] GC(54) Concurrent class unloading 0.737ms
+[152.513s][info   ][gc          ] GC(54) Pause Final Roots 0.002ms
+[152.513s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[152.523s][info   ][gc          ] Trigger: GC request (System.gc())
+[152.526s][info   ][gc          ] GC(55) Concurrent reset 2.468ms
+[152.526s][info   ][gc          ] GC(55) Pause Init Mark (unload classes) 0.026ms
+[152.526s][info   ][gc          ] GC(55) Concurrent marking roots 0.089ms
+[155.345s][info   ][gc          ] GC(55) Concurrent marking (unload classes) 2819.609ms
+[155.346s][info   ][gc          ] GC(55) Pause Final Mark (unload classes) 0.171ms
+[155.346s][info   ][gc          ] GC(55) Concurrent weak references 0.018ms
+[155.346s][info   ][gc          ] GC(55) Concurrent weak roots 0.412ms
+[155.346s][info   ][gc          ] GC(55) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[155.347s][info   ][gc          ] GC(55) Concurrent class unloading 0.672ms
+[155.347s][info   ][gc          ] GC(55) Pause Final Roots 0.003ms
+[155.347s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[155.357s][info   ][gc          ] Trigger: GC request (System.gc())
+[155.360s][info   ][gc          ] GC(56) Concurrent reset 2.709ms
+[155.360s][info   ][gc          ] GC(56) Pause Init Mark (unload classes) 0.041ms
+[155.360s][info   ][gc          ] GC(56) Concurrent marking roots 0.148ms
+[158.124s][info   ][gc          ] GC(56) Concurrent marking (unload classes) 2763.772ms
+[158.124s][info   ][gc          ] GC(56) Pause Final Mark (unload classes) 0.177ms
+[158.124s][info   ][gc          ] GC(56) Concurrent weak references 0.025ms
+[158.125s][info   ][gc          ] GC(56) Concurrent weak roots 0.436ms
+[158.125s][info   ][gc          ] GC(56) Concurrent cleanup 1574M->1574M(6144M) 0.037ms
+[158.125s][info   ][gc          ] GC(56) Concurrent class unloading 0.680ms
+[158.125s][info   ][gc          ] GC(56) Pause Final Roots 0.002ms
+[158.125s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[158.135s][info   ][gc          ] Trigger: GC request (System.gc())
+[158.138s][info   ][gc          ] GC(57) Concurrent reset 2.473ms
+[158.138s][info   ][gc          ] GC(57) Pause Init Mark (unload classes) 0.036ms
+[158.138s][info   ][gc          ] GC(57) Concurrent marking roots 0.085ms
+[160.948s][info   ][gc          ] GC(57) Concurrent marking (unload classes) 2809.484ms
+[160.948s][info   ][gc          ] GC(57) Pause Final Mark (unload classes) 0.162ms
+[160.948s][info   ][gc          ] GC(57) Concurrent weak references 0.032ms
+[160.949s][info   ][gc          ] GC(57) Concurrent weak roots 0.473ms
+[160.949s][info   ][gc          ] GC(57) Concurrent cleanup 1574M->1574M(6144M) 0.040ms
+[160.950s][info   ][gc          ] GC(57) Concurrent class unloading 0.971ms
+[160.950s][info   ][gc          ] GC(57) Pause Final Roots 0.002ms
+[160.950s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[160.960s][info   ][gc          ] Trigger: GC request (System.gc())
+[160.963s][info   ][gc          ] GC(58) Concurrent reset 2.677ms
+[160.963s][info   ][gc          ] GC(58) Pause Init Mark (unload classes) 0.063ms
+[160.963s][info   ][gc          ] GC(58) Concurrent marking roots 0.099ms
+[163.773s][info   ][gc          ] GC(58) Concurrent marking (unload classes) 2809.515ms
+[163.773s][info   ][gc          ] GC(58) Pause Final Mark (unload classes) 0.158ms
+[163.773s][info   ][gc          ] GC(58) Concurrent weak references 0.028ms
+[163.773s][info   ][gc          ] GC(58) Concurrent weak roots 0.444ms
+[163.773s][info   ][gc          ] GC(58) Concurrent cleanup 1574M->1574M(6144M) 0.035ms
+[163.774s][info   ][gc          ] GC(58) Concurrent class unloading 0.683ms
+[163.774s][info   ][gc          ] GC(58) Pause Final Roots 0.002ms
+[163.774s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[163.784s][info   ][gc          ] Trigger: GC request (System.gc())
+[163.787s][info   ][gc          ] GC(59) Concurrent reset 2.473ms
+[163.787s][info   ][gc          ] GC(59) Pause Init Mark (unload classes) 0.025ms
+[163.787s][info   ][gc          ] GC(59) Concurrent marking roots 0.091ms
+[166.607s][info   ][gc          ] GC(59) Concurrent marking (unload classes) 2820.454ms
+[166.608s][info   ][gc          ] GC(59) Pause Final Mark (unload classes) 0.167ms
+[166.608s][info   ][gc          ] GC(59) Concurrent weak references 0.031ms
+[166.609s][info   ][gc          ] GC(59) Concurrent weak roots 0.436ms
+[166.609s][info   ][gc          ] GC(59) Concurrent cleanup 1574M->1574M(6144M) 0.043ms
+[166.609s][info   ][gc          ] GC(59) Concurrent class unloading 0.774ms
+[166.609s][info   ][gc          ] GC(59) Pause Final Roots 0.002ms
+[166.610s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[166.620s][info   ][gc          ] Trigger: GC request (System.gc())
+[166.622s][info   ][gc          ] GC(60) Concurrent reset 2.474ms
+[166.622s][info   ][gc          ] GC(60) Pause Init Mark (unload classes) 0.033ms
+[166.622s][info   ][gc          ] GC(60) Concurrent marking roots 0.108ms
+[169.435s][info   ][gc          ] GC(60) Concurrent marking (unload classes) 2812.639ms
+[169.435s][info   ][gc          ] GC(60) Pause Final Mark (unload classes) 0.166ms
+[169.435s][info   ][gc          ] GC(60) Concurrent weak references 0.040ms
+[169.436s][info   ][gc          ] GC(60) Concurrent weak roots 0.418ms
+[169.436s][info   ][gc          ] GC(60) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[169.437s][info   ][gc          ] GC(60) Concurrent class unloading 0.856ms
+[169.437s][info   ][gc          ] GC(60) Pause Final Roots 0.003ms
+[169.437s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+[169.447s][info   ][gc          ] Trigger: GC request (System.gc())
+[169.449s][info   ][gc          ] GC(61) Concurrent reset 2.667ms
+[169.449s][info   ][gc          ] GC(61) Pause Init Mark (unload classes) 0.059ms
+[169.450s][info   ][gc          ] GC(61) Concurrent marking roots 0.099ms
+[172.259s][info   ][gc          ] GC(61) Concurrent marking (unload classes) 2809.576ms
+[172.259s][info   ][gc          ] GC(61) Pause Final Mark (unload classes) 0.174ms
+[172.260s][info   ][gc          ] GC(61) Concurrent weak references 0.033ms
+[172.260s][info   ][gc          ] GC(61) Concurrent weak roots 0.422ms
+[172.260s][info   ][gc          ] GC(61) Concurrent cleanup 1574M->1574M(6144M) 0.041ms
+[172.261s][info   ][gc          ] GC(61) Concurrent class unloading 0.811ms
+[172.261s][info   ][gc          ] GC(61) Pause Final Roots 0.002ms
+[172.261s][info   ][gc,metaspace] Metaspace: 11244K(11456K)->11244K(11456K) NonClass: 9453K(9600K)->9453K(9600K) Class: 1790K(1856K)->1790K(1856K)
+After GCs... 
+[172.268s][info   ][gc          ] Cancelling GC: Stopping VM
