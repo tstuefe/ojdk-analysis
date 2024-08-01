@@ -1,8 +1,11 @@
 # KlassLookupTable patch
 
+JDKs and Configs compared:
 - **A** Lilliput HEAD
 - **B** Lilliput HEAD + KLUT patch
 - **C** Mainline OpenJDK
+
+TOC
 
 - [ParallelGC](#ParallelGC)
 - [G1GC](#g1gc)
@@ -10,63 +13,71 @@
 - [ShenandoahGC](#ShenandoahGC)
 - [ZGC](#ZGC)
 
+-----------------------
 
-Various metrics by number of classes
+## ParallelGC
 
-## All
+![](./auswertung/ParallelGC-gc-pauses.svg) 
 
-### ParallelGC
-![ParallelGC](./auswertung/ParallelGC-gc-pauses.svg) 
+![](./auswertung/ParallelGC-l1-misses.svg) ![](./auswertung/ParallelGC-l1-loads.svg) 
 
-![ParallelGC](./auswertung/ParallelGC-l1-misses.svg) ![ParallelGC](./auswertung/ParallelGC-l1-loads.svg) 
+![](./auswertung/ParallelGC-llc-misses.svg) ![](./auswertung/ParallelGC-llc-loads.svg) 
 
-![ParallelGC](./auswertung/ParallelGC-llc-misses.svg) ![ParallelGC](./auswertung/ParallelGC-llc-loads.svg) 
+![](./auswertung/ParallelGC-tlb-misses.svg) ![](./auswertung/ParallelGC-tlb-loads.svg)
 
-![ParallelGC](./auswertung/ParallelGC-tlb-misses.svg) ![ParallelGC](./auswertung/ParallelGC-tlb-loads.svg)
-
-![ParallelGC](./auswertung/ParallelGC-instructions.svg) ![ParallelGC](./auswertung/ParallelGC-branches.svg)
-
-### G1GC
-![G1GC](./auswertung/G1GC-gc-pauses.svg)
-
-![G1GC](./auswertung/G1GC-l1-misses.svg) ![G1GC](./auswertung/G1GC-l1-loads.svg)
-
-![G1GC](./auswertung/G1GC-llc-misses.svg) ![G1GC](./auswertung/G1GC-llc-loads.svg)
-
-![G1GC](./auswertung/G1GC-tlb-misses.svg) ![G1GC](./auswertung/G1GC-tlb-loads.svg)
-
-![G1GC](./auswertung/G1GC-instructions.svg) ![G1GC](./auswertung/G1GC-branches.svg)
-
-### SerialGC
-![SerialGC](./auswertung/SerialGC-gc-pauses.svg)
-
-![SerialGC](./auswertung/SerialGC-l1-misses.svg) ![SerialGC](./auswertung/SerialGC-l1-loads.svg)
-
-![SerialGC](./auswertung/SerialGC-llc-misses.svg) ![SerialGC](./auswertung/SerialGC-llc-loads.svg)
-
-![SerialGC](./auswertung/SerialGC-tlb-misses.svg) ![SerialGC](./auswertung/SerialGC-tlb-loads.svg)
-
-![SerialGC](./auswertung/SerialGC-instructions.svg) ![SerialGC](./auswertung/SerialGC-branches.svg)
+![](./auswertung/ParallelGC-instructions.svg) ![](./auswertung/ParallelGC-branches.svg)
 
 
-## Low pause collectors
+-----------------------
 
-### ShenandoahGC
+## G1GC
 
-![ShenandoahGC](./auswertung/ShenandoahGC-l1-misses.svg) ![ShenandoahGC](./auswertung/ShenandoahGC-l1-loads.svg)
+![](./auswertung/G1GC-gc-pauses.svg)
 
-![ShenandoahGC](./auswertung/ShenandoahGC-llc-misses.svg) ![ShenandoahGC](./auswertung/ShenandoahGC-llc-loads.svg)
+![](./auswertung/G1GC-l1-misses.svg) ![](./auswertung/G1GC-l1-loads.svg)
 
-![ShenandoahGC](./auswertung/ShenandoahGC-tlb-misses.svg) ![ShenandoahGC](./auswertung/ShenandoahGC-tlb-loads.svg)
+![](./auswertung/G1GC-llc-misses.svg) ![](./auswertung/G1GC-llc-loads.svg)
 
-![ShenandoahGC](./auswertung/ShenandoahGC-instructions.svg) ![ShenandoahGC](./auswertung/ShenandoahGC-branches.svg)
+![](./auswertung/G1GC-tlb-misses.svg) ![](./auswertung/G1GC-tlb-loads.svg)
 
-### ZGC
-![ZGC](./auswertung/ZGC-l1-misses.svg) ![ZGC](./auswertung/ZGC-l1-loads.svg)
+![](./auswertung/G1GC-instructions.svg) ![](./auswertung/G1GC-branches.svg)
 
-![ZGC](./auswertung/ZGC-llc-misses.svg) ![ZGC](./auswertung/ZGC-llc-loads.svg)
+-----------------------
 
-![ZGC](./auswertung/ZGC-tlb-misses.svg) ![ZGC](./auswertung/ZGC-tlb-loads.svg)
+## SerialGC
 
-![ZGC](./auswertung/ZGC-instructions.svg) ![ZGC](./auswertung/ZGC-branches.svg)
+![](./auswertung/SerialGC-gc-pauses.svg)
+
+![](./auswertung/SerialGC-l1-misses.svg) ![](./auswertung/SerialGC-l1-loads.svg)
+
+![](./auswertung/SerialGC-llc-misses.svg) ![](./auswertung/SerialGC-llc-loads.svg)
+
+![](./auswertung/SerialGC-tlb-misses.svg) ![](./auswertung/SerialGC-tlb-loads.svg)
+
+![](./auswertung/SerialGC-instructions.svg) ![](./auswertung/SerialGC-branches.svg)
+
+-----------------------
+
+## ShenandoahGC
+
+![](./auswertung/ShenandoahGC-l1-misses.svg) ![](./auswertung/ShenandoahGC-l1-loads.svg)
+
+![](./auswertung/ShenandoahGC-llc-misses.svg) ![](./auswertung/ShenandoahGC-llc-loads.svg)
+
+![](./auswertung/ShenandoahGC-tlb-misses.svg) ![](./auswertung/ShenandoahGC-tlb-loads.svg)
+
+![](./auswertung/ShenandoahGC-instructions.svg) ![](./auswertung/ShenandoahGC-branches.svg)
+
+
+-----------------------
+
+## ZGC
+
+![](./auswertung/ZGC-l1-misses.svg) ![](./auswertung/ZGC-l1-loads.svg)
+
+![](./auswertung/ZGC-llc-misses.svg) ![](./auswertung/ZGC-llc-loads.svg)
+
+![](./auswertung/ZGC-tlb-misses.svg) ![](./auswertung/ZGC-tlb-loads.svg)
+
+![](./auswertung/ZGC-instructions.svg) ![](./auswertung/ZGC-branches.svg)
 
