@@ -1,0 +1,1222 @@
+[0.002s][warning][pagesize] UseLargePages disabled, no large pages configured and available on the system.
+[0.002s][info   ][gc      ] Min heap equals to max heap, disabling ShenandoahUncommit
+[0.002s][info   ][metaspace]  - commit_granule_bytes: 65536.
+[0.002s][info   ][metaspace]  - commit_granule_words: 8192.
+[0.002s][info   ][metaspace]  - virtual_space_node_default_size: 8388608.
+[0.002s][info   ][metaspace]  - enlarge_chunks_in_place: 1.
+[0.002s][info   ][metaspace]  - use_allocation_guard: 0.
+[0.010s][info   ][gc       ] Heuristics ergonomically sets -XX:+ExplicitGCInvokesConcurrent
+[0.010s][info   ][gc       ] Heuristics ergonomically sets -XX:+ShenandoahImplicitGCInvokesConcurrent
+[0.011s][info   ][gc       ] Using Shenandoah
+[0.775s][info   ][metaspace] Reserving compressed class space anywhere
+[0.775s][info   ][gc,metaspace] CDS archive(s) not mapped
+[0.775s][info   ][gc,metaspace] Compressed class space mapped at: 0x0000000030000000-0x00000000f0000000, reserved size: 3221225472
+[0.775s][info   ][gc,metaspace] UseCompressedClassPointers 1, UseCompactObjectHeaders 1, narrow klass pointer bits 22, max shift 10
+[0.775s][info   ][gc,metaspace] Narrow klass base: 0x0000000030000000, Narrow klass shift: 10, Narrow klass range: 0xc0000000
+Random Seed: 12345678
+Num Classes: 64
+Num Objects: 67108864
+Percent IK Objects: 83.0%)
+Percent OAK Objects: 5.0%)
+Percent TAK Objects: 12.0%)
+Cycles: 50
+Loading 64 pre-generated classes ...
+Materialize pre-generated constructors ...
+Creating objects...
+[1.005s][info   ][gc          ] Trigger: GC request (System.gc())
+[1.005s][info   ][gc          ] GC(0) Concurrent reset 0.126ms
+[1.005s][info   ][gc          ] GC(0) Pause Init Mark (unload classes) 0.042ms
+[1.006s][info   ][gc          ] GC(0) Concurrent marking roots 0.280ms
+[1.007s][info   ][gc          ] GC(0) Concurrent marking (unload classes) 1.216ms
+[1.007s][info   ][gc          ] GC(0) Pause Final Mark (unload classes) 0.140ms
+[1.007s][info   ][gc          ] GC(0) Concurrent thread roots 0.057ms
+[1.007s][info   ][gc          ] GC(0) Concurrent weak references 0.067ms
+[1.008s][info   ][gc          ] GC(0) Concurrent weak roots 0.454ms
+[1.008s][info   ][gc          ] GC(0) Concurrent cleanup 22M->22M(6144M) 0.057ms
+[1.009s][info   ][metaspace   ] ChkMgr @0x00007ffff0121c40 (non-class-space): : reclaiming memory...
+[1.009s][info   ][metaspace   ] ChkMgr @0x00007ffff0121c40 (non-class-space): nothing reclaimed.
+[1.009s][info   ][metaspace   ] ChkMgr @0x00007ffff0121a50 (class-space): : reclaiming memory...
+[1.009s][info   ][metaspace   ] ChkMgr @0x00007ffff0121a50 (class-space): nothing reclaimed.
+[1.009s][info   ][gc          ] GC(0) Concurrent class unloading 1.169ms
+[1.009s][info   ][gc          ] GC(0) Concurrent strong roots 0.246ms
+[1.010s][info   ][gc          ] GC(0) Concurrent evacuation 0.783ms
+[1.010s][info   ][gc          ] GC(0) Pause Init Update Refs 0.005ms
+[1.010s][info   ][gc          ] GC(0) At start of update refs, moving 18432K to Mutator free partition from Collector Reserve
+[1.011s][info   ][gc          ] GC(0) Concurrent update references 1.562ms
+[1.011s][info   ][gc          ] GC(0) Concurrent update thread roots 0.042ms
+[1.012s][info   ][gc          ] GC(0) Pause Final Update Refs 0.074ms
+[1.012s][info   ][gc          ] GC(0) Concurrent cleanup 24M->6M(6144M) 0.060ms
+[1.012s][info   ][gc,metaspace] Metaspace: 11271K(11584K)->11256K(11584K) NonClass: 9429K(9600K)->9421K(9600K) Class: 1842K(1984K)->1834K(1984K)
+[1.915s][info   ][gc          ] Trigger: Learning 2 of 5. Free (4300M) is below initial threshold (4300M)
+[1.915s][info   ][gc          ] GC(1) Concurrent reset 0.231ms
+[1.915s][info   ][gc          ] GC(1) Pause Init Mark (unload classes) 0.038ms
+[1.915s][info   ][gc          ] GC(1) Concurrent marking roots 0.116ms
+[2.335s][info   ][gc          ] GC(1) Concurrent marking (unload classes) 419.834ms
+[2.335s][info   ][gc          ] GC(1) Pause Final Mark (unload classes) 0.314ms
+[2.336s][info   ][gc          ] GC(1) Concurrent thread roots 0.097ms
+[2.336s][info   ][gc          ] GC(1) Concurrent weak references 0.069ms
+[2.336s][info   ][gc          ] GC(1) Concurrent weak roots 0.487ms
+[2.336s][info   ][gc          ] GC(1) Concurrent cleanup 2209M->2210M(6144M) 0.097ms
+[2.337s][info   ][gc          ] GC(1) Concurrent class unloading 0.866ms
+[2.337s][info   ][gc          ] GC(1) Concurrent strong roots 0.199ms
+[2.453s][info   ][gc          ] GC(1) Concurrent evacuation 115.708ms
+[2.453s][info   ][gc          ] GC(1) Pause Init Update Refs 0.011ms
+[2.453s][info   ][gc          ] GC(1) At start of update refs, moving 156M to Mutator free partition from Collector Reserve
+[2.817s][info   ][gc          ] GC(1) Concurrent update references 364.054ms
+[2.818s][info   ][gc          ] GC(1) Concurrent update thread roots 0.211ms
+[2.818s][info   ][gc          ] GC(1) Pause Final Update Refs 0.091ms
+[2.818s][info   ][gc          ] GC(1) Concurrent cleanup 3345M->2067M(6144M) 0.143ms
+[2.818s][info   ][gc,metaspace] Metaspace: 11515K(11840K)->11516K(11840K) NonClass: 9645K(9792K)->9646K(9792K) Class: 1870K(2048K)->1870K(2048K)
+[2.819s][info   ][gc          ] Trigger: Learning 3 of 5. Free (3763M) is below initial threshold (4300M)
+[2.821s][info   ][gc          ] GC(2) Concurrent reset 2.237ms
+[2.821s][info   ][gc          ] GC(2) Pause Init Mark (unload classes) 0.044ms
+[2.822s][info   ][gc          ] GC(2) Concurrent marking roots 0.123ms
+[3.356s][info   ][gc          ] GC(2) Concurrent marking (unload classes) 534.305ms
+[3.356s][info   ][gc          ] GC(2) Pause Final Mark (unload classes) 0.329ms
+[3.357s][info   ][gc          ] GC(2) Concurrent thread roots 0.059ms
+[3.357s][info   ][gc          ] GC(2) Concurrent weak references 0.038ms
+[3.357s][info   ][gc          ] GC(2) Concurrent weak roots 0.335ms
+[3.357s][info   ][gc          ] GC(2) Concurrent cleanup 3154M->3154M(6144M) 0.098ms
+[3.358s][info   ][gc          ] GC(2) Concurrent class unloading 0.669ms
+[3.358s][info   ][gc          ] GC(2) Concurrent strong roots 0.066ms
+[3.520s][info   ][gc          ] GC(2) Concurrent evacuation 162.298ms
+[3.520s][info   ][gc          ] GC(2) Pause Init Update Refs 0.010ms
+[3.520s][info   ][gc          ] GC(2) At start of update refs, moving 148M to Mutator free partition from Collector Reserve
+[3.902s][info   ][gc          ] GC(2) Concurrent update references 381.582ms
+[3.902s][info   ][gc          ] GC(2) Concurrent update thread roots 0.222ms
+[3.902s][info   ][gc          ] GC(2) Pause Final Update Refs 0.112ms
+[3.903s][info   ][gc          ] GC(2) Concurrent cleanup 4421M->2750M(6144M) 0.160ms
+[3.903s][info   ][gc,metaspace] Metaspace: 11516K(11840K)->11516K(11840K) NonClass: 9646K(9792K)->9646K(9792K) Class: 1870K(2048K)->1870K(2048K)
+[3.904s][info   ][gc          ] Trigger: Learning 4 of 5. Free (3081M) is below initial threshold (4300M)
+[3.907s][info   ][gc          ] GC(3) Concurrent reset 3.203ms
+[3.907s][info   ][gc          ] GC(3) Pause Init Mark (unload classes) 0.055ms
+[3.907s][info   ][gc          ] GC(3) Concurrent marking roots 0.084ms
+[4.583s][info   ][gc          ] GC(3) Concurrent marking (unload classes) 675.353ms
+[4.583s][info   ][gc          ] GC(3) Pause Final Mark (unload classes) 0.371ms
+[4.583s][info   ][gc          ] GC(3) Concurrent thread roots 0.083ms
+[4.583s][info   ][gc          ] GC(3) Concurrent weak references 0.038ms
+[4.584s][info   ][gc          ] GC(3) Concurrent weak roots 0.396ms
+[4.584s][info   ][gc          ] GC(3) Concurrent cleanup 4150M->4150M(6144M) 0.098ms
+[4.584s][info   ][gc          ] GC(3) Concurrent class unloading 0.584ms
+[4.584s][info   ][gc          ] GC(3) Concurrent strong roots 0.096ms
+[4.754s][info   ][gc          ] GC(3) Concurrent evacuation 170.053ms
+[4.755s][info   ][gc          ] GC(3) Pause Init Update Refs 0.009ms
+[4.755s][info   ][gc          ] GC(3) At start of update refs, moving 114M to Mutator free partition from Collector Reserve
+[5.680s][info   ][gc          ] GC(3) Concurrent update references 924.951ms
+[5.680s][info   ][gc          ] GC(3) Concurrent update thread roots 0.263ms
+[5.680s][info   ][gc          ] GC(3) Pause Final Update Refs 0.130ms
+[5.680s][info   ][gc          ] GC(3) Concurrent cleanup 5836M->3634M(6144M) 0.180ms
+[5.680s][info   ][gc,metaspace] Metaspace: 11516K(11840K)->11516K(11840K) NonClass: 9646K(9792K)->9646K(9792K) Class: 1870K(2048K)->1870K(2048K)
+[5.682s][info   ][gc          ] Trigger: Learning 5 of 5. Free (2197M) is below initial threshold (4300M)
+[5.686s][info   ][gc          ] GC(4) Concurrent reset 4.252ms
+[5.686s][info   ][gc          ] GC(4) Pause Init Mark (unload classes) 0.046ms
+[5.686s][info   ][gc          ] GC(4) Concurrent marking roots 0.098ms
+[6.623s][info   ][gc          ] GC(4) Concurrent marking (unload classes) 936.907ms
+[6.624s][info   ][gc          ] GC(4) Pause Final Mark (unload classes) 0.442ms
+[6.624s][info   ][gc          ] GC(4) Concurrent thread roots 0.080ms
+[6.624s][info   ][gc          ] GC(4) Concurrent weak references 0.041ms
+[6.624s][info   ][gc          ] GC(4) Concurrent weak roots 0.352ms
+[6.624s][info   ][gc          ] GC(4) Concurrent cleanup 4811M->4811M(6144M) 0.098ms
+[6.625s][info   ][gc          ] GC(4) Concurrent class unloading 0.741ms
+[6.625s][info   ][gc          ] GC(4) Concurrent strong roots 0.061ms
+[6.889s][info   ][gc          ] GC(4) Concurrent evacuation 263.673ms
+[6.889s][info   ][gc          ] GC(4) Pause Init Update Refs 0.010ms
+[6.889s][info   ][gc          ] GC(4) At start of update refs, moving 53248K to Mutator free partition from Collector Reserve
+[7.774s][info   ][gc          ] GC(4) Concurrent update references 885.208ms
+[7.774s][info   ][gc          ] GC(4) Concurrent update thread roots 0.225ms
+[7.775s][info   ][gc          ] GC(4) Pause Final Update Refs 0.109ms
+[7.775s][info   ][gc          ] GC(4) Concurrent cleanup 6010M->3114M(6144M) 0.217ms
+[7.775s][info   ][gc,metaspace] Metaspace: 11516K(11840K)->11516K(11840K) NonClass: 9646K(9792K)->9646K(9792K) Class: 1870K(2048K)->1870K(2048K)
+[7.776s][info   ][gc          ] Trigger: Average GC time (2740.37 ms) is above the time for average allocation rate (1466 MB/s) to deplete free headroom (2412M) (margin of error = 1.80)
+[7.782s][info   ][gc          ] GC(5) Concurrent reset 5.665ms
+[7.782s][info   ][gc          ] GC(5) Pause Init Mark (unload classes) 0.056ms
+[7.782s][info   ][gc          ] GC(5) Concurrent marking roots 0.099ms
+[9.418s][info   ][gc          ] Failed to allocate TLAB, 954K
+[9.418s][info   ][gc          ] Cancelling GC: Allocation Failure
+[9.419s][info   ][gc          ] GC(5) Concurrent marking (unload classes) 1636.625ms
+[9.419s][info   ][gc,metaspace] Metaspace: 11516K(11840K)->11516K(11840K) NonClass: 9646K(9792K)->9646K(9792K) Class: 1870K(2048K)->1870K(2048K)
+[9.420s][info   ][gc          ] Trigger: Handle Allocation Failure
+[10.026s][info   ][gc          ] GC(6) Pause Degenerated GC (Mark) 5834M->3904M(6144M) 606.305ms
+[10.026s][info   ][gc,metaspace] Metaspace: 11516K(11840K)->11516K(11840K) NonClass: 9646K(9792K)->9646K(9792K) Class: 1870K(2048K)->1870K(2048K)
+[10.032s][info   ][gc          ] Trigger: Average GC time (2799.10 ms) is above the time for average allocation rate (804 MB/s) to deplete free headroom (1001M) (margin of error = 1.90)
+[10.036s][info   ][gc          ] GC(7) Concurrent reset 4.812ms
+[10.037s][info   ][gc          ] GC(7) Pause Init Mark (unload classes) 0.055ms
+[10.037s][info   ][gc          ] GC(7) Concurrent marking roots 0.095ms
+67108864 Objects created
+ - IK: 55699211 (82.99829%)
+ - OAK: 3355627 (5.0002737%)
+ - TAK: 8054026 (12.001434%)
+Preparatory GC...
+[11.573s][info   ][gc          ] GC(7) Concurrent marking (unload classes) 1536.544ms
+[11.574s][info   ][gc          ] GC(7) Pause Final Mark (unload classes) 0.442ms
+[11.574s][info   ][gc          ] GC(7) Concurrent thread roots 0.115ms
+[11.574s][info   ][gc          ] GC(7) Concurrent weak references 0.039ms
+[11.574s][info   ][gc          ] GC(7) Concurrent weak roots 0.358ms
+[11.575s][info   ][gc          ] GC(7) Concurrent cleanup 5712M->5712M(6144M) 0.098ms
+[11.575s][info   ][gc          ] GC(7) Concurrent class unloading 0.728ms
+[11.575s][info   ][gc          ] GC(7) Concurrent strong roots 0.062ms
+[11.816s][info   ][gc          ] GC(7) Concurrent evacuation 240.411ms
+[11.816s][info   ][gc          ] GC(7) Pause Init Update Refs 0.010ms
+[11.816s][info   ][gc          ] GC(7) At start of update refs, moving 69632K to Mutator free partition from Collector Reserve
+[13.158s][info   ][gc          ] GC(7) Concurrent update references 1341.565ms
+[13.158s][info   ][gc          ] GC(7) Concurrent update thread roots 0.295ms
+[13.158s][info   ][gc          ] GC(7) Pause Final Update Refs 0.118ms
+[13.158s][info   ][gc          ] GC(7) Concurrent cleanup 5952M->3216M(6144M) 0.196ms
+[13.158s][info   ][gc,metaspace] Metaspace: 11516K(11840K)->11516K(11840K) NonClass: 9646K(9792K)->9646K(9792K) Class: 1870K(2048K)->1870K(2048K)
+[13.159s][info   ][gc          ] Trigger: GC request (System.gc())
+[13.165s][info   ][gc          ] GC(8) Concurrent reset 6.017ms
+[13.166s][info   ][gc          ] GC(8) Pause Init Mark (unload classes) 0.068ms
+[13.166s][info   ][gc          ] GC(8) Concurrent marking roots 0.109ms
+[14.706s][info   ][gc          ] GC(8) Concurrent marking (unload classes) 1540.445ms
+[14.707s][info   ][gc          ] GC(8) Pause Final Mark (unload classes) 0.341ms
+[14.707s][info   ][gc          ] GC(8) Concurrent thread roots 0.080ms
+[14.707s][info   ][gc          ] GC(8) Concurrent weak references 0.046ms
+[14.707s][info   ][gc          ] GC(8) Concurrent weak roots 0.363ms
+[14.707s][info   ][gc          ] GC(8) Concurrent cleanup 3216M->3216M(6144M) 0.098ms
+[14.709s][info   ][metaspace   ] ChkMgr @0x00007ffff0121c40 (non-class-space): : reclaiming memory...
+[14.709s][info   ][metaspace   ] ChkMgr @0x00007ffff0121c40 (non-class-space): finished reclaiming memory: 
+[14.709s][info   ][metaspace   ] reserved: 64.00 MB (no change)
+[14.709s][info   ][metaspace   ] committed: 9.56 MB->9.44 MB (-128.00 KB)
+[14.709s][info   ][metaspace   ] ChkMgr @0x00007ffff0121a50 (class-space): : reclaiming memory...
+[14.709s][info   ][metaspace   ] ChkMgr @0x00007ffff0121a50 (class-space): finished reclaiming memory: 
+[14.709s][info   ][metaspace   ] reserved: 3.00 GB (no change)
+[14.709s][info   ][metaspace   ] committed: 2.00 MB->1.94 MB (-64.00 KB)
+[14.710s][info   ][gc          ] GC(8) Concurrent class unloading 2.146ms
+[14.710s][info   ][gc          ] GC(8) Concurrent strong roots 0.056ms
+[14.865s][info   ][gc          ] GC(8) Concurrent evacuation 155.195ms
+[14.865s][info   ][gc          ] GC(8) Pause Init Update Refs 0.010ms
+[14.865s][info   ][gc          ] GC(8) At start of update refs, moving 152M to Mutator free partition from Collector Reserve
+[16.408s][info   ][gc          ] GC(8) Concurrent update references 1542.843ms
+[16.408s][info   ][gc          ] GC(8) Concurrent update thread roots 0.235ms
+[16.408s][info   ][gc          ] GC(8) Pause Final Update Refs 0.145ms
+[16.409s][info   ][gc          ] GC(8) Concurrent cleanup 3372M->1574M(6144M) 0.162ms
+[16.409s][info   ][gc,metaspace] Metaspace: 11516K(11840K)->11310K(11648K) NonClass: 9646K(9792K)->9474K(9664K) Class: 1870K(2048K)->1836K(1984K)
+[16.410s][info   ][gc          ] Trigger: GC request (System.gc())
+[16.415s][info   ][gc          ] GC(9) Concurrent reset 4.939ms
+[16.415s][info   ][gc          ] GC(9) Pause Init Mark (unload classes) 0.043ms
+[16.415s][info   ][gc          ] GC(9) Concurrent marking roots 0.137ms
+[17.586s][info   ][gc          ] GC(9) Concurrent marking (unload classes) 1171.433ms
+[17.587s][info   ][gc          ] GC(9) Pause Final Mark (unload classes) 0.237ms
+[17.587s][info   ][gc          ] GC(9) Concurrent thread roots 0.081ms
+[17.587s][info   ][gc          ] GC(9) Concurrent weak references 0.042ms
+[17.587s][info   ][gc          ] GC(9) Concurrent weak roots 0.332ms
+[17.587s][info   ][gc          ] GC(9) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[17.588s][info   ][gc          ] GC(9) Concurrent class unloading 0.712ms
+[17.588s][info   ][gc          ] GC(9) Concurrent strong roots 0.060ms
+[17.590s][info   ][gc          ] GC(9) Concurrent evacuation 2.127ms
+[17.590s][info   ][gc          ] GC(9) Pause Init Update Refs 0.006ms
+[17.591s][info   ][gc          ] GC(9) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[18.772s][info   ][gc          ] GC(9) Concurrent update references 1181.964ms
+[18.773s][info   ][gc          ] GC(9) Concurrent update thread roots 0.294ms
+[18.773s][info   ][gc          ] GC(9) Pause Final Update Refs 0.093ms
+[18.773s][info   ][gc          ] GC(9) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[18.773s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+Done; will start GCs... 
+[18.774s][info   ][gc          ] Trigger: GC request (System.gc())
+[18.776s][info   ][gc          ] GC(10) Concurrent reset 1.974ms
+[18.776s][info   ][gc          ] GC(10) Pause Init Mark (unload classes) 0.054ms
+[18.777s][info   ][gc          ] GC(10) Concurrent marking roots 0.199ms
+[20.311s][info   ][gc          ] GC(10) Concurrent marking (unload classes) 1534.134ms
+[20.311s][info   ][gc          ] GC(10) Pause Final Mark (unload classes) 0.220ms
+[20.311s][info   ][gc          ] GC(10) Concurrent thread roots 0.070ms
+[20.311s][info   ][gc          ] GC(10) Concurrent weak references 0.043ms
+[20.312s][info   ][gc          ] GC(10) Concurrent weak roots 0.304ms
+[20.312s][info   ][gc          ] GC(10) Concurrent cleanup 1575M->1573M(6144M) 0.098ms
+[20.312s][info   ][gc          ] GC(10) Concurrent class unloading 0.742ms
+[20.312s][info   ][gc          ] GC(10) Concurrent strong roots 0.062ms
+[20.316s][info   ][gc          ] GC(10) Concurrent evacuation 3.185ms
+[20.316s][info   ][gc          ] GC(10) Pause Init Update Refs 0.006ms
+[20.316s][info   ][gc          ] GC(10) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[21.501s][info   ][gc          ] GC(10) Concurrent update references 1184.541ms
+[21.501s][info   ][gc          ] GC(10) Concurrent update thread roots 0.295ms
+[21.501s][info   ][gc          ] GC(10) Pause Final Update Refs 0.092ms
+[21.501s][info   ][gc          ] GC(10) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[21.501s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[21.502s][info   ][gc          ] Trigger: GC request (System.gc())
+[21.504s][info   ][gc          ] GC(11) Concurrent reset 2.025ms
+[21.504s][info   ][gc          ] GC(11) Pause Init Mark (unload classes) 0.051ms
+[21.505s][info   ][gc          ] GC(11) Concurrent marking roots 0.103ms
+[23.000s][info   ][gc          ] GC(11) Concurrent marking (unload classes) 1495.462ms
+[23.000s][info   ][gc          ] GC(11) Pause Final Mark (unload classes) 0.241ms
+[23.001s][info   ][gc          ] GC(11) Concurrent thread roots 0.089ms
+[23.001s][info   ][gc          ] GC(11) Concurrent weak references 0.042ms
+[23.001s][info   ][gc          ] GC(11) Concurrent weak roots 0.381ms
+[23.001s][info   ][gc          ] GC(11) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[23.002s][info   ][gc          ] GC(11) Concurrent class unloading 0.632ms
+[23.002s][info   ][gc          ] GC(11) Concurrent strong roots 0.091ms
+[23.004s][info   ][gc          ] GC(11) Concurrent evacuation 2.143ms
+[23.004s][info   ][gc          ] GC(11) Pause Init Update Refs 0.006ms
+[23.004s][info   ][gc          ] GC(11) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[24.460s][info   ][gc          ] GC(11) Concurrent update references 1456.324ms
+[24.461s][info   ][gc          ] GC(11) Concurrent update thread roots 0.312ms
+[24.461s][info   ][gc          ] GC(11) Pause Final Update Refs 0.085ms
+[24.461s][info   ][gc          ] GC(11) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[24.461s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[24.462s][info   ][gc          ] Trigger: GC request (System.gc())
+[24.464s][info   ][gc          ] GC(12) Concurrent reset 2.106ms
+[24.464s][info   ][gc          ] GC(12) Pause Init Mark (unload classes) 0.046ms
+[24.465s][info   ][gc          ] GC(12) Concurrent marking roots 0.111ms
+[25.959s][info   ][gc          ] GC(12) Concurrent marking (unload classes) 1493.982ms
+[25.959s][info   ][gc          ] GC(12) Pause Final Mark (unload classes) 0.242ms
+[25.959s][info   ][gc          ] GC(12) Concurrent thread roots 0.077ms
+[25.959s][info   ][gc          ] GC(12) Concurrent weak references 0.041ms
+[25.959s][info   ][gc          ] GC(12) Concurrent weak roots 0.302ms
+[25.960s][info   ][gc          ] GC(12) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[25.960s][info   ][gc          ] GC(12) Concurrent class unloading 0.695ms
+[25.960s][info   ][gc          ] GC(12) Concurrent strong roots 0.063ms
+[25.962s][info   ][gc          ] GC(12) Concurrent evacuation 2.134ms
+[25.963s][info   ][gc          ] GC(12) Pause Init Update Refs 0.006ms
+[25.963s][info   ][gc          ] GC(12) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[27.145s][info   ][gc          ] GC(12) Concurrent update references 1182.214ms
+[27.145s][info   ][gc          ] GC(12) Concurrent update thread roots 0.184ms
+[27.145s][info   ][gc          ] GC(12) Pause Final Update Refs 0.094ms
+[27.145s][info   ][gc          ] GC(12) Concurrent cleanup 1575M->1573M(6144M) 0.102ms
+[27.146s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[27.147s][info   ][gc          ] Trigger: GC request (System.gc())
+[27.149s][info   ][gc          ] GC(13) Concurrent reset 2.181ms
+[27.149s][info   ][gc          ] GC(13) Pause Init Mark (unload classes) 0.053ms
+[27.149s][info   ][gc          ] GC(13) Concurrent marking roots 0.096ms
+[28.598s][info   ][gc          ] GC(13) Concurrent marking (unload classes) 1449.001ms
+[28.598s][info   ][gc          ] GC(13) Pause Final Mark (unload classes) 0.216ms
+[28.598s][info   ][gc          ] GC(13) Concurrent thread roots 0.064ms
+[28.599s][info   ][gc          ] GC(13) Concurrent weak references 0.042ms
+[28.599s][info   ][gc          ] GC(13) Concurrent weak roots 0.324ms
+[28.599s][info   ][gc          ] GC(13) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[28.600s][info   ][gc          ] GC(13) Concurrent class unloading 0.607ms
+[28.600s][info   ][gc          ] GC(13) Concurrent strong roots 0.058ms
+[28.602s][info   ][gc          ] GC(13) Concurrent evacuation 2.115ms
+[28.602s][info   ][gc          ] GC(13) Pause Init Update Refs 0.006ms
+[28.602s][info   ][gc          ] GC(13) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[29.792s][info   ][gc          ] GC(13) Concurrent update references 1189.596ms
+[29.792s][info   ][gc          ] GC(13) Concurrent update thread roots 0.273ms
+[29.792s][info   ][gc          ] GC(13) Pause Final Update Refs 0.085ms
+[29.792s][info   ][gc          ] GC(13) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[29.792s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[29.793s][info   ][gc          ] Trigger: GC request (System.gc())
+[29.796s][info   ][gc          ] GC(14) Concurrent reset 2.189ms
+[29.796s][info   ][gc          ] GC(14) Pause Init Mark (unload classes) 0.048ms
+[29.796s][info   ][gc          ] GC(14) Concurrent marking roots 0.085ms
+[31.587s][info   ][gc          ] GC(14) Concurrent marking (unload classes) 1790.903ms
+[31.587s][info   ][gc          ] GC(14) Pause Final Mark (unload classes) 0.229ms
+[31.591s][info   ][gc          ] GC(14) Concurrent thread roots 0.078ms
+[31.591s][info   ][gc          ] GC(14) Concurrent weak references 0.044ms
+[31.592s][info   ][gc          ] GC(14) Concurrent weak roots 0.349ms
+[31.592s][info   ][gc          ] GC(14) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[31.593s][info   ][gc          ] GC(14) Concurrent class unloading 0.660ms
+[31.593s][info   ][gc          ] GC(14) Concurrent strong roots 0.063ms
+[31.595s][info   ][gc          ] GC(14) Concurrent evacuation 2.131ms
+[31.595s][info   ][gc          ] GC(14) Pause Init Update Refs 0.007ms
+[31.595s][info   ][gc          ] GC(14) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[32.742s][info   ][gc          ] GC(14) Concurrent update references 1146.887ms
+[32.742s][info   ][gc          ] GC(14) Concurrent update thread roots 0.301ms
+[32.742s][info   ][gc          ] GC(14) Pause Final Update Refs 0.091ms
+[32.743s][info   ][gc          ] GC(14) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[32.743s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[32.744s][info   ][gc          ] Trigger: GC request (System.gc())
+[32.746s][info   ][gc          ] GC(15) Concurrent reset 2.282ms
+[32.746s][info   ][gc          ] GC(15) Pause Init Mark (unload classes) 0.053ms
+[32.746s][info   ][gc          ] GC(15) Concurrent marking roots 0.109ms
+[34.307s][info   ][gc          ] GC(15) Concurrent marking (unload classes) 1560.473ms
+[34.307s][info   ][gc          ] GC(15) Pause Final Mark (unload classes) 0.223ms
+[34.307s][info   ][gc          ] GC(15) Concurrent thread roots 0.072ms
+[34.307s][info   ][gc          ] GC(15) Concurrent weak references 0.041ms
+[34.308s][info   ][gc          ] GC(15) Concurrent weak roots 0.297ms
+[34.308s][info   ][gc          ] GC(15) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[34.308s][info   ][gc          ] GC(15) Concurrent class unloading 0.695ms
+[34.308s][info   ][gc          ] GC(15) Concurrent strong roots 0.058ms
+[34.311s][info   ][gc          ] GC(15) Concurrent evacuation 2.122ms
+[34.311s][info   ][gc          ] GC(15) Pause Init Update Refs 0.005ms
+[34.311s][info   ][gc          ] GC(15) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[35.493s][info   ][gc          ] GC(15) Concurrent update references 1181.846ms
+[35.493s][info   ][gc          ] GC(15) Concurrent update thread roots 0.304ms
+[35.493s][info   ][gc          ] GC(15) Pause Final Update Refs 0.099ms
+[35.493s][info   ][gc          ] GC(15) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[35.493s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[35.494s][info   ][gc          ] Trigger: GC request (System.gc())
+[35.497s][info   ][gc          ] GC(16) Concurrent reset 2.064ms
+[35.497s][info   ][gc          ] GC(16) Pause Init Mark (unload classes) 0.051ms
+[35.497s][info   ][gc          ] GC(16) Concurrent marking roots 0.099ms
+[36.682s][info   ][gc          ] GC(16) Concurrent marking (unload classes) 1184.871ms
+[36.682s][info   ][gc          ] GC(16) Pause Final Mark (unload classes) 0.223ms
+[36.686s][info   ][gc          ] GC(16) Concurrent thread roots 0.070ms
+[36.686s][info   ][gc          ] GC(16) Concurrent weak references 0.045ms
+[36.687s][info   ][gc          ] GC(16) Concurrent weak roots 0.324ms
+[36.687s][info   ][gc          ] GC(16) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[36.687s][info   ][gc          ] GC(16) Concurrent class unloading 0.625ms
+[36.687s][info   ][gc          ] GC(16) Concurrent strong roots 0.054ms
+[36.690s][info   ][gc          ] GC(16) Concurrent evacuation 2.144ms
+[36.690s][info   ][gc          ] GC(16) Pause Init Update Refs 0.006ms
+[36.690s][info   ][gc          ] GC(16) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[37.636s][info   ][gc          ] GC(16) Concurrent update references 946.195ms
+[37.636s][info   ][gc          ] GC(16) Concurrent update thread roots 0.161ms
+[37.636s][info   ][gc          ] GC(16) Pause Final Update Refs 0.096ms
+[37.636s][info   ][gc          ] GC(16) Concurrent cleanup 1575M->1573M(6144M) 0.100ms
+[37.636s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[37.637s][info   ][gc          ] Trigger: GC request (System.gc())
+[37.640s][info   ][gc          ] GC(17) Concurrent reset 2.442ms
+[37.640s][info   ][gc          ] GC(17) Pause Init Mark (unload classes) 0.040ms
+[37.640s][info   ][gc          ] GC(17) Concurrent marking roots 0.100ms
+[38.851s][info   ][gc          ] GC(17) Concurrent marking (unload classes) 1210.696ms
+[38.851s][info   ][gc          ] GC(17) Pause Final Mark (unload classes) 0.243ms
+[38.851s][info   ][gc          ] GC(17) Concurrent thread roots 0.070ms
+[38.851s][info   ][gc          ] GC(17) Concurrent weak references 0.042ms
+[38.852s][info   ][gc          ] GC(17) Concurrent weak roots 0.298ms
+[38.852s][info   ][gc          ] GC(17) Concurrent cleanup 1573M->1573M(6144M) 0.120ms
+[38.852s][info   ][gc          ] GC(17) Concurrent class unloading 0.637ms
+[38.852s][info   ][gc          ] GC(17) Concurrent strong roots 0.056ms
+[38.855s][info   ][gc          ] GC(17) Concurrent evacuation 2.130ms
+[38.855s][info   ][gc          ] GC(17) Pause Init Update Refs 0.006ms
+[38.855s][info   ][gc          ] GC(17) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[40.039s][info   ][gc          ] GC(17) Concurrent update references 1184.611ms
+[40.040s][info   ][gc          ] GC(17) Concurrent update thread roots 0.325ms
+[40.040s][info   ][gc          ] GC(17) Pause Final Update Refs 0.097ms
+[40.040s][info   ][gc          ] GC(17) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[40.040s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[40.041s][info   ][gc          ] Trigger: GC request (System.gc())
+[40.043s][info   ][gc          ] GC(18) Concurrent reset 2.179ms
+[40.044s][info   ][gc          ] GC(18) Pause Init Mark (unload classes) 0.048ms
+[40.044s][info   ][gc          ] GC(18) Concurrent marking roots 0.113ms
+[41.518s][info   ][gc          ] GC(18) Concurrent marking (unload classes) 1474.022ms
+[41.518s][info   ][gc          ] GC(18) Pause Final Mark (unload classes) 0.218ms
+[41.518s][info   ][gc          ] GC(18) Concurrent thread roots 0.072ms
+[41.518s][info   ][gc          ] GC(18) Concurrent weak references 0.043ms
+[41.519s][info   ][gc          ] GC(18) Concurrent weak roots 0.334ms
+[41.519s][info   ][gc          ] GC(18) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[41.519s][info   ][gc          ] GC(18) Concurrent class unloading 0.601ms
+[41.519s][info   ][gc          ] GC(18) Concurrent strong roots 0.058ms
+[41.522s][info   ][gc          ] GC(18) Concurrent evacuation 2.148ms
+[41.522s][info   ][gc          ] GC(18) Pause Init Update Refs 0.006ms
+[41.522s][info   ][gc          ] GC(18) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[42.703s][info   ][gc          ] GC(18) Concurrent update references 1181.097ms
+[42.703s][info   ][gc          ] GC(18) Concurrent update thread roots 0.295ms
+[42.703s][info   ][gc          ] GC(18) Pause Final Update Refs 0.091ms
+[42.703s][info   ][gc          ] GC(18) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[42.704s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[42.705s][info   ][gc          ] Trigger: GC request (System.gc())
+[42.707s][info   ][gc          ] GC(19) Concurrent reset 2.145ms
+[42.707s][info   ][gc          ] GC(19) Pause Init Mark (unload classes) 0.056ms
+[42.707s][info   ][gc          ] GC(19) Concurrent marking roots 0.081ms
+[44.560s][info   ][gc          ] GC(19) Concurrent marking (unload classes) 1852.693ms
+[44.560s][info   ][gc          ] GC(19) Pause Final Mark (unload classes) 0.217ms
+[44.560s][info   ][gc          ] GC(19) Concurrent thread roots 0.058ms
+[44.560s][info   ][gc          ] GC(19) Concurrent weak references 0.042ms
+[44.561s][info   ][gc          ] GC(19) Concurrent weak roots 0.322ms
+[44.561s][info   ][gc          ] GC(19) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[44.561s][info   ][gc          ] GC(19) Concurrent class unloading 0.623ms
+[44.561s][info   ][gc          ] GC(19) Concurrent strong roots 0.055ms
+[44.563s][info   ][gc          ] GC(19) Concurrent evacuation 2.129ms
+[44.564s][info   ][gc          ] GC(19) Pause Init Update Refs 0.007ms
+[44.564s][info   ][gc          ] GC(19) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[45.748s][info   ][gc          ] GC(19) Concurrent update references 1184.051ms
+[45.748s][info   ][gc          ] GC(19) Concurrent update thread roots 0.288ms
+[45.748s][info   ][gc          ] GC(19) Pause Final Update Refs 0.091ms
+[45.748s][info   ][gc          ] GC(19) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[45.748s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[45.749s][info   ][gc          ] Trigger: GC request (System.gc())
+[45.752s][info   ][gc          ] GC(20) Concurrent reset 2.188ms
+[45.752s][info   ][gc          ] GC(20) Pause Init Mark (unload classes) 0.040ms
+[45.752s][info   ][gc          ] GC(20) Concurrent marking roots 0.078ms
+[47.279s][info   ][gc          ] GC(20) Concurrent marking (unload classes) 1526.793ms
+[47.279s][info   ][gc          ] GC(20) Pause Final Mark (unload classes) 0.275ms
+[47.279s][info   ][gc          ] GC(20) Concurrent thread roots 0.073ms
+[47.279s][info   ][gc          ] GC(20) Concurrent weak references 0.046ms
+[47.280s][info   ][gc          ] GC(20) Concurrent weak roots 0.342ms
+[47.280s][info   ][gc          ] GC(20) Concurrent cleanup 1573M->1573M(6144M) 0.118ms
+[47.280s][info   ][gc          ] GC(20) Concurrent class unloading 0.705ms
+[47.281s][info   ][gc          ] GC(20) Concurrent strong roots 0.062ms
+[47.283s][info   ][gc          ] GC(20) Concurrent evacuation 2.861ms
+[47.284s][info   ][gc          ] GC(20) Pause Init Update Refs 0.006ms
+[47.284s][info   ][gc          ] GC(20) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[48.533s][info   ][gc          ] GC(20) Concurrent update references 1249.376ms
+[48.533s][info   ][gc          ] GC(20) Concurrent update thread roots 0.253ms
+[48.533s][info   ][gc          ] GC(20) Pause Final Update Refs 0.114ms
+[48.534s][info   ][gc          ] GC(20) Concurrent cleanup 1575M->1573M(6144M) 0.100ms
+[48.534s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[48.535s][info   ][gc          ] Trigger: GC request (System.gc())
+[48.537s][info   ][gc          ] GC(21) Concurrent reset 2.002ms
+[48.537s][info   ][gc          ] GC(21) Pause Init Mark (unload classes) 0.052ms
+[48.537s][info   ][gc          ] GC(21) Concurrent marking roots 0.091ms
+[50.035s][info   ][gc          ] GC(21) Concurrent marking (unload classes) 1497.673ms
+[50.035s][info   ][gc          ] GC(21) Pause Final Mark (unload classes) 0.239ms
+[50.035s][info   ][gc          ] GC(21) Concurrent thread roots 0.086ms
+[50.035s][info   ][gc          ] GC(21) Concurrent weak references 0.043ms
+[50.036s][info   ][gc          ] GC(21) Concurrent weak roots 0.342ms
+[50.036s][info   ][gc          ] GC(21) Concurrent cleanup 1573M->1573M(6144M) 0.119ms
+[50.036s][info   ][gc          ] GC(21) Concurrent class unloading 0.640ms
+[50.036s][info   ][gc          ] GC(21) Concurrent strong roots 0.058ms
+[50.039s][info   ][gc          ] GC(21) Concurrent evacuation 2.125ms
+[50.039s][info   ][gc          ] GC(21) Pause Init Update Refs 0.007ms
+[50.039s][info   ][gc          ] GC(21) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[51.275s][info   ][gc          ] GC(21) Concurrent update references 1236.093ms
+[51.275s][info   ][gc          ] GC(21) Concurrent update thread roots 0.296ms
+[51.275s][info   ][gc          ] GC(21) Pause Final Update Refs 0.091ms
+[51.276s][info   ][gc          ] GC(21) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[51.276s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[51.277s][info   ][gc          ] Trigger: GC request (System.gc())
+[51.279s][info   ][gc          ] GC(22) Concurrent reset 2.244ms
+[51.279s][info   ][gc          ] GC(22) Pause Init Mark (unload classes) 0.042ms
+[51.279s][info   ][gc          ] GC(22) Concurrent marking roots 0.097ms
+[53.033s][info   ][gc          ] GC(22) Concurrent marking (unload classes) 1753.360ms
+[53.033s][info   ][gc          ] GC(22) Pause Final Mark (unload classes) 0.237ms
+[53.033s][info   ][gc          ] GC(22) Concurrent thread roots 0.068ms
+[53.033s][info   ][gc          ] GC(22) Concurrent weak references 0.064ms
+[53.033s][info   ][gc          ] GC(22) Concurrent weak roots 0.318ms
+[53.034s][info   ][gc          ] GC(22) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[53.034s][info   ][gc          ] GC(22) Concurrent class unloading 0.708ms
+[53.034s][info   ][gc          ] GC(22) Concurrent strong roots 0.058ms
+[53.037s][info   ][gc          ] GC(22) Concurrent evacuation 2.962ms
+[53.037s][info   ][gc          ] GC(22) Pause Init Update Refs 0.006ms
+[53.038s][info   ][gc          ] GC(22) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[53.993s][info   ][gc          ] GC(22) Concurrent update references 955.407ms
+[53.993s][info   ][gc          ] GC(22) Concurrent update thread roots 0.237ms
+[53.997s][info   ][gc          ] GC(22) Pause Final Update Refs 0.095ms
+[53.998s][info   ][gc          ] GC(22) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[53.998s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[53.999s][info   ][gc          ] Trigger: GC request (System.gc())
+[54.001s][info   ][gc          ] GC(23) Concurrent reset 1.999ms
+[54.001s][info   ][gc          ] GC(23) Pause Init Mark (unload classes) 0.055ms
+[54.001s][info   ][gc          ] GC(23) Concurrent marking roots 0.100ms
+[55.505s][info   ][gc          ] GC(23) Concurrent marking (unload classes) 1504.052ms
+[55.505s][info   ][gc          ] GC(23) Pause Final Mark (unload classes) 0.255ms
+[55.506s][info   ][gc          ] GC(23) Concurrent thread roots 0.078ms
+[55.506s][info   ][gc          ] GC(23) Concurrent weak references 0.041ms
+[55.506s][info   ][gc          ] GC(23) Concurrent weak roots 0.330ms
+[55.506s][info   ][gc          ] GC(23) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[55.507s][info   ][gc          ] GC(23) Concurrent class unloading 0.697ms
+[55.507s][info   ][gc          ] GC(23) Concurrent strong roots 0.062ms
+[55.509s][info   ][gc          ] GC(23) Concurrent evacuation 2.195ms
+[55.509s][info   ][gc          ] GC(23) Pause Init Update Refs 0.005ms
+[55.509s][info   ][gc          ] GC(23) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[56.719s][info   ][gc          ] GC(23) Concurrent update references 1210.082ms
+[56.720s][info   ][gc          ] GC(23) Concurrent update thread roots 0.303ms
+[56.720s][info   ][gc          ] GC(23) Pause Final Update Refs 0.106ms
+[56.720s][info   ][gc          ] GC(23) Concurrent cleanup 1575M->1573M(6144M) 0.101ms
+[56.720s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[56.721s][info   ][gc          ] Trigger: GC request (System.gc())
+[56.723s][info   ][gc          ] GC(24) Concurrent reset 2.093ms
+[56.723s][info   ][gc          ] GC(24) Pause Init Mark (unload classes) 0.052ms
+[56.724s][info   ][gc          ] GC(24) Concurrent marking roots 0.099ms
+[58.291s][info   ][gc          ] GC(24) Concurrent marking (unload classes) 1567.758ms
+[58.292s][info   ][gc          ] GC(24) Pause Final Mark (unload classes) 0.229ms
+[58.292s][info   ][gc          ] GC(24) Concurrent thread roots 0.083ms
+[58.292s][info   ][gc          ] GC(24) Concurrent weak references 0.049ms
+[58.292s][info   ][gc          ] GC(24) Concurrent weak roots 0.334ms
+[58.292s][info   ][gc          ] GC(24) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[58.293s][info   ][gc          ] GC(24) Concurrent class unloading 0.709ms
+[58.293s][info   ][gc          ] GC(24) Concurrent strong roots 0.059ms
+[58.296s][info   ][gc          ] GC(24) Concurrent evacuation 2.881ms
+[58.296s][info   ][gc          ] GC(24) Pause Init Update Refs 0.007ms
+[58.296s][info   ][gc          ] GC(24) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[59.479s][info   ][gc          ] GC(24) Concurrent update references 1182.712ms
+[59.479s][info   ][gc          ] GC(24) Concurrent update thread roots 0.301ms
+[59.479s][info   ][gc          ] GC(24) Pause Final Update Refs 0.099ms
+[59.480s][info   ][gc          ] GC(24) Concurrent cleanup 1575M->1573M(6144M) 0.119ms
+[59.480s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[59.481s][info   ][gc          ] Trigger: GC request (System.gc())
+[59.483s][info   ][gc          ] GC(25) Concurrent reset 2.163ms
+[59.483s][info   ][gc          ] GC(25) Pause Init Mark (unload classes) 0.053ms
+[59.483s][info   ][gc          ] GC(25) Concurrent marking roots 0.128ms
+[60.982s][info   ][gc          ] GC(25) Concurrent marking (unload classes) 1498.409ms
+[60.982s][info   ][gc          ] GC(25) Pause Final Mark (unload classes) 0.219ms
+[60.982s][info   ][gc          ] GC(25) Concurrent thread roots 0.077ms
+[60.982s][info   ][gc          ] GC(25) Concurrent weak references 0.041ms
+[60.982s][info   ][gc          ] GC(25) Concurrent weak roots 0.375ms
+[60.983s][info   ][gc          ] GC(25) Concurrent cleanup 1573M->1573M(6144M) 0.098ms
+[60.983s][info   ][gc          ] GC(25) Concurrent class unloading 0.666ms
+[60.983s][info   ][gc          ] GC(25) Concurrent strong roots 0.059ms
+[60.985s][info   ][gc          ] GC(25) Concurrent evacuation 2.141ms
+[60.986s][info   ][gc          ] GC(25) Pause Init Update Refs 0.007ms
+[60.986s][info   ][gc          ] GC(25) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[62.168s][info   ][gc          ] GC(25) Concurrent update references 1182.697ms
+[62.169s][info   ][gc          ] GC(25) Concurrent update thread roots 0.293ms
+[62.169s][info   ][gc          ] GC(25) Pause Final Update Refs 0.094ms
+[62.169s][info   ][gc          ] GC(25) Concurrent cleanup 1577M->1575M(6144M) 0.101ms
+[62.169s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[62.170s][info   ][gc          ] Trigger: GC request (System.gc())
+[62.172s][info   ][gc          ] GC(26) Concurrent reset 2.011ms
+[62.172s][info   ][gc          ] GC(26) Pause Init Mark (unload classes) 0.052ms
+[62.172s][info   ][gc          ] GC(26) Concurrent marking roots 0.082ms
+[63.818s][info   ][gc          ] GC(26) Concurrent marking (unload classes) 1645.474ms
+[63.818s][info   ][gc          ] GC(26) Pause Final Mark (unload classes) 0.224ms
+[63.818s][info   ][gc          ] GC(26) Concurrent thread roots 0.076ms
+[63.818s][info   ][gc          ] GC(26) Concurrent weak references 0.042ms
+[63.819s][info   ][gc          ] GC(26) Concurrent weak roots 0.342ms
+[63.819s][info   ][gc          ] GC(26) Concurrent cleanup 1575M->1575M(6144M) 0.098ms
+[63.819s][info   ][gc          ] GC(26) Concurrent class unloading 0.586ms
+[63.819s][info   ][gc          ] GC(26) Concurrent strong roots 0.058ms
+[63.822s][info   ][gc          ] GC(26) Concurrent evacuation 2.310ms
+[63.822s][info   ][gc          ] GC(26) Pause Init Update Refs 0.006ms
+[63.822s][info   ][gc          ] GC(26) At start of update refs, moving 4096K to Mutator free partition from Collector Reserve
+[65.006s][info   ][gc          ] GC(26) Concurrent update references 1183.979ms
+[65.006s][info   ][gc          ] GC(26) Concurrent update thread roots 0.335ms
+[65.010s][info   ][gc          ] GC(26) Pause Final Update Refs 0.097ms
+[65.011s][info   ][gc          ] GC(26) Concurrent cleanup 1577M->1574M(6144M) 0.102ms
+[65.011s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[65.012s][info   ][gc          ] Trigger: GC request (System.gc())
+[65.014s][info   ][gc          ] GC(27) Concurrent reset 2.153ms
+[65.014s][info   ][gc          ] GC(27) Pause Init Mark (unload classes) 0.061ms
+[65.014s][info   ][gc          ] GC(27) Concurrent marking roots 0.106ms
+[66.512s][info   ][gc          ] GC(27) Concurrent marking (unload classes) 1497.818ms
+[66.512s][info   ][gc          ] GC(27) Pause Final Mark (unload classes) 0.239ms
+[66.513s][info   ][gc          ] GC(27) Concurrent thread roots 0.079ms
+[66.513s][info   ][gc          ] GC(27) Concurrent weak references 0.044ms
+[66.513s][info   ][gc          ] GC(27) Concurrent weak roots 0.350ms
+[66.513s][info   ][gc          ] GC(27) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[66.514s][info   ][gc          ] GC(27) Concurrent class unloading 0.617ms
+[66.514s][info   ][gc          ] GC(27) Concurrent strong roots 0.062ms
+[66.516s][info   ][gc          ] GC(27) Concurrent evacuation 2.166ms
+[66.516s][info   ][gc          ] GC(27) Pause Init Update Refs 0.007ms
+[66.516s][info   ][gc          ] GC(27) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[67.699s][info   ][gc          ] GC(27) Concurrent update references 1182.571ms
+[67.699s][info   ][gc          ] GC(27) Concurrent update thread roots 0.302ms
+[67.699s][info   ][gc          ] GC(27) Pause Final Update Refs 0.093ms
+[67.699s][info   ][gc          ] GC(27) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[67.699s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[67.700s][info   ][gc          ] Trigger: GC request (System.gc())
+[67.703s][info   ][gc          ] GC(28) Concurrent reset 2.141ms
+[67.703s][info   ][gc          ] GC(28) Pause Init Mark (unload classes) 0.055ms
+[67.703s][info   ][gc          ] GC(28) Concurrent marking roots 0.114ms
+[69.249s][info   ][gc          ] GC(28) Concurrent marking (unload classes) 1545.655ms
+[69.249s][info   ][gc          ] GC(28) Pause Final Mark (unload classes) 0.212ms
+[69.249s][info   ][gc          ] GC(28) Concurrent thread roots 0.075ms
+[69.249s][info   ][gc          ] GC(28) Concurrent weak references 0.043ms
+[69.249s][info   ][gc          ] GC(28) Concurrent weak roots 0.343ms
+[69.249s][info   ][gc          ] GC(28) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[69.250s][info   ][gc          ] GC(28) Concurrent class unloading 0.611ms
+[69.250s][info   ][gc          ] GC(28) Concurrent strong roots 0.059ms
+[69.252s][info   ][gc          ] GC(28) Concurrent evacuation 2.142ms
+[69.252s][info   ][gc          ] GC(28) Pause Init Update Refs 0.006ms
+[69.252s][info   ][gc          ] GC(28) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[70.410s][info   ][gc          ] GC(28) Concurrent update references 1157.517ms
+[70.410s][info   ][gc          ] GC(28) Concurrent update thread roots 0.302ms
+[70.410s][info   ][gc          ] GC(28) Pause Final Update Refs 0.097ms
+[70.411s][info   ][gc          ] GC(28) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[70.411s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[70.412s][info   ][gc          ] Trigger: GC request (System.gc())
+[70.414s][info   ][gc          ] GC(29) Concurrent reset 2.153ms
+[70.414s][info   ][gc          ] GC(29) Pause Init Mark (unload classes) 0.055ms
+[70.414s][info   ][gc          ] GC(29) Concurrent marking roots 0.131ms
+[71.911s][info   ][gc          ] GC(29) Concurrent marking (unload classes) 1496.576ms
+[71.911s][info   ][gc          ] GC(29) Pause Final Mark (unload classes) 0.224ms
+[71.911s][info   ][gc          ] GC(29) Concurrent thread roots 0.064ms
+[71.911s][info   ][gc          ] GC(29) Concurrent weak references 0.042ms
+[71.912s][info   ][gc          ] GC(29) Concurrent weak roots 0.348ms
+[71.912s][info   ][gc          ] GC(29) Concurrent cleanup 1574M->1574M(6144M) 0.120ms
+[71.913s][info   ][gc          ] GC(29) Concurrent class unloading 0.680ms
+[71.913s][info   ][gc          ] GC(29) Concurrent strong roots 0.057ms
+[71.915s][info   ][gc          ] GC(29) Concurrent evacuation 2.135ms
+[71.915s][info   ][gc          ] GC(29) Pause Init Update Refs 0.006ms
+[71.915s][info   ][gc          ] GC(29) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[73.097s][info   ][gc          ] GC(29) Concurrent update references 1181.893ms
+[73.097s][info   ][gc          ] GC(29) Concurrent update thread roots 0.216ms
+[73.097s][info   ][gc          ] GC(29) Pause Final Update Refs 0.093ms
+[73.097s][info   ][gc          ] GC(29) Concurrent cleanup 1576M->1574M(6144M) 0.119ms
+[73.097s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[73.099s][info   ][gc          ] Trigger: GC request (System.gc())
+[73.101s][info   ][gc          ] GC(30) Concurrent reset 1.989ms
+[73.101s][info   ][gc          ] GC(30) Pause Init Mark (unload classes) 0.061ms
+[73.101s][info   ][gc          ] GC(30) Concurrent marking roots 0.102ms
+[74.774s][info   ][gc          ] GC(30) Concurrent marking (unload classes) 1672.924ms
+[74.774s][info   ][gc          ] GC(30) Pause Final Mark (unload classes) 0.227ms
+[74.774s][info   ][gc          ] GC(30) Concurrent thread roots 0.080ms
+[74.774s][info   ][gc          ] GC(30) Concurrent weak references 0.043ms
+[74.775s][info   ][gc          ] GC(30) Concurrent weak roots 0.345ms
+[74.775s][info   ][gc          ] GC(30) Concurrent cleanup 1574M->1574M(6144M) 0.116ms
+[74.776s][info   ][gc          ] GC(30) Concurrent class unloading 0.684ms
+[74.776s][info   ][gc          ] GC(30) Concurrent strong roots 0.065ms
+[74.778s][info   ][gc          ] GC(30) Concurrent evacuation 2.150ms
+[74.778s][info   ][gc          ] GC(30) Pause Init Update Refs 0.006ms
+[74.778s][info   ][gc          ] GC(30) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[75.960s][info   ][gc          ] GC(30) Concurrent update references 1181.723ms
+[75.960s][info   ][gc          ] GC(30) Concurrent update thread roots 0.331ms
+[75.964s][info   ][gc          ] GC(30) Pause Final Update Refs 0.088ms
+[75.964s][info   ][gc          ] GC(30) Concurrent cleanup 1576M->1574M(6144M) 0.118ms
+[75.964s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[75.966s][info   ][gc          ] Trigger: GC request (System.gc())
+[75.968s][info   ][gc          ] GC(31) Concurrent reset 2.213ms
+[75.968s][info   ][gc          ] GC(31) Pause Init Mark (unload classes) 0.047ms
+[75.968s][info   ][gc          ] GC(31) Concurrent marking roots 0.104ms
+[77.498s][info   ][gc          ] GC(31) Concurrent marking (unload classes) 1529.826ms
+[77.498s][info   ][gc          ] GC(31) Pause Final Mark (unload classes) 0.232ms
+[77.498s][info   ][gc          ] GC(31) Concurrent thread roots 0.073ms
+[77.498s][info   ][gc          ] GC(31) Concurrent weak references 0.041ms
+[77.499s][info   ][gc          ] GC(31) Concurrent weak roots 0.338ms
+[77.499s][info   ][gc          ] GC(31) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[77.500s][info   ][gc          ] GC(31) Concurrent class unloading 0.628ms
+[77.500s][info   ][gc          ] GC(31) Concurrent strong roots 0.057ms
+[77.502s][info   ][gc          ] GC(31) Concurrent evacuation 2.147ms
+[77.502s][info   ][gc          ] GC(31) Pause Init Update Refs 0.006ms
+[77.502s][info   ][gc          ] GC(31) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[78.687s][info   ][gc          ] GC(31) Concurrent update references 1185.446ms
+[78.688s][info   ][gc          ] GC(31) Concurrent update thread roots 0.320ms
+[78.688s][info   ][gc          ] GC(31) Pause Final Update Refs 0.094ms
+[78.688s][info   ][gc          ] GC(31) Concurrent cleanup 1576M->1574M(6144M) 0.102ms
+[78.688s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[78.689s][info   ][gc          ] Trigger: GC request (System.gc())
+[78.691s][info   ][gc          ] GC(32) Concurrent reset 2.096ms
+[78.691s][info   ][gc          ] GC(32) Pause Init Mark (unload classes) 0.040ms
+[78.692s][info   ][gc          ] GC(32) Concurrent marking roots 0.093ms
+[80.180s][info   ][gc          ] GC(32) Concurrent marking (unload classes) 1487.937ms
+[80.231s][info   ][gc          ] GC(32) Pause Final Mark (unload classes) 51.059ms
+[80.231s][info   ][gc          ] GC(32) Concurrent thread roots 0.087ms
+[80.231s][info   ][gc          ] GC(32) Concurrent weak references 0.040ms
+[80.231s][info   ][gc          ] GC(32) Concurrent weak roots 0.416ms
+[80.231s][info   ][gc          ] GC(32) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[80.232s][info   ][gc          ] GC(32) Concurrent class unloading 0.715ms
+[80.232s][info   ][gc          ] GC(32) Concurrent strong roots 0.058ms
+[80.235s][info   ][gc          ] GC(32) Concurrent evacuation 2.304ms
+[80.235s][info   ][gc          ] GC(32) Pause Init Update Refs 0.006ms
+[80.235s][info   ][gc          ] GC(32) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[81.391s][info   ][gc          ] GC(32) Concurrent update references 1155.954ms
+[81.391s][info   ][gc          ] GC(32) Concurrent update thread roots 0.302ms
+[81.391s][info   ][gc          ] GC(32) Pause Final Update Refs 0.096ms
+[81.391s][info   ][gc          ] GC(32) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[81.391s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[81.392s][info   ][gc          ] Trigger: GC request (System.gc())
+[81.395s][info   ][gc          ] GC(33) Concurrent reset 2.186ms
+[81.395s][info   ][gc          ] GC(33) Pause Init Mark (unload classes) 0.042ms
+[81.395s][info   ][gc          ] GC(33) Concurrent marking roots 0.104ms
+[82.884s][info   ][gc          ] GC(33) Concurrent marking (unload classes) 1488.789ms
+[82.884s][info   ][gc          ] GC(33) Pause Final Mark (unload classes) 0.231ms
+[82.884s][info   ][gc          ] GC(33) Concurrent thread roots 0.072ms
+[82.884s][info   ][gc          ] GC(33) Concurrent weak references 0.067ms
+[82.885s][info   ][gc          ] GC(33) Concurrent weak roots 0.348ms
+[82.885s][info   ][gc          ] GC(33) Concurrent cleanup 1574M->1574M(6144M) 0.115ms
+[82.886s][info   ][gc          ] GC(33) Concurrent class unloading 0.715ms
+[82.886s][info   ][gc          ] GC(33) Concurrent strong roots 0.058ms
+[82.889s][info   ][gc          ] GC(33) Concurrent evacuation 3.768ms
+[82.890s][info   ][gc          ] GC(33) Pause Init Update Refs 0.005ms
+[82.890s][info   ][gc          ] GC(33) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[83.846s][info   ][gc          ] GC(33) Concurrent update references 956.058ms
+[83.846s][info   ][gc          ] GC(33) Concurrent update thread roots 0.210ms
+[83.846s][info   ][gc          ] GC(33) Pause Final Update Refs 0.092ms
+[83.846s][info   ][gc          ] GC(33) Concurrent cleanup 1576M->1574M(6144M) 0.080ms
+[83.846s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[83.847s][info   ][gc          ] Trigger: GC request (System.gc())
+[83.849s][info   ][gc          ] GC(34) Concurrent reset 1.987ms
+[83.849s][info   ][gc          ] GC(34) Pause Init Mark (unload classes) 0.059ms
+[83.850s][info   ][gc          ] GC(34) Concurrent marking roots 0.093ms
+[85.356s][info   ][gc          ] GC(34) Concurrent marking (unload classes) 1506.887ms
+[85.357s][info   ][gc          ] GC(34) Pause Final Mark (unload classes) 0.220ms
+[85.357s][info   ][gc          ] GC(34) Concurrent thread roots 0.076ms
+[85.357s][info   ][gc          ] GC(34) Concurrent weak references 0.045ms
+[85.357s][info   ][gc          ] GC(34) Concurrent weak roots 0.344ms
+[85.357s][info   ][gc          ] GC(34) Concurrent cleanup 1574M->1574M(6144M) 0.115ms
+[85.358s][info   ][gc          ] GC(34) Concurrent class unloading 0.634ms
+[85.358s][info   ][gc          ] GC(34) Concurrent strong roots 0.062ms
+[85.360s][info   ][gc          ] GC(34) Concurrent evacuation 2.149ms
+[85.360s][info   ][gc          ] GC(34) Pause Init Update Refs 0.006ms
+[85.360s][info   ][gc          ] GC(34) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[86.543s][info   ][gc          ] GC(34) Concurrent update references 1182.289ms
+[86.543s][info   ][gc          ] GC(34) Concurrent update thread roots 0.296ms
+[86.547s][info   ][gc          ] GC(34) Pause Final Update Refs 0.099ms
+[86.547s][info   ][gc          ] GC(34) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[86.548s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[86.549s][info   ][gc          ] Trigger: GC request (System.gc())
+[86.551s][info   ][gc          ] GC(35) Concurrent reset 2.251ms
+[86.551s][info   ][gc          ] GC(35) Pause Init Mark (unload classes) 0.054ms
+[86.551s][info   ][gc          ] GC(35) Concurrent marking roots 0.113ms
+[88.231s][info   ][gc          ] GC(35) Concurrent marking (unload classes) 1680.102ms
+[88.232s][info   ][gc          ] GC(35) Pause Final Mark (unload classes) 0.237ms
+[88.232s][info   ][gc          ] GC(35) Concurrent thread roots 0.085ms
+[88.232s][info   ][gc          ] GC(35) Concurrent weak references 0.053ms
+[88.232s][info   ][gc          ] GC(35) Concurrent weak roots 0.355ms
+[88.232s][info   ][gc          ] GC(35) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[88.233s][info   ][gc          ] GC(35) Concurrent class unloading 0.714ms
+[88.233s][info   ][gc          ] GC(35) Concurrent strong roots 0.060ms
+[88.237s][info   ][gc          ] GC(35) Concurrent evacuation 3.869ms
+[88.237s][info   ][gc          ] GC(35) Pause Init Update Refs 0.006ms
+[88.237s][info   ][gc          ] GC(35) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[89.392s][info   ][gc          ] GC(35) Concurrent update references 1154.375ms
+[89.392s][info   ][gc          ] GC(35) Concurrent update thread roots 0.384ms
+[89.392s][info   ][gc          ] GC(35) Pause Final Update Refs 0.095ms
+[89.392s][info   ][gc          ] GC(35) Concurrent cleanup 1576M->1574M(6144M) 0.102ms
+[89.392s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[89.393s][info   ][gc          ] Trigger: GC request (System.gc())
+[89.396s][info   ][gc          ] GC(36) Concurrent reset 2.161ms
+[89.396s][info   ][gc          ] GC(36) Pause Init Mark (unload classes) 0.053ms
+[89.396s][info   ][gc          ] GC(36) Concurrent marking roots 0.089ms
+[91.353s][info   ][gc          ] GC(36) Concurrent marking (unload classes) 1957.591ms
+[91.354s][info   ][gc          ] GC(36) Pause Final Mark (unload classes) 0.252ms
+[91.354s][info   ][gc          ] GC(36) Concurrent thread roots 0.087ms
+[91.354s][info   ][gc          ] GC(36) Concurrent weak references 0.042ms
+[91.354s][info   ][gc          ] GC(36) Concurrent weak roots 0.338ms
+[91.354s][info   ][gc          ] GC(36) Concurrent cleanup 1574M->1574M(6144M) 0.099ms
+[91.355s][info   ][gc          ] GC(36) Concurrent class unloading 0.632ms
+[91.355s][info   ][gc          ] GC(36) Concurrent strong roots 0.058ms
+[91.357s][info   ][gc          ] GC(36) Concurrent evacuation 2.140ms
+[91.357s][info   ][gc          ] GC(36) Pause Init Update Refs 0.007ms
+[91.357s][info   ][gc          ] GC(36) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[92.540s][info   ][gc          ] GC(36) Concurrent update references 1182.289ms
+[92.540s][info   ][gc          ] GC(36) Concurrent update thread roots 0.359ms
+[92.540s][info   ][gc          ] GC(36) Pause Final Update Refs 0.095ms
+[92.540s][info   ][gc          ] GC(36) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[92.541s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[92.542s][info   ][gc          ] Trigger: GC request (System.gc())
+[92.544s][info   ][gc          ] GC(37) Concurrent reset 2.251ms
+[92.544s][info   ][gc          ] GC(37) Pause Init Mark (unload classes) 0.056ms
+[92.544s][info   ][gc          ] GC(37) Concurrent marking roots 0.099ms
+[94.455s][info   ][gc          ] GC(37) Concurrent marking (unload classes) 1910.970ms
+[94.455s][info   ][gc          ] GC(37) Pause Final Mark (unload classes) 0.247ms
+[94.456s][info   ][gc          ] GC(37) Concurrent thread roots 0.093ms
+[94.456s][info   ][gc          ] GC(37) Concurrent weak references 0.043ms
+[94.456s][info   ][gc          ] GC(37) Concurrent weak roots 0.399ms
+[94.456s][info   ][gc          ] GC(37) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[94.457s][info   ][gc          ] GC(37) Concurrent class unloading 0.575ms
+[94.457s][info   ][gc          ] GC(37) Concurrent strong roots 0.088ms
+[94.459s][info   ][gc          ] GC(37) Concurrent evacuation 2.239ms
+[94.459s][info   ][gc          ] GC(37) Pause Init Update Refs 0.006ms
+[94.459s][info   ][gc          ] GC(37) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[96.083s][info   ][gc          ] GC(37) Concurrent update references 1623.447ms
+[96.083s][info   ][gc          ] GC(37) Concurrent update thread roots 0.237ms
+[96.083s][info   ][gc          ] GC(37) Pause Final Update Refs 0.094ms
+[96.083s][info   ][gc          ] GC(37) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[96.083s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[96.084s][info   ][gc          ] Trigger: GC request (System.gc())
+[96.086s][info   ][gc          ] GC(38) Concurrent reset 2.098ms
+[96.087s][info   ][gc          ] GC(38) Pause Init Mark (unload classes) 0.049ms
+[96.087s][info   ][gc          ] GC(38) Concurrent marking roots 0.070ms
+[97.566s][info   ][gc          ] GC(38) Concurrent marking (unload classes) 1479.519ms
+[97.567s][info   ][gc          ] GC(38) Pause Final Mark (unload classes) 0.204ms
+[97.571s][info   ][gc          ] GC(38) Concurrent thread roots 0.078ms
+[97.571s][info   ][gc          ] GC(38) Concurrent weak references 0.047ms
+[97.571s][info   ][gc          ] GC(38) Concurrent weak roots 0.336ms
+[97.571s][info   ][gc          ] GC(38) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[97.572s][info   ][gc          ] GC(38) Concurrent class unloading 0.625ms
+[97.572s][info   ][gc          ] GC(38) Concurrent strong roots 0.057ms
+[97.574s][info   ][gc          ] GC(38) Concurrent evacuation 2.297ms
+[97.575s][info   ][gc          ] GC(38) Pause Init Update Refs 0.006ms
+[97.575s][info   ][gc          ] GC(38) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[98.740s][info   ][gc          ] GC(38) Concurrent update references 1165.437ms
+[98.740s][info   ][gc          ] GC(38) Concurrent update thread roots 0.293ms
+[98.741s][info   ][gc          ] GC(38) Pause Final Update Refs 0.097ms
+[98.741s][info   ][gc          ] GC(38) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[98.741s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[98.742s][info   ][gc          ] Trigger: GC request (System.gc())
+[98.744s][info   ][gc          ] GC(39) Concurrent reset 2.270ms
+[98.744s][info   ][gc          ] GC(39) Pause Init Mark (unload classes) 0.050ms
+[98.744s][info   ][gc          ] GC(39) Concurrent marking roots 0.087ms
+[100.574s][info   ][gc          ] GC(39) Concurrent marking (unload classes) 1829.792ms
+[100.574s][info   ][gc          ] GC(39) Pause Final Mark (unload classes) 0.213ms
+[100.575s][info   ][gc          ] GC(39) Concurrent thread roots 0.078ms
+[100.575s][info   ][gc          ] GC(39) Concurrent weak references 0.043ms
+[100.575s][info   ][gc          ] GC(39) Concurrent weak roots 0.351ms
+[100.575s][info   ][gc          ] GC(39) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[100.576s][info   ][gc          ] GC(39) Concurrent class unloading 0.639ms
+[100.576s][info   ][gc          ] GC(39) Concurrent strong roots 0.059ms
+[100.578s][info   ][gc          ] GC(39) Concurrent evacuation 2.295ms
+[100.578s][info   ][gc          ] GC(39) Pause Init Update Refs 0.006ms
+[100.578s][info   ][gc          ] GC(39) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[101.762s][info   ][gc          ] GC(39) Concurrent update references 1183.324ms
+[101.762s][info   ][gc          ] GC(39) Concurrent update thread roots 0.294ms
+[101.762s][info   ][gc          ] GC(39) Pause Final Update Refs 0.092ms
+[101.762s][info   ][gc          ] GC(39) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[101.762s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[101.763s][info   ][gc          ] Trigger: GC request (System.gc())
+[101.765s][info   ][gc          ] GC(40) Concurrent reset 2.010ms
+[101.765s][info   ][gc          ] GC(40) Pause Init Mark (unload classes) 0.054ms
+[101.766s][info   ][gc          ] GC(40) Concurrent marking roots 0.101ms
+[103.238s][info   ][gc          ] GC(40) Concurrent marking (unload classes) 1471.882ms
+[103.238s][info   ][gc          ] GC(40) Pause Final Mark (unload classes) 0.218ms
+[103.242s][info   ][gc          ] GC(40) Concurrent thread roots 0.077ms
+[103.242s][info   ][gc          ] GC(40) Concurrent weak references 0.053ms
+[103.243s][info   ][gc          ] GC(40) Concurrent weak roots 0.328ms
+[103.243s][info   ][gc          ] GC(40) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[103.243s][info   ][gc          ] GC(40) Concurrent class unloading 0.693ms
+[103.243s][info   ][gc          ] GC(40) Concurrent strong roots 0.059ms
+[103.247s][info   ][gc          ] GC(40) Concurrent evacuation 3.828ms
+[103.247s][info   ][gc          ] GC(40) Pause Init Update Refs 0.005ms
+[103.248s][info   ][gc          ] GC(40) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[104.159s][info   ][gc          ] GC(40) Concurrent update references 911.368ms
+[104.159s][info   ][gc          ] GC(40) Concurrent update thread roots 0.295ms
+[104.159s][info   ][gc          ] GC(40) Pause Final Update Refs 0.092ms
+[104.160s][info   ][gc          ] GC(40) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[104.160s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[104.161s][info   ][gc          ] Trigger: GC request (System.gc())
+[104.163s][info   ][gc          ] GC(41) Concurrent reset 2.147ms
+[104.163s][info   ][gc          ] GC(41) Pause Init Mark (unload classes) 0.055ms
+[104.163s][info   ][gc          ] GC(41) Concurrent marking roots 0.082ms
+[105.771s][info   ][gc          ] GC(41) Concurrent marking (unload classes) 1607.464ms
+[105.771s][info   ][gc          ] GC(41) Pause Final Mark (unload classes) 0.210ms
+[105.771s][info   ][gc          ] GC(41) Concurrent thread roots 0.073ms
+[105.771s][info   ][gc          ] GC(41) Concurrent weak references 0.043ms
+[105.771s][info   ][gc          ] GC(41) Concurrent weak roots 0.337ms
+[105.772s][info   ][gc          ] GC(41) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[105.772s][info   ][gc          ] GC(41) Concurrent class unloading 0.699ms
+[105.772s][info   ][gc          ] GC(41) Concurrent strong roots 0.062ms
+[105.774s][info   ][gc          ] GC(41) Concurrent evacuation 2.123ms
+[105.775s][info   ][gc          ] GC(41) Pause Init Update Refs 0.005ms
+[105.775s][info   ][gc          ] GC(41) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[106.957s][info   ][gc          ] GC(41) Concurrent update references 1182.587ms
+[106.958s][info   ][gc          ] GC(41) Concurrent update thread roots 0.270ms
+[106.958s][info   ][gc          ] GC(41) Pause Final Update Refs 0.100ms
+[106.958s][info   ][gc          ] GC(41) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[106.958s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[106.959s][info   ][gc          ] Trigger: GC request (System.gc())
+[106.961s][info   ][gc          ] GC(42) Concurrent reset 2.025ms
+[106.961s][info   ][gc          ] GC(42) Pause Init Mark (unload classes) 0.050ms
+[106.961s][info   ][gc          ] GC(42) Concurrent marking roots 0.090ms
+[108.524s][info   ][gc          ] GC(42) Concurrent marking (unload classes) 1563.081ms
+[108.525s][info   ][gc          ] GC(42) Pause Final Mark (unload classes) 0.244ms
+[108.525s][info   ][gc          ] GC(42) Concurrent thread roots 0.073ms
+[108.525s][info   ][gc          ] GC(42) Concurrent weak references 0.053ms
+[108.525s][info   ][gc          ] GC(42) Concurrent weak roots 0.328ms
+[108.525s][info   ][gc          ] GC(42) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[108.526s][info   ][gc          ] GC(42) Concurrent class unloading 0.723ms
+[108.526s][info   ][gc          ] GC(42) Concurrent strong roots 0.056ms
+[108.529s][info   ][gc          ] GC(42) Concurrent evacuation 3.262ms
+[108.530s][info   ][gc          ] GC(42) Pause Init Update Refs 0.007ms
+[108.530s][info   ][gc          ] GC(42) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[109.488s][info   ][gc          ] GC(42) Concurrent update references 958.679ms
+[109.489s][info   ][gc          ] GC(42) Concurrent update thread roots 0.299ms
+[109.489s][info   ][gc          ] GC(42) Pause Final Update Refs 0.092ms
+[109.489s][info   ][gc          ] GC(42) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[109.489s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[109.490s][info   ][gc          ] Trigger: GC request (System.gc())
+[109.492s][info   ][gc          ] GC(43) Concurrent reset 2.087ms
+[109.492s][info   ][gc          ] GC(43) Pause Init Mark (unload classes) 0.060ms
+[109.492s][info   ][gc          ] GC(43) Concurrent marking roots 0.081ms
+[111.391s][info   ][gc          ] GC(43) Concurrent marking (unload classes) 1898.732ms
+[111.391s][info   ][gc          ] GC(43) Pause Final Mark (unload classes) 0.250ms
+[111.392s][info   ][gc          ] GC(43) Concurrent thread roots 0.069ms
+[111.392s][info   ][gc          ] GC(43) Concurrent weak references 0.041ms
+[111.392s][info   ][gc          ] GC(43) Concurrent weak roots 0.347ms
+[111.392s][info   ][gc          ] GC(43) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[111.393s][info   ][gc          ] GC(43) Concurrent class unloading 0.700ms
+[111.393s][info   ][gc          ] GC(43) Concurrent strong roots 0.058ms
+[111.395s][info   ][gc          ] GC(43) Concurrent evacuation 2.404ms
+[111.395s][info   ][gc          ] GC(43) Pause Init Update Refs 0.006ms
+[111.395s][info   ][gc          ] GC(43) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[112.583s][info   ][gc          ] GC(43) Concurrent update references 1187.149ms
+[112.583s][info   ][gc          ] GC(43) Concurrent update thread roots 0.296ms
+[112.583s][info   ][gc          ] GC(43) Pause Final Update Refs 0.086ms
+[112.583s][info   ][gc          ] GC(43) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[112.583s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[112.584s][info   ][gc          ] Trigger: GC request (System.gc())
+[112.586s][info   ][gc          ] GC(44) Concurrent reset 2.170ms
+[112.587s][info   ][gc          ] GC(44) Pause Init Mark (unload classes) 0.046ms
+[112.587s][info   ][gc          ] GC(44) Concurrent marking roots 0.076ms
+[114.465s][info   ][gc          ] GC(44) Concurrent marking (unload classes) 1878.581ms
+[114.466s][info   ][gc          ] GC(44) Pause Final Mark (unload classes) 0.246ms
+[114.466s][info   ][gc          ] GC(44) Concurrent thread roots 0.079ms
+[114.466s][info   ][gc          ] GC(44) Concurrent weak references 0.041ms
+[114.466s][info   ][gc          ] GC(44) Concurrent weak roots 0.336ms
+[114.466s][info   ][gc          ] GC(44) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[114.467s][info   ][gc          ] GC(44) Concurrent class unloading 0.677ms
+[114.467s][info   ][gc          ] GC(44) Concurrent strong roots 0.059ms
+[114.469s][info   ][gc          ] GC(44) Concurrent evacuation 2.138ms
+[114.469s][info   ][gc          ] GC(44) Pause Init Update Refs 0.006ms
+[114.469s][info   ][gc          ] GC(44) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[115.651s][info   ][gc          ] GC(44) Concurrent update references 1182.101ms
+[115.652s][info   ][gc          ] GC(44) Concurrent update thread roots 0.331ms
+[115.652s][info   ][gc          ] GC(44) Pause Final Update Refs 0.108ms
+[115.652s][info   ][gc          ] GC(44) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[115.652s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[115.653s][info   ][gc          ] Trigger: GC request (System.gc())
+[115.655s][info   ][gc          ] GC(45) Concurrent reset 2.089ms
+[115.655s][info   ][gc          ] GC(45) Pause Init Mark (unload classes) 0.048ms
+[115.656s][info   ][gc          ] GC(45) Concurrent marking roots 0.087ms
+[117.147s][info   ][gc          ] GC(45) Concurrent marking (unload classes) 1491.020ms
+[117.147s][info   ][gc          ] GC(45) Pause Final Mark (unload classes) 0.266ms
+[117.147s][info   ][gc          ] GC(45) Concurrent thread roots 0.082ms
+[117.147s][info   ][gc          ] GC(45) Concurrent weak references 0.042ms
+[117.148s][info   ][gc          ] GC(45) Concurrent weak roots 0.346ms
+[117.148s][info   ][gc          ] GC(45) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[117.148s][info   ][gc          ] GC(45) Concurrent class unloading 0.660ms
+[117.148s][info   ][gc          ] GC(45) Concurrent strong roots 0.058ms
+[117.151s][info   ][gc          ] GC(45) Concurrent evacuation 2.098ms
+[117.151s][info   ][gc          ] GC(45) Pause Init Update Refs 0.006ms
+[117.151s][info   ][gc          ] GC(45) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[118.385s][info   ][gc          ] GC(45) Concurrent update references 1234.846ms
+[118.386s][info   ][gc          ] GC(45) Concurrent update thread roots 0.302ms
+[118.386s][info   ][gc          ] GC(45) Pause Final Update Refs 0.094ms
+[118.386s][info   ][gc          ] GC(45) Concurrent cleanup 1576M->1574M(6144M) 0.116ms
+[118.386s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[118.387s][info   ][gc          ] Trigger: GC request (System.gc())
+[118.389s][info   ][gc          ] GC(46) Concurrent reset 2.187ms
+[118.390s][info   ][gc          ] GC(46) Pause Init Mark (unload classes) 0.049ms
+[118.390s][info   ][gc          ] GC(46) Concurrent marking roots 0.087ms
+[119.889s][info   ][gc          ] GC(46) Concurrent marking (unload classes) 1499.564ms
+[119.894s][info   ][gc          ] GC(46) Pause Final Mark (unload classes) 0.357ms
+[119.894s][info   ][gc          ] GC(46) Concurrent thread roots 0.061ms
+[119.894s][info   ][gc          ] GC(46) Concurrent weak references 0.044ms
+[119.895s][info   ][gc          ] GC(46) Concurrent weak roots 0.330ms
+[119.895s][info   ][gc          ] GC(46) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[119.895s][info   ][gc          ] GC(46) Concurrent class unloading 0.647ms
+[119.895s][info   ][gc          ] GC(46) Concurrent strong roots 0.056ms
+[119.898s][info   ][gc          ] GC(46) Concurrent evacuation 2.143ms
+[119.898s][info   ][gc          ] GC(46) Pause Init Update Refs 0.006ms
+[119.898s][info   ][gc          ] GC(46) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[120.830s][info   ][gc          ] GC(46) Concurrent update references 932.526ms
+[120.831s][info   ][gc          ] GC(46) Concurrent update thread roots 0.293ms
+[120.831s][info   ][gc          ] GC(46) Pause Final Update Refs 0.092ms
+[120.831s][info   ][gc          ] GC(46) Concurrent cleanup 1576M->1574M(6144M) 0.102ms
+[120.831s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[120.832s][info   ][gc          ] Trigger: GC request (System.gc())
+[120.834s][info   ][gc          ] GC(47) Concurrent reset 2.294ms
+[120.835s][info   ][gc          ] GC(47) Pause Init Mark (unload classes) 0.054ms
+[120.835s][info   ][gc          ] GC(47) Concurrent marking roots 0.098ms
+[122.240s][info   ][gc          ] GC(47) Concurrent marking (unload classes) 1405.647ms
+[122.241s][info   ][gc          ] GC(47) Pause Final Mark (unload classes) 0.243ms
+[122.241s][info   ][gc          ] GC(47) Concurrent thread roots 0.073ms
+[122.241s][info   ][gc          ] GC(47) Concurrent weak references 0.041ms
+[122.241s][info   ][gc          ] GC(47) Concurrent weak roots 0.351ms
+[122.241s][info   ][gc          ] GC(47) Concurrent cleanup 1575M->1575M(6144M) 0.098ms
+[122.242s][info   ][gc          ] GC(47) Concurrent class unloading 0.645ms
+[122.242s][info   ][gc          ] GC(47) Concurrent strong roots 0.074ms
+[122.244s][info   ][gc          ] GC(47) Concurrent evacuation 2.138ms
+[122.244s][info   ][gc          ] GC(47) Pause Init Update Refs 0.006ms
+[122.244s][info   ][gc          ] GC(47) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[123.595s][info   ][gc          ] GC(47) Concurrent update references 1350.335ms
+[123.595s][info   ][gc          ] GC(47) Concurrent update thread roots 0.210ms
+[123.595s][info   ][gc          ] GC(47) Pause Final Update Refs 0.093ms
+[123.595s][info   ][gc          ] GC(47) Concurrent cleanup 1577M->1575M(6144M) 0.119ms
+[123.595s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[123.596s][info   ][gc          ] Trigger: GC request (System.gc())
+[123.599s][info   ][gc          ] GC(48) Concurrent reset 2.114ms
+[123.599s][info   ][gc          ] GC(48) Pause Init Mark (unload classes) 0.046ms
+[123.599s][info   ][gc          ] GC(48) Concurrent marking roots 0.094ms
+[125.082s][info   ][gc          ] GC(48) Concurrent marking (unload classes) 1483.633ms
+[125.087s][info   ][gc          ] GC(48) Pause Final Mark (unload classes) 0.221ms
+[125.088s][info   ][gc          ] GC(48) Concurrent thread roots 0.067ms
+[125.088s][info   ][gc          ] GC(48) Concurrent weak references 0.043ms
+[125.088s][info   ][gc          ] GC(48) Concurrent weak roots 0.400ms
+[125.088s][info   ][gc          ] GC(48) Concurrent cleanup 1575M->1575M(6144M) 0.115ms
+[125.089s][info   ][gc          ] GC(48) Concurrent class unloading 0.638ms
+[125.089s][info   ][gc          ] GC(48) Concurrent strong roots 0.085ms
+[125.091s][info   ][gc          ] GC(48) Concurrent evacuation 2.396ms
+[125.091s][info   ][gc          ] GC(48) Pause Init Update Refs 0.006ms
+[125.091s][info   ][gc          ] GC(48) At start of update refs, moving 4096K to Mutator free partition from Collector Reserve
+[126.512s][info   ][gc          ] GC(48) Concurrent update references 1420.138ms
+[126.512s][info   ][gc          ] GC(48) Concurrent update thread roots 0.231ms
+[126.512s][info   ][gc          ] GC(48) Pause Final Update Refs 0.085ms
+[126.512s][info   ][gc          ] GC(48) Concurrent cleanup 1577M->1574M(6144M) 0.100ms
+[126.512s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[126.513s][info   ][gc          ] Trigger: GC request (System.gc())
+[126.516s][info   ][gc          ] GC(49) Concurrent reset 2.386ms
+[126.516s][info   ][gc          ] GC(49) Pause Init Mark (unload classes) 0.055ms
+[126.516s][info   ][gc          ] GC(49) Concurrent marking roots 0.103ms
+[127.710s][info   ][gc          ] GC(49) Concurrent marking (unload classes) 1194.004ms
+[127.710s][info   ][gc          ] GC(49) Pause Final Mark (unload classes) 0.218ms
+[127.710s][info   ][gc          ] GC(49) Concurrent thread roots 0.071ms
+[127.710s][info   ][gc          ] GC(49) Concurrent weak references 0.041ms
+[127.711s][info   ][gc          ] GC(49) Concurrent weak roots 0.306ms
+[127.711s][info   ][gc          ] GC(49) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[127.711s][info   ][gc          ] GC(49) Concurrent class unloading 0.621ms
+[127.712s][info   ][gc          ] GC(49) Concurrent strong roots 0.056ms
+[127.714s][info   ][gc          ] GC(49) Concurrent evacuation 2.141ms
+[127.714s][info   ][gc          ] GC(49) Pause Init Update Refs 0.005ms
+[127.714s][info   ][gc          ] GC(49) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[128.896s][info   ][gc          ] GC(49) Concurrent update references 1182.194ms
+[128.896s][info   ][gc          ] GC(49) Concurrent update thread roots 0.214ms
+[128.896s][info   ][gc          ] GC(49) Pause Final Update Refs 0.091ms
+[128.897s][info   ][gc          ] GC(49) Concurrent cleanup 1576M->1574M(6144M) 0.102ms
+[128.897s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[128.898s][info   ][gc          ] Trigger: GC request (System.gc())
+[128.900s][info   ][gc          ] GC(50) Concurrent reset 2.139ms
+[128.900s][info   ][gc          ] GC(50) Pause Init Mark (unload classes) 0.058ms
+[128.900s][info   ][gc          ] GC(50) Concurrent marking roots 0.097ms
+[130.654s][info   ][gc          ] GC(50) Concurrent marking (unload classes) 1753.459ms
+[130.654s][info   ][gc          ] GC(50) Pause Final Mark (unload classes) 0.252ms
+[130.654s][info   ][gc          ] GC(50) Concurrent thread roots 0.078ms
+[130.654s][info   ][gc          ] GC(50) Concurrent weak references 0.043ms
+[130.655s][info   ][gc          ] GC(50) Concurrent weak roots 0.345ms
+[130.655s][info   ][gc          ] GC(50) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[130.655s][info   ][gc          ] GC(50) Concurrent class unloading 0.639ms
+[130.655s][info   ][gc          ] GC(50) Concurrent strong roots 0.059ms
+[130.658s][info   ][gc          ] GC(50) Concurrent evacuation 2.147ms
+[130.658s][info   ][gc          ] GC(50) Pause Init Update Refs 0.006ms
+[130.658s][info   ][gc          ] GC(50) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[131.892s][info   ][gc          ] GC(50) Concurrent update references 1234.157ms
+[131.892s][info   ][gc          ] GC(50) Concurrent update thread roots 0.208ms
+[131.892s][info   ][gc          ] GC(50) Pause Final Update Refs 0.093ms
+[131.893s][info   ][gc          ] GC(50) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[131.893s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[131.894s][info   ][gc          ] Trigger: GC request (System.gc())
+[131.896s][info   ][gc          ] GC(51) Concurrent reset 2.058ms
+[131.896s][info   ][gc          ] GC(51) Pause Init Mark (unload classes) 0.051ms
+[131.896s][info   ][gc          ] GC(51) Concurrent marking roots 0.084ms
+[133.414s][info   ][gc          ] GC(51) Concurrent marking (unload classes) 1518.176ms
+[133.414s][info   ][gc          ] GC(51) Pause Final Mark (unload classes) 0.219ms
+[133.415s][info   ][gc          ] GC(51) Concurrent thread roots 0.061ms
+[133.415s][info   ][gc          ] GC(51) Concurrent weak references 0.040ms
+[133.415s][info   ][gc          ] GC(51) Concurrent weak roots 0.324ms
+[133.415s][info   ][gc          ] GC(51) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[133.416s][info   ][gc          ] GC(51) Concurrent class unloading 0.617ms
+[133.416s][info   ][gc          ] GC(51) Concurrent strong roots 0.072ms
+[133.418s][info   ][gc          ] GC(51) Concurrent evacuation 2.134ms
+[133.418s][info   ][gc          ] GC(51) Pause Init Update Refs 0.007ms
+[133.418s][info   ][gc          ] GC(51) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[134.603s][info   ][gc          ] GC(51) Concurrent update references 1184.701ms
+[134.603s][info   ][gc          ] GC(51) Concurrent update thread roots 0.305ms
+[134.603s][info   ][gc          ] GC(51) Pause Final Update Refs 0.098ms
+[134.604s][info   ][gc          ] GC(51) Concurrent cleanup 1576M->1574M(6144M) 0.102ms
+[134.604s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[134.605s][info   ][gc          ] Trigger: GC request (System.gc())
+[134.607s][info   ][gc          ] GC(52) Concurrent reset 2.169ms
+[134.607s][info   ][gc          ] GC(52) Pause Init Mark (unload classes) 0.046ms
+[134.607s][info   ][gc          ] GC(52) Concurrent marking roots 0.090ms
+[136.500s][info   ][gc          ] GC(52) Concurrent marking (unload classes) 1892.893ms
+[136.500s][info   ][gc          ] GC(52) Pause Final Mark (unload classes) 0.213ms
+[136.500s][info   ][gc          ] GC(52) Concurrent thread roots 0.086ms
+[136.501s][info   ][gc          ] GC(52) Concurrent weak references 0.042ms
+[136.501s][info   ][gc          ] GC(52) Concurrent weak roots 0.341ms
+[136.501s][info   ][gc          ] GC(52) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[136.502s][info   ][gc          ] GC(52) Concurrent class unloading 0.674ms
+[136.502s][info   ][gc          ] GC(52) Concurrent strong roots 0.062ms
+[136.504s][info   ][gc          ] GC(52) Concurrent evacuation 2.145ms
+[136.504s][info   ][gc          ] GC(52) Pause Init Update Refs 0.006ms
+[136.504s][info   ][gc          ] GC(52) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[137.687s][info   ][gc          ] GC(52) Concurrent update references 1183.053ms
+[137.687s][info   ][gc          ] GC(52) Concurrent update thread roots 0.299ms
+[137.688s][info   ][gc          ] GC(52) Pause Final Update Refs 0.098ms
+[137.688s][info   ][gc          ] GC(52) Concurrent cleanup 1576M->1574M(6144M) 0.143ms
+[137.688s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[137.689s][info   ][gc          ] Trigger: GC request (System.gc())
+[137.691s][info   ][gc          ] GC(53) Concurrent reset 2.162ms
+[137.691s][info   ][gc          ] GC(53) Pause Init Mark (unload classes) 0.048ms
+[137.691s][info   ][gc          ] GC(53) Concurrent marking roots 0.108ms
+[139.239s][info   ][gc          ] GC(53) Concurrent marking (unload classes) 1547.900ms
+[139.240s][info   ][gc          ] GC(53) Pause Final Mark (unload classes) 0.221ms
+[139.240s][info   ][gc          ] GC(53) Concurrent thread roots 0.102ms
+[139.240s][info   ][gc          ] GC(53) Concurrent weak references 0.042ms
+[139.240s][info   ][gc          ] GC(53) Concurrent weak roots 0.337ms
+[139.240s][info   ][gc          ] GC(53) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[139.241s][info   ][gc          ] GC(53) Concurrent class unloading 0.673ms
+[139.241s][info   ][gc          ] GC(53) Concurrent strong roots 0.057ms
+[139.243s][info   ][gc          ] GC(53) Concurrent evacuation 2.096ms
+[139.243s][info   ][gc          ] GC(53) Pause Init Update Refs 0.006ms
+[139.243s][info   ][gc          ] GC(53) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[140.400s][info   ][gc          ] GC(53) Concurrent update references 1156.559ms
+[140.400s][info   ][gc          ] GC(53) Concurrent update thread roots 0.205ms
+[140.400s][info   ][gc          ] GC(53) Pause Final Update Refs 0.084ms
+[140.400s][info   ][gc          ] GC(53) Concurrent cleanup 1576M->1574M(6144M) 0.080ms
+[140.401s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[140.402s][info   ][gc          ] Trigger: GC request (System.gc())
+[140.404s][info   ][gc          ] GC(54) Concurrent reset 2.330ms
+[140.404s][info   ][gc          ] GC(54) Pause Init Mark (unload classes) 0.068ms
+[140.404s][info   ][gc          ] GC(54) Concurrent marking roots 0.083ms
+[142.353s][info   ][gc          ] GC(54) Concurrent marking (unload classes) 1949.189ms
+[142.354s][info   ][gc          ] GC(54) Pause Final Mark (unload classes) 0.242ms
+[142.358s][info   ][gc          ] GC(54) Concurrent thread roots 0.083ms
+[142.358s][info   ][gc          ] GC(54) Concurrent weak references 0.045ms
+[142.358s][info   ][gc          ] GC(54) Concurrent weak roots 0.351ms
+[142.359s][info   ][gc          ] GC(54) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[142.359s][info   ][gc          ] GC(54) Concurrent class unloading 0.662ms
+[142.359s][info   ][gc          ] GC(54) Concurrent strong roots 0.060ms
+[142.361s][info   ][gc          ] GC(54) Concurrent evacuation 2.145ms
+[142.362s][info   ][gc          ] GC(54) Pause Init Update Refs 0.006ms
+[142.362s][info   ][gc          ] GC(54) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[143.543s][info   ][gc          ] GC(54) Concurrent update references 1181.076ms
+[143.543s][info   ][gc          ] GC(54) Concurrent update thread roots 0.206ms
+[143.543s][info   ][gc          ] GC(54) Pause Final Update Refs 0.092ms
+[143.543s][info   ][gc          ] GC(54) Concurrent cleanup 1576M->1574M(6144M) 0.080ms
+[143.543s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[143.544s][info   ][gc          ] Trigger: GC request (System.gc())
+[143.546s][info   ][gc          ] GC(55) Concurrent reset 1.923ms
+[143.546s][info   ][gc          ] GC(55) Pause Init Mark (unload classes) 0.052ms
+[143.547s][info   ][gc          ] GC(55) Concurrent marking roots 0.093ms
+[144.899s][info   ][gc          ] GC(55) Concurrent marking (unload classes) 1352.816ms
+[144.900s][info   ][gc          ] GC(55) Pause Final Mark (unload classes) 0.218ms
+[144.900s][info   ][gc          ] GC(55) Concurrent thread roots 0.059ms
+[144.900s][info   ][gc          ] GC(55) Concurrent weak references 0.037ms
+[144.900s][info   ][gc          ] GC(55) Concurrent weak roots 0.311ms
+[144.900s][info   ][gc          ] GC(55) Concurrent cleanup 1574M->1574M(6144M) 0.061ms
+[144.901s][info   ][gc          ] GC(55) Concurrent class unloading 0.575ms
+[144.901s][info   ][gc          ] GC(55) Concurrent strong roots 0.046ms
+[144.903s][info   ][gc          ] GC(55) Concurrent evacuation 2.307ms
+[144.903s][info   ][gc          ] GC(55) Pause Init Update Refs 0.006ms
+[144.903s][info   ][gc          ] GC(55) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[146.104s][info   ][gc          ] GC(55) Concurrent update references 1201.041ms
+[146.105s][info   ][gc          ] GC(55) Concurrent update thread roots 0.306ms
+[146.105s][info   ][gc          ] GC(55) Pause Final Update Refs 0.091ms
+[146.105s][info   ][gc          ] GC(55) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[146.105s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[146.106s][info   ][gc          ] Trigger: GC request (System.gc())
+[146.108s][info   ][gc          ] GC(56) Concurrent reset 1.996ms
+[146.108s][info   ][gc          ] GC(56) Pause Init Mark (unload classes) 0.052ms
+[146.108s][info   ][gc          ] GC(56) Concurrent marking roots 0.100ms
+[147.578s][info   ][gc          ] GC(56) Concurrent marking (unload classes) 1469.128ms
+[147.578s][info   ][gc          ] GC(56) Pause Final Mark (unload classes) 0.220ms
+[147.582s][info   ][gc          ] GC(56) Concurrent thread roots 0.081ms
+[147.582s][info   ][gc          ] GC(56) Concurrent weak references 0.042ms
+[147.583s][info   ][gc          ] GC(56) Concurrent weak roots 0.303ms
+[147.583s][info   ][gc          ] GC(56) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[147.583s][info   ][gc          ] GC(56) Concurrent class unloading 0.702ms
+[147.583s][info   ][gc          ] GC(56) Concurrent strong roots 0.057ms
+[147.586s][info   ][gc          ] GC(56) Concurrent evacuation 2.150ms
+[147.586s][info   ][gc          ] GC(56) Pause Init Update Refs 0.006ms
+[147.586s][info   ][gc          ] GC(56) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[148.766s][info   ][gc          ] GC(56) Concurrent update references 1180.521ms
+[148.767s][info   ][gc          ] GC(56) Concurrent update thread roots 0.298ms
+[148.767s][info   ][gc          ] GC(56) Pause Final Update Refs 0.095ms
+[148.767s][info   ][gc          ] GC(56) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[148.767s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[148.768s][info   ][gc          ] Trigger: GC request (System.gc())
+[148.770s][info   ][gc          ] GC(57) Concurrent reset 2.142ms
+[148.770s][info   ][gc          ] GC(57) Pause Init Mark (unload classes) 0.054ms
+[148.771s][info   ][gc          ] GC(57) Concurrent marking roots 0.093ms
+[150.507s][info   ][gc          ] GC(57) Concurrent marking (unload classes) 1735.898ms
+[150.507s][info   ][gc          ] GC(57) Pause Final Mark (unload classes) 0.231ms
+[150.507s][info   ][gc          ] GC(57) Concurrent thread roots 0.068ms
+[150.507s][info   ][gc          ] GC(57) Concurrent weak references 0.040ms
+[150.507s][info   ][gc          ] GC(57) Concurrent weak roots 0.341ms
+[150.508s][info   ][gc          ] GC(57) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[150.508s][info   ][gc          ] GC(57) Concurrent class unloading 0.590ms
+[150.508s][info   ][gc          ] GC(57) Concurrent strong roots 0.092ms
+[150.510s][info   ][gc          ] GC(57) Concurrent evacuation 2.126ms
+[150.510s][info   ][gc          ] GC(57) Pause Init Update Refs 0.006ms
+[150.511s][info   ][gc          ] GC(57) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[152.138s][info   ][gc          ] GC(57) Concurrent update references 1627.268ms
+[152.138s][info   ][gc          ] GC(57) Concurrent update thread roots 0.299ms
+[152.138s][info   ][gc          ] GC(57) Pause Final Update Refs 0.104ms
+[152.139s][info   ][gc          ] GC(57) Concurrent cleanup 1576M->1574M(6144M) 0.101ms
+[152.139s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[152.140s][info   ][gc          ] Trigger: GC request (System.gc())
+[152.142s][info   ][gc          ] GC(58) Concurrent reset 2.172ms
+[152.142s][info   ][gc          ] GC(58) Pause Init Mark (unload classes) 0.046ms
+[152.142s][info   ][gc          ] GC(58) Concurrent marking roots 0.112ms
+[153.588s][info   ][gc          ] GC(58) Concurrent marking (unload classes) 1446.014ms
+[153.589s][info   ][gc          ] GC(58) Pause Final Mark (unload classes) 0.245ms
+[153.589s][info   ][gc          ] GC(58) Concurrent thread roots 0.092ms
+[153.589s][info   ][gc          ] GC(58) Concurrent weak references 0.040ms
+[153.589s][info   ][gc          ] GC(58) Concurrent weak roots 0.377ms
+[153.589s][info   ][gc          ] GC(58) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[153.590s][info   ][gc          ] GC(58) Concurrent class unloading 0.556ms
+[153.590s][info   ][gc          ] GC(58) Concurrent strong roots 0.085ms
+[153.592s][info   ][gc          ] GC(58) Concurrent evacuation 2.138ms
+[153.592s][info   ][gc          ] GC(58) Pause Init Update Refs 0.006ms
+[153.592s][info   ][gc          ] GC(58) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[155.251s][info   ][gc          ] GC(58) Concurrent update references 1658.522ms
+[155.251s][info   ][gc          ] GC(58) Concurrent update thread roots 0.297ms
+[155.251s][info   ][gc          ] GC(58) Pause Final Update Refs 0.094ms
+[155.251s][info   ][gc          ] GC(58) Concurrent cleanup 1576M->1574M(6144M) 0.102ms
+[155.251s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+[155.253s][info   ][gc          ] Trigger: GC request (System.gc())
+[155.255s][info   ][gc          ] GC(59) Concurrent reset 2.130ms
+[155.255s][info   ][gc          ] GC(59) Pause Init Mark (unload classes) 0.043ms
+[155.255s][info   ][gc          ] GC(59) Concurrent marking roots 0.109ms
+[156.648s][info   ][gc          ] GC(59) Concurrent marking (unload classes) 1392.561ms
+[156.648s][info   ][gc          ] GC(59) Pause Final Mark (unload classes) 0.246ms
+[156.648s][info   ][gc          ] GC(59) Concurrent thread roots 0.069ms
+[156.648s][info   ][gc          ] GC(59) Concurrent weak references 0.045ms
+[156.648s][info   ][gc          ] GC(59) Concurrent weak roots 0.334ms
+[156.648s][info   ][gc          ] GC(59) Concurrent cleanup 1574M->1574M(6144M) 0.098ms
+[156.649s][info   ][gc          ] GC(59) Concurrent class unloading 0.646ms
+[156.649s][info   ][gc          ] GC(59) Concurrent strong roots 0.056ms
+[156.651s][info   ][gc          ] GC(59) Concurrent evacuation 2.127ms
+[156.652s][info   ][gc          ] GC(59) Pause Init Update Refs 0.006ms
+[156.652s][info   ][gc          ] GC(59) At start of update refs, moving 2048K to Mutator free partition from Collector Reserve
+[157.841s][info   ][gc          ] GC(59) Concurrent update references 1189.822ms
+[157.842s][info   ][gc          ] GC(59) Concurrent update thread roots 0.302ms
+[157.842s][info   ][gc          ] GC(59) Pause Final Update Refs 0.085ms
+[157.842s][info   ][gc          ] GC(59) Concurrent cleanup 1576M->1574M(6144M) 0.099ms
+[157.842s][info   ][gc,metaspace] Metaspace: 11310K(11648K)->11310K(11648K) NonClass: 9474K(9664K)->9474K(9664K) Class: 1836K(1984K)->1836K(1984K)
+After GCs... 
+[157.843s][info   ][gc          ] Trigger: Learning 2 of 5. Free (4258M) is below initial threshold (4300M)
+[157.846s][info   ][gc          ] GC(60) Concurrent reset 2.393ms
+[157.846s][info   ][gc          ] GC(60) Pause Init Mark (unload classes) 0.062ms
+[157.846s][info   ][gc          ] GC(60) Concurrent marking roots 0.181ms
+[157.852s][info   ][gc          ] Cancelling GC: Stopping VM
+[157.853s][info   ][gc          ] GC(60) Concurrent marking (unload classes) 6.628ms
+[157.853s][info   ][gc,metaspace] Metaspace: 11319K(11648K)->11631K(11904K) NonClass: 9479K(9664K)->9723K(9856K) Class: 1840K(1984K)->1908K(2048K)

@@ -1,0 +1,1434 @@
+**** -XX:+UseSerialGC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	149712.803	2956.7545	200.06583360886
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	158534.192	3067.094	286.12813029476
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	150265.171	2967.9445	170.44480110259
+GC Times, Sum, B to A: 105.89%
+GC Times, Sum, C to A: 100.36%
+GC Times, Standard Deviation, A: +-200.06583360886 (+-6.76%)
+A (jdk-v4.2) perf data: 
+         9,689,168,768      L1-dcache-load-misses     #    1.59% of all L1-dcache accesses  (83.33%)
+       610,696,796,947      L1-dcache-loads                                               (83.33%)
+           158,912,053      dTLB-load-misses          #   71.53% of all dTLB cache accesses  (83.34%)
+           222,150,214      dTLB-loads                                                    (83.32%)
+     1,299,797,967,397      instructions                                                  (83.34%)
+       236,927,022,243      branches                                                      (83.34%)
+B (jdk-v4.2) perf data: 
+         7,526,433,559      L1-dcache-load-misses     #    1.10% of all L1-dcache accesses  (83.33%)
+       686,942,257,806      L1-dcache-loads                                               (83.32%)
+            56,286,275      dTLB-load-misses          #   58.83% of all dTLB cache accesses  (83.34%)
+            95,684,258      dTLB-loads                                                    (83.34%)
+     1,380,594,591,465      instructions                                                  (83.34%)
+       242,835,366,446      branches                                                      (83.33%)
+C (jdk-v4.2) perf data: 
+        10,606,045,932      L1-dcache-load-misses     #    1.77% of all L1-dcache accesses  (83.35%)
+       598,311,906,231      L1-dcache-loads                                               (83.35%)
+           148,033,638      dTLB-load-misses          #   69.60% of all dTLB cache accesses  (83.34%)
+           212,689,519      dTLB-loads                                                    (83.31%)
+     1,318,868,583,525      instructions                                                  (83.33%)
+       262,590,104,416      branches                                                      (83.33%)
+L1 Misses, B to A: 77.67%
+L1 Misses, C to A: 109.46%
+L1 Loads, B to A: 112.48%
+L1 Loads, C to A: 97.97%
+dTLB Misses, B to A: 35.41%
+dTLB Misses, C to A: 93.15%
+dTLB Loads, B to A: 43.07%
+dTLB Loads, C to A: 95.74%
+Instructions, B to A: 106.21%
+Instructions, C to A: 101.46%
+branches, B to A: 102.49%
+branches, C to A: 110.83%
+**** -XX:+UseSerialGC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	165145.387	3223.509	217.45607284088
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	162369.443	3187.6905	220.19640018244
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	155880.912	3069.477	175.22178384871
+GC Times, Sum, B to A: 98.31%
+GC Times, Sum, C to A: 94.39%
+GC Times, Standard Deviation, A: +-217.45607284088 (+-6.74%)
+A (jdk-v4.2) perf data: 
+        30,851,672,639      L1-dcache-load-misses     #    4.82% of all L1-dcache accesses  (83.34%)
+       639,452,013,131      L1-dcache-loads                                               (83.33%)
+           146,610,045      dTLB-load-misses          #   41.27% of all dTLB cache accesses  (83.34%)
+           355,237,215      dTLB-loads                                                    (83.33%)
+     1,324,696,055,501      instructions                                                  (83.34%)
+       243,184,899,244      branches                                                      (83.33%)
+B (jdk-v4.2) perf data: 
+        15,711,407,259      L1-dcache-load-misses     #    2.25% of all L1-dcache accesses  (83.32%)
+       697,089,453,773      L1-dcache-loads                                               (83.33%)
+            39,230,135      dTLB-load-misses          #   36.72% of all dTLB cache accesses  (83.34%)
+           106,845,596      dTLB-loads                                                    (83.35%)
+     1,415,631,411,337      instructions                                                  (83.33%)
+       250,774,039,420      branches                                                      (83.34%)
+C (jdk-v4.2) perf data: 
+        14,659,762,591      L1-dcache-load-misses     #    2.42% of all L1-dcache accesses  (83.34%)
+       606,506,215,469      L1-dcache-loads                                               (83.34%)
+           146,505,941      dTLB-load-misses          #   64.81% of all dTLB cache accesses  (83.33%)
+           226,066,940      dTLB-loads                                                    (83.34%)
+     1,342,391,822,453      instructions                                                  (83.33%)
+       268,703,384,064      branches                                                      (83.32%)
+L1 Misses, B to A: 50.92%
+L1 Misses, C to A: 47.51%
+L1 Loads, B to A: 109.01%
+L1 Loads, C to A: 94.84%
+dTLB Misses, B to A: 26.75%
+dTLB Misses, C to A: 99.92%
+dTLB Loads, B to A: 30.07%
+dTLB Loads, C to A: 63.63%
+Instructions, B to A: 106.86%
+Instructions, C to A: 101.33%
+branches, B to A: 103.12%
+branches, C to A: 110.49%
+**** -XX:+UseSerialGC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	172319.607	3404.121	223.89760123771
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	168406.854	3269.7295	250.28504812508
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	167031.405	3222.4855	234.80228447827
+GC Times, Sum, B to A: 97.72%
+GC Times, Sum, C to A: 96.93%
+GC Times, Standard Deviation, A: +-223.89760123771 (+-6.57%)
+A (jdk-v4.2) perf data: 
+        42,512,775,591      L1-dcache-load-misses     #    6.51% of all L1-dcache accesses  (83.33%)
+       653,083,081,409      L1-dcache-loads                                               (83.33%)
+           152,890,404      dTLB-load-misses          #   12.81% of all dTLB cache accesses  (83.32%)
+         1,193,875,326      dTLB-loads                                                    (83.34%)
+     1,342,030,465,713      instructions                                                  (83.33%)
+       247,325,255,227      branches                                                      (83.35%)
+B (jdk-v4.2) perf data: 
+        20,594,306,321      L1-dcache-load-misses     #    2.92% of all L1-dcache accesses  (83.34%)
+       704,756,869,241      L1-dcache-loads                                               (83.34%)
+           108,966,617      dTLB-load-misses          #   10.01% of all dTLB cache accesses  (83.35%)
+         1,088,709,265      dTLB-loads                                                    (83.31%)
+     1,437,746,368,633      instructions                                                  (83.33%)
+       255,854,081,785      branches                                                      (83.33%)
+C (jdk-v4.2) perf data: 
+        33,862,449,512      L1-dcache-load-misses     #    5.33% of all L1-dcache accesses  (83.34%)
+       634,819,687,006      L1-dcache-loads                                               (83.34%)
+           162,145,193      dTLB-load-misses          #   25.25% of all dTLB cache accesses  (83.32%)
+           642,263,759      dTLB-loads                                                    (83.34%)
+     1,359,559,040,908      instructions                                                  (83.34%)
+       272,934,885,874      branches                                                      (83.32%)
+L1 Misses, B to A: 48.44%
+L1 Misses, C to A: 79.65%
+L1 Loads, B to A: 107.91%
+L1 Loads, C to A: 97.20%
+dTLB Misses, B to A: 71.27%
+dTLB Misses, C to A: 106.05%
+dTLB Loads, B to A: 91.19%
+dTLB Loads, C to A: 53.79%
+Instructions, B to A: 107.13%
+Instructions, C to A: 101.30%
+branches, B to A: 103.44%
+branches, C to A: 110.35%
+**** -XX:+UseSerialGC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	209307.819	4077.1145	337.81951029343
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	195844.75	3749.1745	354.34770042086
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	173418.076	3417.05	193.12934963379
+GC Times, Sum, B to A: 93.56%
+GC Times, Sum, C to A: 82.85%
+GC Times, Standard Deviation, A: +-337.81951029343 (+-8.28%)
+A (jdk-v4.2) perf data: 
+        45,303,543,993      L1-dcache-load-misses     #    6.60% of all L1-dcache accesses  (83.34%)
+       686,011,668,805      L1-dcache-loads                                               (83.33%)
+           165,328,166      dTLB-load-misses          #    1.79% of all dTLB cache accesses  (83.32%)
+         9,240,098,789      dTLB-loads                                                    (83.33%)
+     1,339,357,634,556      instructions                                                  (83.34%)
+       246,005,824,513      branches                                                      (83.33%)
+B (jdk-v4.2) perf data: 
+        22,084,875,894      L1-dcache-load-misses     #    3.11% of all L1-dcache accesses  (83.32%)
+       709,398,493,295      L1-dcache-loads                                               (83.34%)
+           124,234,042      dTLB-load-misses          #    2.55% of all dTLB cache accesses  (83.33%)
+         4,870,180,355      dTLB-loads                                                    (83.34%)
+     1,429,587,238,889      instructions                                                  (83.33%)
+       253,419,986,171      branches                                                      (83.33%)
+C (jdk-v4.2) perf data: 
+        43,204,469,649      L1-dcache-load-misses     #    6.57% of all L1-dcache accesses  (83.33%)
+       657,141,756,954      L1-dcache-loads                                               (83.33%)
+           134,804,834      dTLB-load-misses          #    2.65% of all dTLB cache accesses  (83.33%)
+         5,084,586,548      dTLB-loads                                                    (83.35%)
+     1,358,050,616,777      instructions                                                  (83.33%)
+       271,635,743,016      branches                                                      (83.33%)
+L1 Misses, B to A: 48.74%
+L1 Misses, C to A: 95.36%
+L1 Loads, B to A: 103.40%
+L1 Loads, C to A: 95.79%
+dTLB Misses, B to A: 75.14%
+dTLB Misses, C to A: 81.53%
+dTLB Loads, B to A: 52.70%
+dTLB Loads, C to A: 55.02%
+Instructions, B to A: 106.73%
+Instructions, C to A: 101.39%
+branches, B to A: 103.01%
+branches, C to A: 110.41%
+**** -XX:+UseSerialGC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	227785.16	4492.8255	299.92685832212
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	200194.511	3850.0685	351.125239797
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	209780.314	4127.912	238.1474849511
+GC Times, Sum, B to A: 87.88%
+GC Times, Sum, C to A: 92.09%
+GC Times, Standard Deviation, A: +-299.92685832212 (+-6.67%)
+A (jdk-v4.2) perf data: 
+        46,897,046,671      L1-dcache-load-misses     #    6.57% of all L1-dcache accesses  (83.35%)
+       714,066,893,591      L1-dcache-loads                                               (83.33%)
+           330,878,655      dTLB-load-misses          #    2.74% of all dTLB cache accesses  (83.33%)
+        12,091,816,600      dTLB-loads                                                    (83.35%)
+     1,374,761,549,922      instructions                                                  (83.33%)
+       252,808,818,986      branches                                                      (83.32%)
+B (jdk-v4.2) perf data: 
+        25,078,171,710      L1-dcache-load-misses     #    3.40% of all L1-dcache accesses  (83.34%)
+       736,538,678,333      L1-dcache-loads                                               (83.35%)
+           257,667,690      dTLB-load-misses          #    3.79% of all dTLB cache accesses  (83.35%)
+         6,800,284,651      dTLB-loads                                                    (83.33%)
+     1,469,939,488,188      instructions                                                  (83.32%)
+       261,591,007,209      branches                                                      (83.32%)
+C (jdk-v4.2) perf data: 
+        48,093,467,456      L1-dcache-load-misses     #    6.81% of all L1-dcache accesses  (83.34%)
+       706,161,338,233      L1-dcache-loads                                               (83.33%)
+           344,185,539      dTLB-load-misses          #    2.82% of all dTLB cache accesses  (83.33%)
+        12,212,254,484      dTLB-loads                                                    (83.32%)
+     1,390,000,143,019      instructions                                                  (83.35%)
+       278,144,008,873      branches                                                      (83.33%)
+L1 Misses, B to A: 53.47%
+L1 Misses, C to A: 102.55%
+L1 Loads, B to A: 103.14%
+L1 Loads, C to A: 98.89%
+dTLB Misses, B to A: 77.87%
+dTLB Misses, C to A: 104.02%
+dTLB Loads, B to A: 56.23%
+dTLB Loads, C to A: 100.99%
+Instructions, B to A: 106.92%
+Instructions, C to A: 101.10%
+branches, B to A: 103.47%
+branches, C to A: 110.02%
+**** -XX:+UseSerialGC and 16384 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseSerialGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	360492.488	7116.287	259.02048906512
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	270990.093	5385.0335	98.907651810637
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	238862.232	4767.0685	97.001889018375
+GC Times, Sum, B to A: 75.17%
+GC Times, Sum, C to A: 66.25%
+GC Times, Standard Deviation, A: +-259.02048906512 (+-3.63%)
+A (jdk-v4.2) perf data: 
+        48,813,902,590      L1-dcache-load-misses     #    6.46% of all L1-dcache accesses  (83.32%)
+       755,571,405,982      L1-dcache-loads                                               (83.34%)
+         3,852,311,003      dTLB-load-misses          #   29.78% of all dTLB cache accesses  (83.33%)
+        12,936,543,046      dTLB-loads                                                    (83.35%)
+     1,420,140,518,408      instructions                                                  (83.31%)
+       261,942,553,929      branches                                                      (83.34%)
+B (jdk-v4.2) perf data: 
+        33,270,157,260      L1-dcache-load-misses     #    4.25% of all L1-dcache accesses  (83.34%)
+       783,354,061,531      L1-dcache-loads                                               (83.34%)
+         2,853,642,710      dTLB-load-misses          #   38.42% of all dTLB cache accesses  (83.34%)
+         7,426,938,129      dTLB-loads                                                    (83.32%)
+     1,513,454,369,296      instructions                                                  (83.34%)
+       269,990,769,162      branches                                                      (83.33%)
+C (jdk-v4.2) perf data: 
+        49,680,090,786      L1-dcache-load-misses     #    6.71% of all L1-dcache accesses  (83.35%)
+       740,484,394,086      L1-dcache-loads                                               (83.33%)
+         1,283,435,376      dTLB-load-misses          #    9.47% of all dTLB cache accesses  (83.33%)
+        13,553,634,623      dTLB-loads                                                    (83.34%)
+     1,440,001,691,628      instructions                                                  (83.32%)
+       288,210,081,845      branches                                                      (83.33%)
+L1 Misses, B to A: 68.15%
+L1 Misses, C to A: 101.77%
+L1 Loads, B to A: 103.67%
+L1 Loads, C to A: 98.00%
+dTLB Misses, B to A: 74.07%
+dTLB Misses, C to A: 33.31%
+dTLB Loads, B to A: 57.41%
+dTLB Loads, C to A: 104.77%
+Instructions, B to A: 106.57%
+Instructions, C to A: 101.39%
+branches, B to A: 103.07%
+branches, C to A: 110.02%
+**** -XX:+UseParallelGC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	26697.307	528.881	22.170969632594
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	27522.962	552.6515	21.151565582582
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	27970.986	571.069	25.426026707374
+GC Times, Sum, B to A: 103.09%
+GC Times, Sum, C to A: 104.77%
+GC Times, Standard Deviation, A: +-22.170969632594 (+-4.19%)
+A (jdk-v4.2) perf data: 
+         9,148,629,802      L1-dcache-load-misses     #    1.10% of all L1-dcache accesses  (83.33%)
+       828,622,933,380      L1-dcache-loads                                               (83.33%)
+           148,408,806      dTLB-load-misses          #   60.18% of all dTLB cache accesses  (83.32%)
+           246,606,846      dTLB-loads                                                    (83.35%)
+     1,856,689,454,447      instructions                                                  (83.34%)
+       292,351,153,686      branches                                                      (83.34%)
+B (jdk-v4.2) perf data: 
+         7,772,942,156      L1-dcache-load-misses     #    0.89% of all L1-dcache accesses  (83.34%)
+       871,677,549,329      L1-dcache-loads                                               (83.33%)
+           107,892,127      dTLB-load-misses          #   58.36% of all dTLB cache accesses  (83.36%)
+           184,864,854      dTLB-loads                                                    (83.31%)
+     1,883,171,310,234      instructions                                                  (83.33%)
+       292,044,677,864      branches                                                      (83.34%)
+C (jdk-v4.2) perf data: 
+         9,605,428,582      L1-dcache-load-misses     #    1.16% of all L1-dcache accesses  (83.33%)
+       827,348,088,544      L1-dcache-loads                                               (83.35%)
+           146,594,982      dTLB-load-misses          #   60.56% of all dTLB cache accesses  (83.32%)
+           242,066,020      dTLB-loads                                                    (83.33%)
+     1,926,854,018,892      instructions                                                  (83.33%)
+       335,464,351,359      branches                                                      (83.34%)
+L1 Misses, B to A: 84.96%
+L1 Misses, C to A: 104.99%
+L1 Loads, B to A: 105.19%
+L1 Loads, C to A: 99.84%
+dTLB Misses, B to A: 72.69%
+dTLB Misses, C to A: 98.77%
+dTLB Loads, B to A: 74.96%
+dTLB Loads, C to A: 98.15%
+Instructions, B to A: 101.42%
+Instructions, C to A: 103.77%
+branches, B to A: 99.89%
+branches, C to A: 114.74%
+**** -XX:+UseParallelGC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	28855.407	583.074	22.327588532438
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	28923.47	581.9605	24.39109085929
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	28958.197	581.4715	28.37201213787
+GC Times, Sum, B to A: 100.23%
+GC Times, Sum, C to A: 100.35%
+GC Times, Standard Deviation, A: +-22.327588532438 (+-3.82%)
+A (jdk-v4.2) perf data: 
+        26,957,204,484      L1-dcache-load-misses     #    3.16% of all L1-dcache accesses  (83.33%)
+       851,952,807,404      L1-dcache-loads                                               (83.34%)
+           142,896,961      dTLB-load-misses          #   46.07% of all dTLB cache accesses  (83.32%)
+           310,175,616      dTLB-loads                                                    (83.36%)
+     1,881,342,737,929      instructions                                                  (83.34%)
+       298,273,242,158      branches                                                      (83.32%)
+B (jdk-v4.2) perf data: 
+        12,936,865,206      L1-dcache-load-misses     #    1.46% of all L1-dcache accesses  (83.34%)
+       887,408,853,904      L1-dcache-loads                                               (83.30%)
+           115,728,070      dTLB-load-misses          #   36.23% of all dTLB cache accesses  (83.36%)
+           319,420,413      dTLB-loads                                                    (83.33%)
+     1,919,612,421,683      instructions                                                  (83.36%)
+       300,094,385,048      branches                                                      (83.32%)
+C (jdk-v4.2) perf data: 
+        13,653,980,584      L1-dcache-load-misses     #    1.62% of all L1-dcache accesses  (83.33%)
+       841,626,146,848      L1-dcache-loads                                               (83.34%)
+           156,114,587      dTLB-load-misses          #   46.47% of all dTLB cache accesses  (83.33%)
+           335,929,872      dTLB-loads                                                    (83.31%)
+     1,954,064,601,221      instructions                                                  (83.35%)
+       341,545,752,741      branches                                                      (83.34%)
+L1 Misses, B to A: 47.99%
+L1 Misses, C to A: 50.65%
+L1 Loads, B to A: 104.16%
+L1 Loads, C to A: 98.78%
+dTLB Misses, B to A: 80.98%
+dTLB Misses, C to A: 109.24%
+dTLB Loads, B to A: 102.98%
+dTLB Loads, C to A: 108.30%
+Instructions, B to A: 102.03%
+Instructions, C to A: 103.86%
+branches, B to A: 100.61%
+branches, C to A: 114.50%
+**** -XX:+UseParallelGC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	30766.924	608.766	29.875043394206
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	29774.772	596.8125	28.906084076173
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	30276.405	604.6945	29.638347052597
+GC Times, Sum, B to A: 96.77%
+GC Times, Sum, C to A: 98.40%
+GC Times, Standard Deviation, A: +-29.875043394206 (+-4.90%)
+A (jdk-v4.2) perf data: 
+        37,090,491,966      L1-dcache-load-misses     #    4.26% of all L1-dcache accesses  (83.34%)
+       869,793,601,352      L1-dcache-loads                                               (83.36%)
+           143,186,738      dTLB-load-misses          #    3.98% of all dTLB cache accesses  (83.33%)
+         3,601,437,035      dTLB-loads                                                    (83.33%)
+     1,901,005,061,053      instructions                                                  (83.32%)
+       302,381,623,154      branches                                                      (83.32%)
+B (jdk-v4.2) perf data: 
+        15,864,201,733      L1-dcache-load-misses     #    1.77% of all L1-dcache accesses  (83.34%)
+       896,747,079,543      L1-dcache-loads                                               (83.32%)
+           122,677,447      dTLB-load-misses          #    5.42% of all dTLB cache accesses  (83.33%)
+         2,261,426,463      dTLB-loads                                                    (83.34%)
+     1,945,158,305,859      instructions                                                  (83.34%)
+       305,338,400,407      branches                                                      (83.32%)
+C (jdk-v4.2) perf data: 
+        32,843,379,583      L1-dcache-load-misses     #    3.79% of all L1-dcache accesses  (83.32%)
+       866,524,926,472      L1-dcache-loads                                               (83.33%)
+           158,877,485      dTLB-load-misses          #   29.20% of all dTLB cache accesses  (83.33%)
+           544,067,378      dTLB-loads                                                    (83.35%)
+     1,972,492,417,083      instructions                                                  (83.33%)
+       345,588,870,094      branches                                                      (83.34%)
+L1 Misses, B to A: 42.77%
+L1 Misses, C to A: 88.54%
+L1 Loads, B to A: 103.09%
+L1 Loads, C to A: 99.62%
+dTLB Misses, B to A: 85.67%
+dTLB Misses, C to A: 110.95%
+dTLB Loads, B to A: 62.79%
+dTLB Loads, C to A: 15.10%
+Instructions, B to A: 102.32%
+Instructions, C to A: 103.76%
+branches, B to A: 100.97%
+branches, C to A: 114.28%
+**** -XX:+UseParallelGC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	36472.342	722.1405	37.053621850766
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	33073.178	655.1475	34.298635711643
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	32108.343	640.7745	33.79173991873
+GC Times, Sum, B to A: 90.68%
+GC Times, Sum, C to A: 88.03%
+GC Times, Standard Deviation, A: +-37.053621850766 (+-5.13%)
+A (jdk-v4.2) perf data: 
+        39,486,341,725      L1-dcache-load-misses     #    4.38% of all L1-dcache accesses  (83.35%)
+       901,569,588,045      L1-dcache-loads                                               (83.36%)
+           161,160,888      dTLB-load-misses          #    1.90% of all dTLB cache accesses  (83.32%)
+         8,489,984,704      dTLB-loads                                                    (83.32%)
+     1,899,984,874,083      instructions                                                  (83.34%)
+       301,945,870,230      branches                                                      (83.31%)
+B (jdk-v4.2) perf data: 
+        16,979,566,353      L1-dcache-load-misses     #    1.89% of all L1-dcache accesses  (83.34%)
+       898,024,412,304      L1-dcache-loads                                               (83.32%)
+           143,836,312      dTLB-load-misses          #    2.63% of all dTLB cache accesses  (83.33%)
+         5,471,753,166      dTLB-loads                                                    (83.34%)
+     1,940,208,171,518      instructions                                                  (83.32%)
+       303,891,987,517      branches                                                      (83.35%)
+C (jdk-v4.2) perf data: 
+        42,546,087,965      L1-dcache-load-misses     #    4.80% of all L1-dcache accesses  (83.35%)
+       886,156,257,261      L1-dcache-loads                                               (83.32%)
+           172,357,607      dTLB-load-misses          #    2.42% of all dTLB cache accesses  (83.35%)
+         7,127,874,191      dTLB-loads                                                    (83.33%)
+     1,969,313,582,350      instructions                                                  (83.31%)
+       344,630,325,101      branches                                                      (83.35%)
+L1 Misses, B to A: 43.00%
+L1 Misses, C to A: 107.74%
+L1 Loads, B to A: 99.60%
+L1 Loads, C to A: 98.29%
+dTLB Misses, B to A: 89.25%
+dTLB Misses, C to A: 106.94%
+dTLB Loads, B to A: 64.44%
+dTLB Loads, C to A: 83.95%
+Instructions, B to A: 102.11%
+Instructions, C to A: 103.64%
+branches, B to A: 100.64%
+branches, C to A: 114.13%
+**** -XX:+UseParallelGC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	40506.581	805.3265	37.028219516014
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	35807.794	703.0635	42.173611890656
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	37026.575	733.645	31.32545025834
+GC Times, Sum, B to A: 88.39%
+GC Times, Sum, C to A: 91.40%
+GC Times, Standard Deviation, A: +-37.028219516014 (+-4.59%)
+A (jdk-v4.2) perf data: 
+        41,267,969,827      L1-dcache-load-misses     #    4.41% of all L1-dcache accesses  (83.34%)
+       936,685,829,730      L1-dcache-loads                                               (83.34%)
+           385,499,995      dTLB-load-misses          #    3.26% of all dTLB cache accesses  (83.32%)
+        11,821,391,053      dTLB-loads                                                    (83.34%)
+     1,948,404,881,979      instructions                                                  (83.33%)
+       310,707,499,794      branches                                                      (83.32%)
+B (jdk-v4.2) perf data: 
+        19,804,670,167      L1-dcache-load-misses     #    2.14% of all L1-dcache accesses  (83.34%)
+       927,014,088,761      L1-dcache-loads                                               (83.33%)
+           341,225,252      dTLB-load-misses          #    5.10% of all dTLB cache accesses  (83.33%)
+         6,686,115,414      dTLB-loads                                                    (83.34%)
+     1,989,188,475,394      instructions                                                  (83.32%)
+       312,831,354,418      branches                                                      (83.33%)
+C (jdk-v4.2) perf data: 
+        47,485,158,240      L1-dcache-load-misses     #    5.05% of all L1-dcache accesses  (83.34%)
+       940,537,893,917      L1-dcache-loads                                               (83.33%)
+           356,411,000      dTLB-load-misses          #    3.01% of all dTLB cache accesses  (83.35%)
+        11,851,113,973      dTLB-loads                                                    (83.33%)
+     2,016,661,694,545      instructions                                                  (83.33%)
+       353,333,850,936      branches                                                      (83.32%)
+L1 Misses, B to A: 47.99%
+L1 Misses, C to A: 115.06%
+L1 Loads, B to A: 98.96%
+L1 Loads, C to A: 100.41%
+dTLB Misses, B to A: 88.51%
+dTLB Misses, C to A: 92.45%
+dTLB Loads, B to A: 56.55%
+dTLB Loads, C to A: 100.25%
+Instructions, B to A: 102.09%
+Instructions, C to A: 103.50%
+branches, B to A: 100.68%
+branches, C to A: 113.71%
+**** -XX:+UseParallelGC and 16384 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseParallelGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	59460.593	1163.5035	57.897452891001
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	46345.856	906.9275	50.710594526692
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	41677.737	817.288	36.821607237926
+GC Times, Sum, B to A: 77.94%
+GC Times, Sum, C to A: 70.09%
+GC Times, Standard Deviation, A: +-57.897452891001 (+-4.97%)
+A (jdk-v4.2) perf data: 
+        42,827,798,587      L1-dcache-load-misses     #    4.37% of all L1-dcache accesses  (83.34%)
+       980,122,187,893      L1-dcache-loads                                               (83.34%)
+         4,086,670,968      dTLB-load-misses          #   31.74% of all dTLB cache accesses  (83.33%)
+        12,876,829,111      dTLB-loads                                                    (83.34%)
+     1,994,144,259,187      instructions                                                  (83.34%)
+       320,085,597,979      branches                                                      (83.32%)
+B (jdk-v4.2) perf data: 
+        27,798,263,033      L1-dcache-load-misses     #    2.87% of all L1-dcache accesses  (83.34%)
+       969,194,074,889      L1-dcache-loads                                               (83.31%)
+         2,810,992,496      dTLB-load-misses          #   38.19% of all dTLB cache accesses  (83.34%)
+         7,361,296,868      dTLB-loads                                                    (83.34%)
+     2,034,579,695,519      instructions                                                  (83.34%)
+       322,567,768,484      branches                                                      (83.33%)
+C (jdk-v4.2) perf data: 
+        49,251,606,216      L1-dcache-load-misses     #    5.05% of all L1-dcache accesses  (83.34%)
+       974,504,725,694      L1-dcache-loads                                               (83.32%)
+         1,119,062,407      dTLB-load-misses          #    8.45% of all dTLB cache accesses  (83.34%)
+        13,241,830,355      dTLB-loads                                                    (83.32%)
+     2,065,861,535,231      instructions                                                  (83.34%)
+       363,516,047,026      branches                                                      (83.34%)
+L1 Misses, B to A: 64.90%
+L1 Misses, C to A: 114.99%
+L1 Loads, B to A: 98.88%
+L1 Loads, C to A: 99.42%
+dTLB Misses, B to A: 68.78%
+dTLB Misses, C to A: 27.38%
+dTLB Loads, B to A: 57.16%
+dTLB Loads, C to A: 102.83%
+Instructions, B to A: 102.02%
+Instructions, C to A: 103.59%
+branches, B to A: 100.77%
+branches, C to A: 113.56%
+**** -XX:+UseG1GC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	27508.508	549.7015	4.2169174705547
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	28504.818	561.9275	22.305323431369
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	29057.417	566.038	27.212802339483
+GC Times, Sum, B to A: 103.62%
+GC Times, Sum, C to A: 105.63%
+GC Times, Standard Deviation, A: +-4.2169174705547 (+-.76%)
+A (jdk-v4.2) perf data: 
+        10,302,315,869      L1-dcache-load-misses     #    1.31% of all L1-dcache accesses  (83.29%)
+       789,263,967,916      L1-dcache-loads                                               (83.42%)
+           170,386,557      dTLB-load-misses          #   48.27% of all dTLB cache accesses  (83.32%)
+           352,979,545      dTLB-loads                                                    (83.37%)
+     1,675,286,749,824      instructions                                                  (83.32%)
+       270,193,703,760      branches                                                      (83.29%)
+B (jdk-v4.2) perf data: 
+         7,772,459,123      L1-dcache-load-misses     #    0.93% of all L1-dcache accesses  (83.35%)
+       835,941,870,870      L1-dcache-loads                                               (83.28%)
+           111,199,463      dTLB-load-misses          #   37.35% of all dTLB cache accesses  (83.30%)
+           297,740,439      dTLB-loads                                                    (83.35%)
+     1,715,956,976,744      instructions                                                  (83.39%)
+       265,001,388,284      branches                                                      (83.34%)
+C (jdk-v4.2) perf data: 
+        11,038,403,339      L1-dcache-load-misses     #    1.35% of all L1-dcache accesses  (83.32%)
+       815,024,338,322      L1-dcache-loads                                               (83.39%)
+           162,751,214      dTLB-load-misses          #   47.03% of all dTLB cache accesses  (83.32%)
+           346,048,941      dTLB-loads                                                    (83.36%)
+     1,758,437,046,355      instructions                                                  (83.27%)
+       310,907,418,980      branches                                                      (83.34%)
+L1 Misses, B to A: 75.44%
+L1 Misses, C to A: 107.14%
+L1 Loads, B to A: 105.91%
+L1 Loads, C to A: 103.26%
+dTLB Misses, B to A: 65.26%
+dTLB Misses, C to A: 95.51%
+dTLB Loads, B to A: 84.35%
+dTLB Loads, C to A: 98.03%
+Instructions, B to A: 102.42%
+Instructions, C to A: 104.96%
+branches, B to A: 98.07%
+branches, C to A: 115.06%
+**** -XX:+UseG1GC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	29527.116	584.165	20.018985796081
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	29080.56	579.723	9.6238931194974
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	28843.277	577.077	3.0667464792113
+GC Times, Sum, B to A: 98.48%
+GC Times, Sum, C to A: 97.68%
+GC Times, Standard Deviation, A: +-20.018985796081 (+-3.42%)
+A (jdk-v4.2) perf data: 
+        27,733,099,374      L1-dcache-load-misses     #    3.40% of all L1-dcache accesses  (83.37%)
+       815,164,160,707      L1-dcache-loads                                               (83.36%)
+           170,768,928      dTLB-load-misses          #   32.72% of all dTLB cache accesses  (83.34%)
+           521,989,538      dTLB-loads                                                    (83.31%)
+     1,704,159,979,196      instructions                                                  (83.29%)
+       277,111,648,573      branches                                                      (83.32%)
+B (jdk-v4.2) perf data: 
+        12,370,935,574      L1-dcache-load-misses     #    1.46% of all L1-dcache accesses  (83.35%)
+       845,391,704,303      L1-dcache-loads                                               (83.30%)
+           119,061,891      dTLB-load-misses          #   31.85% of all dTLB cache accesses  (83.35%)
+           373,774,501      dTLB-loads                                                    (83.35%)
+     1,752,795,210,241      instructions                                                  (83.34%)
+       274,344,057,090      branches                                                      (83.31%)
+C (jdk-v4.2) perf data: 
+        15,521,503,830      L1-dcache-load-misses     #    1.88% of all L1-dcache accesses  (83.35%)
+       825,391,118,008      L1-dcache-loads                                               (83.34%)
+           173,441,271      dTLB-load-misses          #   35.61% of all dTLB cache accesses  (83.32%)
+           487,028,911      dTLB-loads                                                    (83.39%)
+     1,783,470,581,107      instructions                                                  (83.27%)
+       317,041,533,074      branches                                                      (83.32%)
+L1 Misses, B to A: 44.60%
+L1 Misses, C to A: 55.96%
+L1 Loads, B to A: 103.70%
+L1 Loads, C to A: 101.25%
+dTLB Misses, B to A: 69.72%
+dTLB Misses, C to A: 101.56%
+dTLB Loads, B to A: 71.60%
+dTLB Loads, C to A: 93.30%
+Instructions, B to A: 102.85%
+Instructions, C to A: 104.65%
+branches, B to A: 99.00%
+branches, C to A: 114.40%
+**** -XX:+UseG1GC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	30859.563	612.5565	17.344668309534
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	29815.635	596.6945	4.5657371948737
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	30220.676	602.97	12.137830750011
+GC Times, Sum, B to A: 96.61%
+GC Times, Sum, C to A: 97.92%
+GC Times, Standard Deviation, A: +-17.344668309534 (+-2.83%)
+A (jdk-v4.2) perf data: 
+        36,966,081,020      L1-dcache-load-misses     #    4.43% of all L1-dcache accesses  (83.29%)
+       834,146,958,896      L1-dcache-loads                                               (83.31%)
+           173,165,062      dTLB-load-misses          #    7.43% of all dTLB cache accesses  (83.33%)
+         2,330,037,400      dTLB-loads                                                    (83.37%)
+     1,723,669,276,838      instructions                                                  (83.32%)
+       281,695,270,972      branches                                                      (83.38%)
+B (jdk-v4.2) perf data: 
+        15,371,844,664      L1-dcache-load-misses     #    1.80% of all L1-dcache accesses  (83.27%)
+       852,986,296,841      L1-dcache-loads                                               (83.41%)
+           142,102,425      dTLB-load-misses          #    5.44% of all dTLB cache accesses  (83.35%)
+         2,614,068,972      dTLB-loads                                                    (83.26%)
+     1,775,312,833,301      instructions                                                  (83.34%)
+       280,078,309,092      branches                                                      (83.38%)
+C (jdk-v4.2) perf data: 
+        35,040,577,125      L1-dcache-load-misses     #    4.13% of all L1-dcache accesses  (83.36%)
+       849,232,297,574      L1-dcache-loads                                               (83.34%)
+           178,435,293      dTLB-load-misses          #   23.77% of all dTLB cache accesses  (83.33%)
+           750,600,815      dTLB-loads                                                    (83.21%)
+     1,798,478,828,246      instructions                                                  (83.41%)
+       320,828,397,038      branches                                                      (83.36%)
+L1 Misses, B to A: 41.58%
+L1 Misses, C to A: 94.79%
+L1 Loads, B to A: 102.25%
+L1 Loads, C to A: 101.80%
+dTLB Misses, B to A: 82.06%
+dTLB Misses, C to A: 103.04%
+dTLB Loads, B to A: 112.19%
+dTLB Loads, C to A: 32.21%
+Instructions, B to A: 102.99%
+Instructions, C to A: 104.34%
+branches, B to A: 99.42%
+branches, C to A: 113.89%
+**** -XX:+UseG1GC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	35604.194	711.5475	8.3157119018329
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	31513.046	629.56	4.6188362251873
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	31875.796	637.7545	6.1677515991962
+GC Times, Sum, B to A: 88.50%
+GC Times, Sum, C to A: 89.52%
+GC Times, Standard Deviation, A: +-8.3157119018329 (+-1.16%)
+A (jdk-v4.2) perf data: 
+        39,194,508,320      L1-dcache-load-misses     #    4.49% of all L1-dcache accesses  (83.35%)
+       872,090,999,700      L1-dcache-loads                                               (83.34%)
+           221,636,918      dTLB-load-misses          #    2.39% of all dTLB cache accesses  (83.29%)
+         9,260,646,358      dTLB-loads                                                    (83.29%)
+     1,715,245,475,825      instructions                                                  (83.36%)
+       279,291,044,614      branches                                                      (83.37%)
+B (jdk-v4.2) perf data: 
+        16,423,387,754      L1-dcache-load-misses     #    1.93% of all L1-dcache accesses  (83.32%)
+       852,084,598,692      L1-dcache-loads                                               (83.34%)
+           175,643,472      dTLB-load-misses          #    3.21% of all dTLB cache accesses  (83.37%)
+         5,468,795,983      dTLB-loads                                                    (83.36%)
+     1,767,642,239,047      instructions                                                  (83.26%)
+       277,021,258,687      branches                                                      (83.35%)
+C (jdk-v4.2) perf data: 
+        43,780,165,433      L1-dcache-load-misses     #    4.99% of all L1-dcache accesses  (83.34%)
+       877,247,975,624      L1-dcache-loads                                               (83.36%)
+           222,478,333      dTLB-load-misses          #    3.00% of all dTLB cache accesses  (83.33%)
+         7,420,772,616      dTLB-loads                                                    (83.37%)
+     1,799,733,471,463      instructions                                                  (83.29%)
+       320,355,327,814      branches                                                      (83.30%)
+L1 Misses, B to A: 41.90%
+L1 Misses, C to A: 111.69%
+L1 Loads, B to A: 97.70%
+L1 Loads, C to A: 100.59%
+dTLB Misses, B to A: 79.24%
+dTLB Misses, C to A: 100.37%
+dTLB Loads, B to A: 59.05%
+dTLB Loads, C to A: 80.13%
+Instructions, B to A: 103.05%
+Instructions, C to A: 104.92%
+branches, B to A: 99.18%
+branches, C to A: 114.70%
+**** -XX:+UseG1GC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	38661.33	772.653	9.0076448347716
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	33250.784	664.8665	5.8084605232895
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	36001.518	716.6425	15.660400626616
+GC Times, Sum, B to A: 86.00%
+GC Times, Sum, C to A: 93.12%
+GC Times, Standard Deviation, A: +-9.0076448347716 (+-1.16%)
+A (jdk-v4.2) perf data: 
+        40,764,061,041      L1-dcache-load-misses     #    4.52% of all L1-dcache accesses  (83.37%)
+       902,348,501,646      L1-dcache-loads                                               (83.36%)
+           467,880,665      dTLB-load-misses          #    3.89% of all dTLB cache accesses  (83.35%)
+        12,019,892,385      dTLB-loads                                                    (83.32%)
+     1,750,326,496,013      instructions                                                  (83.28%)
+       286,088,400,845      branches                                                      (83.32%)
+B (jdk-v4.2) perf data: 
+        19,403,615,159      L1-dcache-load-misses     #    2.22% of all L1-dcache accesses  (83.34%)
+       873,050,629,761      L1-dcache-loads                                               (83.25%)
+           386,892,387      dTLB-load-misses          #    5.77% of all dTLB cache accesses  (83.32%)
+         6,708,032,758      dTLB-loads                                                    (83.37%)
+     1,805,002,856,496      instructions                                                  (83.37%)
+       284,344,991,367      branches                                                      (83.35%)
+C (jdk-v4.2) perf data: 
+        48,214,019,348      L1-dcache-load-misses     #    5.21% of all L1-dcache accesses  (83.32%)
+       924,598,376,092      L1-dcache-loads                                               (83.39%)
+           417,214,943      dTLB-load-misses          #    3.59% of all dTLB cache accesses  (83.31%)
+        11,619,338,277      dTLB-loads                                                    (83.32%)
+     1,836,354,662,862      instructions                                                  (83.31%)
+       327,614,230,800      branches                                                      (83.36%)
+L1 Misses, B to A: 47.59%
+L1 Misses, C to A: 118.27%
+L1 Loads, B to A: 96.75%
+L1 Loads, C to A: 102.46%
+dTLB Misses, B to A: 82.69%
+dTLB Misses, C to A: 89.17%
+dTLB Loads, B to A: 55.80%
+dTLB Loads, C to A: 96.66%
+Instructions, B to A: 103.12%
+Instructions, C to A: 104.91%
+branches, B to A: 99.39%
+branches, C to A: 114.51%
+**** -XX:+UseG1GC and 16384 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseG1GC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	57054.073	1134.1315	36.314402306326
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	42332.025	844.1845	12.755852421136
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+50	43520.123	875.7725	36.996066802644
+GC Times, Sum, B to A: 74.19%
+GC Times, Sum, C to A: 76.27%
+GC Times, Standard Deviation, A: +-36.314402306326 (+-3.20%)
+A (jdk-v4.2) perf data: 
+        42,998,489,661      L1-dcache-load-misses     #    4.49% of all L1-dcache accesses  (83.34%)
+       956,709,326,381      L1-dcache-loads                                               (83.34%)
+         4,257,828,720      dTLB-load-misses          #   32.56% of all dTLB cache accesses  (83.32%)
+        13,075,231,535      dTLB-loads                                                    (83.33%)
+     1,823,426,679,189      instructions                                                  (83.33%)
+       299,387,630,192      branches                                                      (83.35%)
+B (jdk-v4.2) perf data: 
+        27,862,190,401      L1-dcache-load-misses     #    3.02% of all L1-dcache accesses  (83.34%)
+       922,979,945,867      L1-dcache-loads                                               (83.31%)
+         2,921,344,658      dTLB-load-misses          #   38.94% of all dTLB cache accesses  (83.36%)
+         7,501,547,053      dTLB-loads                                                    (83.31%)
+     1,871,025,210,784      instructions                                                  (83.32%)
+       296,663,700,024      branches                                                      (83.36%)
+C (jdk-v4.2) perf data: 
+        50,467,041,391      L1-dcache-load-misses     #    5.20% of all L1-dcache accesses  (83.32%)
+       970,608,554,389      L1-dcache-loads                                               (83.31%)
+         1,419,466,098      dTLB-load-misses          #   10.50% of all dTLB cache accesses  (83.36%)
+        13,516,965,872      dTLB-loads                                                    (83.33%)
+     1,899,550,304,830      instructions                                                  (83.30%)
+       339,763,346,141      branches                                                      (83.39%)
+L1 Misses, B to A: 64.79%
+L1 Misses, C to A: 117.36%
+L1 Loads, B to A: 96.47%
+L1 Loads, C to A: 101.45%
+dTLB Misses, B to A: 68.61%
+dTLB Misses, C to A: 33.33%
+dTLB Loads, B to A: 57.37%
+dTLB Loads, C to A: 103.37%
+Instructions, B to A: 102.61%
+Instructions, C to A: 104.17%
+branches, B to A: 99.09%
+branches, C to A: 113.48%
+**** -XX:+UseShenandoahGC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+200	19.215	0.071	0.085853441644532
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+200	71.173	0.0755	3.7047270343129
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+201	19.471	0.068	0.088173540158483
+GC Times, Sum, B to A: 370.40%
+GC Times, Sum, C to A: 101.33%
+GC Times, Standard Deviation, A: +-0.085853441644532 (+-120.92%)
+A (jdk-v4.2) perf data: 
+         7,282,847,624      L1-dcache-load-misses     #    0.73% of all L1-dcache accesses  (83.35%)
+       990,948,150,064      L1-dcache-loads                                               (83.32%)
+           125,846,962      dTLB-load-misses          #   65.22% of all dTLB cache accesses  (83.32%)
+           192,959,370      dTLB-loads                                                    (83.34%)
+     2,061,943,558,270      instructions                                                  (83.33%)
+       331,802,121,161      branches                                                      (83.33%)
+B (jdk-v4.2) perf data: 
+         5,073,962,272      L1-dcache-load-misses     #    0.49% of all L1-dcache accesses  (83.34%)
+     1,042,045,860,776      L1-dcache-loads                                               (83.35%)
+            59,485,156      dTLB-load-misses          #   50.44% of all dTLB cache accesses  (83.32%)
+           117,925,229      dTLB-loads                                                    (83.33%)
+     2,140,610,593,366      instructions                                                  (83.32%)
+       336,997,953,580      branches                                                      (83.34%)
+C (jdk-v4.2) perf data: 
+         6,988,740,324      L1-dcache-load-misses     #    0.72% of all L1-dcache accesses  (83.33%)
+       971,098,664,252      L1-dcache-loads                                               (83.34%)
+           106,824,603      dTLB-load-misses          #   64.40% of all dTLB cache accesses  (83.33%)
+           165,870,050      dTLB-loads                                                    (83.32%)
+     2,122,924,778,886      instructions                                                  (83.34%)
+       364,134,926,382      branches                                                      (83.34%)
+L1 Misses, B to A: 69.67%
+L1 Misses, C to A: 95.96%
+L1 Loads, B to A: 105.15%
+L1 Loads, C to A: 97.99%
+dTLB Misses, B to A: 47.26%
+dTLB Misses, C to A: 84.88%
+dTLB Loads, B to A: 61.11%
+dTLB Loads, C to A: 85.96%
+Instructions, B to A: 103.81%
+Instructions, C to A: 102.95%
+branches, B to A: 101.56%
+branches, C to A: 109.74%
+**** -XX:+UseShenandoahGC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+201	70.164	0.068	3.5957082264003
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+152	14.465	0.046	0.10137240007879
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+152	15.384	0.051	0.10740198868378
+GC Times, Sum, B to A: 20.61%
+GC Times, Sum, C to A: 21.92%
+GC Times, Standard Deviation, A: +-3.5957082264003 (+-5287.80%)
+A (jdk-v4.2) perf data: 
+        21,961,296,541      L1-dcache-load-misses     #    2.16% of all L1-dcache accesses  (83.32%)
+     1,018,193,849,415      L1-dcache-loads                                               (83.33%)
+           118,489,504      dTLB-load-misses          #   44.46% of all dTLB cache accesses  (83.35%)
+           266,508,450      dTLB-loads                                                    (83.34%)
+     2,092,533,120,497      instructions                                                  (83.32%)
+       340,218,015,624      branches                                                      (83.35%)
+B (jdk-v4.2) perf data: 
+         7,886,650,886      L1-dcache-load-misses     #    1.03% of all L1-dcache accesses  (83.34%)
+       768,938,869,871      L1-dcache-loads                                               (83.33%)
+            48,470,273      dTLB-load-misses          #   25.64% of all dTLB cache accesses  (83.34%)
+           189,040,752      dTLB-loads                                                    (83.33%)
+     1,564,308,434,449      instructions                                                  (83.34%)
+       250,134,957,612      branches                                                      (83.33%)
+C (jdk-v4.2) perf data: 
+         7,384,651,203      L1-dcache-load-misses     #    0.99% of all L1-dcache accesses  (83.34%)
+       748,774,294,480      L1-dcache-loads                                               (83.33%)
+            79,979,769      dTLB-load-misses          #   36.88% of all dTLB cache accesses  (83.31%)
+           216,870,912      dTLB-loads                                                    (83.32%)
+     1,581,962,495,914      instructions                                                  (83.35%)
+       282,331,704,640      branches                                                      (83.35%)
+L1 Misses, B to A: 35.91%
+L1 Misses, C to A: 33.62%
+L1 Loads, B to A: 75.51%
+L1 Loads, C to A: 73.53%
+dTLB Misses, B to A: 40.90%
+dTLB Misses, C to A: 67.49%
+dTLB Loads, B to A: 70.93%
+dTLB Loads, C to A: 81.37%
+Instructions, B to A: 74.75%
+Instructions, C to A: 75.60%
+branches, B to A: 73.52%
+branches, C to A: 82.98%
+**** -XX:+UseShenandoahGC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+201	71.019	0.064	3.6357253363864
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+151	14.506	0.045	0.10254544806242
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+201	20.132	0.085	0.089265304163282
+GC Times, Sum, B to A: 20.42%
+GC Times, Sum, C to A: 28.34%
+GC Times, Standard Deviation, A: +-3.6357253363864 (+-5680.82%)
+A (jdk-v4.2) perf data: 
+        30,743,005,111      L1-dcache-load-misses     #    2.90% of all L1-dcache accesses  (83.33%)
+     1,059,929,368,184      L1-dcache-loads                                               (83.33%)
+           123,847,986      dTLB-load-misses          #    6.09% of all dTLB cache accesses  (83.34%)
+         2,033,096,605      dTLB-loads                                                    (83.34%)
+     2,157,515,164,408      instructions                                                  (83.33%)
+       352,647,235,927      branches                                                      (83.34%)
+B (jdk-v4.2) perf data: 
+        12,878,191,368      L1-dcache-load-misses     #    1.66% of all L1-dcache accesses  (83.34%)
+       774,179,910,854      L1-dcache-loads                                               (83.33%)
+            52,292,345      dTLB-load-misses          #    3.77% of all dTLB cache accesses  (83.34%)
+         1,386,855,156      dTLB-loads                                                    (83.33%)
+     1,572,849,465,318      instructions                                                  (83.33%)
+       253,048,433,242      branches                                                      (83.33%)
+C (jdk-v4.2) perf data: 
+        30,038,358,027      L1-dcache-load-misses     #    2.91% of all L1-dcache accesses  (83.34%)
+     1,031,410,354,955      L1-dcache-loads                                               (83.33%)
+           121,044,448      dTLB-load-misses          #   25.34% of all dTLB cache accesses  (83.33%)
+           477,769,981      dTLB-loads                                                    (83.33%)
+     2,214,151,095,601      instructions                                                  (83.34%)
+       384,826,316,260      branches                                                      (83.34%)
+L1 Misses, B to A: 41.88%
+L1 Misses, C to A: 97.70%
+L1 Loads, B to A: 73.04%
+L1 Loads, C to A: 97.30%
+dTLB Misses, B to A: 42.22%
+dTLB Misses, C to A: 97.73%
+dTLB Loads, B to A: 68.21%
+dTLB Loads, C to A: 23.49%
+Instructions, B to A: 72.90%
+Instructions, C to A: 102.62%
+branches, B to A: 71.75%
+branches, C to A: 109.12%
+**** -XX:+UseShenandoahGC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+153	15.038	0.049	0.10456927150047
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+201	71.003	0.062	3.6888339902754
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+151	15.361	0.052	0.10622748757736
+GC Times, Sum, B to A: 472.15%
+GC Times, Sum, C to A: 102.14%
+GC Times, Standard Deviation, A: +-0.10456927150047 (+-213.40%)
+A (jdk-v4.2) perf data: 
+        19,948,306,826      L1-dcache-load-misses     #    2.43% of all L1-dcache accesses  (83.35%)
+       820,000,804,095      L1-dcache-loads                                               (83.32%)
+            93,739,810      dTLB-load-misses          #    2.92% of all dTLB cache accesses  (83.35%)
+         3,214,284,857      dTLB-loads                                                    (83.32%)
+     1,570,559,717,001      instructions                                                  (83.33%)
+       262,500,279,255      branches                                                      (83.33%)
+B (jdk-v4.2) perf data: 
+        14,179,240,849      L1-dcache-load-misses     #    1.29% of all L1-dcache accesses  (83.35%)
+     1,099,006,501,201      L1-dcache-loads                                               (83.33%)
+            93,546,395      dTLB-load-misses          #    2.62% of all dTLB cache accesses  (83.33%)
+         3,564,108,562      dTLB-loads                                                    (83.31%)
+     2,254,630,388,512      instructions                                                  (83.33%)
+       359,451,513,752      branches                                                      (83.34%)
+C (jdk-v4.2) perf data: 
+        22,659,421,392      L1-dcache-load-misses     #    2.84% of all L1-dcache accesses  (83.35%)
+       798,269,651,634      L1-dcache-loads                                               (83.34%)
+           100,186,065      dTLB-load-misses          #    3.23% of all dTLB cache accesses  (83.34%)
+         3,100,356,851      dTLB-loads                                                    (83.32%)
+     1,623,485,523,247      instructions                                                  (83.33%)
+       289,602,747,226      branches                                                      (83.32%)
+L1 Misses, B to A: 71.07%
+L1 Misses, C to A: 113.59%
+L1 Loads, B to A: 134.02%
+L1 Loads, C to A: 97.34%
+dTLB Misses, B to A: 99.79%
+dTLB Misses, C to A: 106.87%
+dTLB Loads, B to A: 110.88%
+dTLB Loads, C to A: 96.45%
+Instructions, B to A: 143.55%
+Instructions, C to A: 103.36%
+branches, B to A: 136.93%
+branches, C to A: 110.32%
+**** -XX:+UseShenandoahGC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+153	14.884	0.05	0.10158768946841
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+152	14.227	0.045	0.10008177185612
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+153	14.701	0.048	0.10162313944127
+GC Times, Sum, B to A: 95.58%
+GC Times, Sum, C to A: 98.77%
+GC Times, Standard Deviation, A: +-0.10158768946841 (+-203.17%)
+A (jdk-v4.2) perf data: 
+        21,083,228,693      L1-dcache-load-misses     #    2.52% of all L1-dcache accesses  (83.35%)
+       835,158,526,594      L1-dcache-loads                                               (83.35%)
+           237,195,872      dTLB-load-misses          #    5.61% of all dTLB cache accesses  (83.33%)
+         4,229,060,201      dTLB-loads                                                    (83.31%)
+     1,581,796,807,506      instructions                                                  (83.31%)
+       265,785,775,094      branches                                                      (83.36%)
+B (jdk-v4.2) perf data: 
+        14,645,376,025      L1-dcache-load-misses     #    1.82% of all L1-dcache accesses  (83.32%)
+       804,178,457,649      L1-dcache-loads                                               (83.35%)
+           227,849,371      dTLB-load-misses          #    5.42% of all dTLB cache accesses  (83.32%)
+         4,205,569,646      dTLB-loads                                                    (83.33%)
+     1,610,495,053,570      instructions                                                  (83.35%)
+       259,724,201,883      branches                                                      (83.34%)
+C (jdk-v4.2) perf data: 
+        25,193,710,692      L1-dcache-load-misses     #    2.94% of all L1-dcache accesses  (83.34%)
+       858,048,425,280      L1-dcache-loads                                               (83.31%)
+           223,805,953      dTLB-load-misses          #    4.93% of all dTLB cache accesses  (83.33%)
+         4,535,183,530      dTLB-loads                                                    (83.31%)
+     1,655,550,698,220      instructions                                                  (83.35%)
+       295,653,853,058      branches                                                      (83.35%)
+L1 Misses, B to A: 69.46%
+L1 Misses, C to A: 119.49%
+L1 Loads, B to A: 96.29%
+L1 Loads, C to A: 102.74%
+dTLB Misses, B to A: 96.05%
+dTLB Misses, C to A: 94.35%
+dTLB Loads, B to A: 99.44%
+dTLB Loads, C to A: 107.23%
+Instructions, B to A: 101.81%
+Instructions, C to A: 104.66%
+branches, B to A: 97.71%
+branches, C to A: 111.23%
+**** -XX:+UseShenandoahGC and 16384 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseShenandoahGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+201	18.738	0.066	0.084494879293752
+B (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+201	19.815	0.082	0.08694587096356
+C (jdk-v4.2) gc times 
+count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
+151	15.36	0.05	0.10860123749696
+GC Times, Sum, B to A: 105.74%
+GC Times, Sum, C to A: 81.97%
+GC Times, Standard Deviation, A: +-0.084494879293752 (+-128.02%)
+A (jdk-v4.2) perf data: 
+        36,883,689,798      L1-dcache-load-misses     #    3.11% of all L1-dcache accesses  (83.33%)
+     1,184,193,584,401      L1-dcache-loads                                               (83.35%)
+         2,935,274,922      dTLB-load-misses          #   37.69% of all dTLB cache accesses  (83.33%)
+         7,788,922,592      dTLB-loads                                                    (83.34%)
+     2,210,240,259,434      instructions                                                  (83.33%)
+       362,473,748,713      branches                                                      (83.32%)
+B (jdk-v4.2) perf data: 
+        24,897,517,201      L1-dcache-load-misses     #    2.13% of all L1-dcache accesses  (83.35%)
+     1,167,787,435,049      L1-dcache-loads                                               (83.35%)
+         1,907,196,479      dTLB-load-misses          #   32.01% of all dTLB cache accesses  (83.32%)
+         5,957,544,513      dTLB-loads                                                    (83.31%)
+     2,325,299,609,593      instructions                                                  (83.33%)
+       374,254,315,825      branches                                                      (83.34%)
+C (jdk-v4.2) perf data: 
+        25,884,733,612      L1-dcache-load-misses     #    3.02% of all L1-dcache accesses  (83.35%)
+       856,992,496,170      L1-dcache-loads                                               (83.34%)
+           902,922,188      dTLB-load-misses          #   17.54% of all dTLB cache accesses  (83.31%)
+         5,148,035,807      dTLB-loads                                                    (83.34%)
+     1,629,596,702,178      instructions                                                  (83.33%)
+       291,581,364,722      branches                                                      (83.33%)
+L1 Misses, B to A: 67.50%
+L1 Misses, C to A: 70.17%
+L1 Loads, B to A: 98.61%
+L1 Loads, C to A: 72.36%
+dTLB Misses, B to A: 64.97%
+dTLB Misses, C to A: 30.76%
+dTLB Loads, B to A: 76.48%
+dTLB Loads, C to A: 66.09%
+Instructions, B to A: 105.20%
+Instructions, C to A: 73.72%
+branches, B to A: 103.25%
+branches, C to A: 80.44%
+**** -XX:+UseZGC and 16 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+B (jdk-v4.2) gc times 
+C (jdk-v4.2) gc times 
+GC Times, Sum, B to A: %
+GC Times, Sum, C to A: %
+GC Times, Standard Deviation, A: +- (+-%)
+A (jdk-v4.2) perf data: 
+         5,652,991,805      L1-dcache-load-misses     #    0.57% of all L1-dcache accesses  (83.36%)
+       991,409,791,961      L1-dcache-loads                                               (83.35%)
+           104,463,272      dTLB-load-misses          #   39.59% of all dTLB cache accesses  (83.32%)
+           263,849,916      dTLB-loads                                                    (83.33%)
+     2,464,368,688,775      instructions                                                  (83.32%)
+       446,009,273,008      branches                                                      (83.32%)
+B (jdk-v4.2) perf data: 
+         6,220,891,283      L1-dcache-load-misses     #    0.60% of all L1-dcache accesses  (83.27%)
+     1,034,719,207,467      L1-dcache-loads                                               (83.37%)
+            75,658,324      dTLB-load-misses          #   19.49% of all dTLB cache accesses  (83.30%)
+           388,191,016      dTLB-loads                                                    (83.37%)
+     2,621,572,283,329      instructions                                                  (83.35%)
+       464,051,895,799      branches                                                      (83.35%)
+C (jdk-v4.2) perf data: 
+         5,347,927,378      L1-dcache-load-misses     #    0.53% of all L1-dcache accesses  (83.36%)
+     1,002,430,994,029      L1-dcache-loads                                               (83.33%)
+            44,864,408      dTLB-load-misses          #   25.98% of all dTLB cache accesses  (83.34%)
+           172,720,192      dTLB-loads                                                    (83.34%)
+     2,510,762,660,730      instructions                                                  (83.33%)
+       475,658,250,152      branches                                                      (83.30%)
+L1 Misses, B to A: 110.04%
+L1 Misses, C to A: 94.60%
+L1 Loads, B to A: 104.36%
+L1 Loads, C to A: 101.11%
+dTLB Misses, B to A: 72.42%
+dTLB Misses, C to A: 42.94%
+dTLB Loads, B to A: 147.12%
+dTLB Loads, C to A: 65.46%
+Instructions, B to A: 106.37%
+Instructions, C to A: 101.88%
+branches, B to A: 104.04%
+branches, C to A: 106.64%
+**** -XX:+UseZGC and 64 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 64 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+B (jdk-v4.2) gc times 
+C (jdk-v4.2) gc times 
+GC Times, Sum, B to A: %
+GC Times, Sum, C to A: %
+GC Times, Standard Deviation, A: +- (+-%)
+A (jdk-v4.2) perf data: 
+        13,895,421,680      L1-dcache-load-misses     #    1.39% of all L1-dcache accesses  (83.33%)
+       996,462,824,753      L1-dcache-loads                                               (83.33%)
+           104,630,950      dTLB-load-misses          #   20.78% of all dTLB cache accesses  (83.32%)
+           503,425,893      dTLB-loads                                                    (83.34%)
+     2,492,345,364,217      instructions                                                  (83.34%)
+       454,687,211,543      branches                                                      (83.34%)
+B (jdk-v4.2) perf data: 
+         9,187,130,624      L1-dcache-load-misses     #    0.85% of all L1-dcache accesses  (83.34%)
+     1,074,659,981,575      L1-dcache-loads                                               (83.34%)
+            72,700,616      dTLB-load-misses          #   14.54% of all dTLB cache accesses  (83.32%)
+           500,128,212      dTLB-loads                                                    (83.34%)
+     2,734,423,098,049      instructions                                                  (83.33%)
+       485,193,966,407      branches                                                      (83.33%)
+C (jdk-v4.2) perf data: 
+         9,517,195,920      L1-dcache-load-misses     #    0.94% of all L1-dcache accesses  (83.33%)
+     1,008,274,155,455      L1-dcache-loads                                               (83.32%)
+            64,631,236      dTLB-load-misses          #   19.31% of all dTLB cache accesses  (83.33%)
+           334,690,585      dTLB-loads                                                    (83.33%)
+     2,536,833,158,122      instructions                                                  (83.36%)
+       484,493,588,686      branches                                                      (83.33%)
+L1 Misses, B to A: 66.11%
+L1 Misses, C to A: 68.49%
+L1 Loads, B to A: 107.84%
+L1 Loads, C to A: 101.18%
+dTLB Misses, B to A: 69.48%
+dTLB Misses, C to A: 61.77%
+dTLB Loads, B to A: 99.34%
+dTLB Loads, C to A: 66.48%
+Instructions, B to A: 109.71%
+Instructions, C to A: 101.78%
+branches, B to A: 106.70%
+branches, C to A: 106.55%
+**** -XX:+UseZGC and 256 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 256 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+B (jdk-v4.2) gc times 
+C (jdk-v4.2) gc times 
+GC Times, Sum, B to A: %
+GC Times, Sum, C to A: %
+GC Times, Standard Deviation, A: +- (+-%)
+A (jdk-v4.2) perf data: 
+        17,900,389,032      L1-dcache-load-misses     #    1.80% of all L1-dcache accesses  (83.33%)
+       995,233,126,698      L1-dcache-loads                                               (83.36%)
+           100,234,039      dTLB-load-misses          #    6.34% of all dTLB cache accesses  (83.31%)
+         1,582,209,162      dTLB-loads                                                    (83.32%)
+     2,493,932,968,447      instructions                                                  (83.34%)
+       457,064,119,678      branches                                                      (83.34%)
+B (jdk-v4.2) perf data: 
+        11,031,185,235      L1-dcache-load-misses     #    1.04% of all L1-dcache accesses  (83.33%)
+     1,061,658,261,822      L1-dcache-loads                                               (83.32%)
+            75,875,954      dTLB-load-misses          #    3.38% of all dTLB cache accesses  (83.33%)
+         2,243,556,706      dTLB-loads                                                    (83.34%)
+     2,702,497,406,525      instructions                                                  (83.34%)
+       482,897,280,868      branches                                                      (83.34%)
+C (jdk-v4.2) perf data: 
+        19,372,421,178      L1-dcache-load-misses     #    1.91% of all L1-dcache accesses  (83.34%)
+     1,012,805,452,153      L1-dcache-loads                                               (83.32%)
+            88,116,184      dTLB-load-misses          #    6.45% of all dTLB cache accesses  (83.34%)
+         1,366,001,017      dTLB-loads                                                    (83.31%)
+     2,554,776,679,071      instructions                                                  (83.34%)
+       489,151,810,920      branches                                                      (83.35%)
+L1 Misses, B to A: 61.62%
+L1 Misses, C to A: 108.22%
+L1 Loads, B to A: 106.67%
+L1 Loads, C to A: 101.76%
+dTLB Misses, B to A: 75.69%
+dTLB Misses, C to A: 87.91%
+dTLB Loads, B to A: 141.79%
+dTLB Loads, C to A: 86.33%
+Instructions, B to A: 108.36%
+Instructions, C to A: 102.43%
+branches, B to A: 105.65%
+branches, C to A: 107.02%
+**** -XX:+UseZGC and 1024 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 1024 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+B (jdk-v4.2) gc times 
+C (jdk-v4.2) gc times 
+GC Times, Sum, B to A: %
+GC Times, Sum, C to A: %
+GC Times, Standard Deviation, A: +- (+-%)
+A (jdk-v4.2) perf data: 
+        19,319,980,663      L1-dcache-load-misses     #    1.87% of all L1-dcache accesses  (83.33%)
+     1,031,763,903,774      L1-dcache-loads                                               (83.33%)
+            60,152,763      dTLB-load-misses          #    1.71% of all dTLB cache accesses  (83.35%)
+         3,525,784,515      dTLB-loads                                                    (83.33%)
+     2,537,019,469,478      instructions                                                  (83.33%)
+       463,088,736,433      branches                                                      (83.32%)
+B (jdk-v4.2) perf data: 
+        11,854,890,483      L1-dcache-load-misses     #    1.11% of all L1-dcache accesses  (83.35%)
+     1,069,202,154,553      L1-dcache-loads                                               (83.34%)
+            59,059,476      dTLB-load-misses          #    1.61% of all dTLB cache accesses  (83.32%)
+         3,660,451,236      dTLB-loads                                                    (83.32%)
+     2,705,553,912,582      instructions                                                  (83.34%)
+       481,872,449,122      branches                                                      (83.34%)
+C (jdk-v4.2) perf data: 
+        22,700,253,445      L1-dcache-load-misses     #    2.21% of all L1-dcache accesses  (83.35%)
+     1,025,141,862,615      L1-dcache-loads                                               (83.34%)
+           122,925,594      dTLB-load-misses          #    3.33% of all dTLB cache accesses  (83.32%)
+         3,692,371,082      dTLB-loads                                                    (83.33%)
+     2,572,134,932,933      instructions                                                  (83.34%)
+       491,232,622,027      branches                                                      (83.31%)
+L1 Misses, B to A: 61.36%
+L1 Misses, C to A: 117.49%
+L1 Loads, B to A: 103.62%
+L1 Loads, C to A: 99.35%
+dTLB Misses, B to A: 98.18%
+dTLB Misses, C to A: 204.35%
+dTLB Loads, B to A: 103.81%
+dTLB Loads, C to A: 104.72%
+Instructions, B to A: 106.64%
+Instructions, C to A: 101.38%
+branches, B to A: 104.05%
+branches, C to A: 106.07%
+**** -XX:+UseZGC and 4096 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 4096 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+B (jdk-v4.2) gc times 
+C (jdk-v4.2) gc times 
+GC Times, Sum, B to A: %
+GC Times, Sum, C to A: %
+GC Times, Standard Deviation, A: +- (+-%)
+A (jdk-v4.2) perf data: 
+        20,623,317,177      L1-dcache-load-misses     #    1.96% of all L1-dcache accesses  (83.34%)
+     1,053,966,585,723      L1-dcache-loads                                               (83.34%)
+           265,881,404      dTLB-load-misses          #    6.23% of all dTLB cache accesses  (83.33%)
+         4,266,449,540      dTLB-loads                                                    (83.33%)
+     2,560,049,746,086      instructions                                                  (83.34%)
+       468,166,192,912      branches                                                      (83.33%)
+B (jdk-v4.2) perf data: 
+        14,950,271,307      L1-dcache-load-misses     #    1.36% of all L1-dcache accesses  (83.33%)
+     1,095,312,662,643      L1-dcache-loads                                               (83.32%)
+           350,254,953      dTLB-load-misses          #    7.39% of all dTLB cache accesses  (83.36%)
+         4,736,451,558      dTLB-loads                                                    (83.33%)
+     2,751,880,954,859      instructions                                                  (83.33%)
+       490,919,008,810      branches                                                      (83.34%)
+C (jdk-v4.2) perf data: 
+        24,305,632,154      L1-dcache-load-misses     #    2.33% of all L1-dcache accesses  (83.35%)
+     1,042,935,468,244      L1-dcache-loads                                               (83.33%)
+           279,436,694      dTLB-load-misses          #    6.28% of all dTLB cache accesses  (83.34%)
+         4,448,988,542      dTLB-loads                                                    (83.32%)
+     2,590,743,046,235      instructions                                                  (83.32%)
+       495,323,657,225      branches                                                      (83.34%)
+L1 Misses, B to A: 72.49%
+L1 Misses, C to A: 117.85%
+L1 Loads, B to A: 103.92%
+L1 Loads, C to A: 98.95%
+dTLB Misses, B to A: 131.73%
+dTLB Misses, C to A: 105.09%
+dTLB Loads, B to A: 111.01%
+dTLB Loads, C to A: 104.27%
+Instructions, B to A: 107.49%
+Instructions, C to A: 101.19%
+branches, B to A: 104.85%
+branches, C to A: 105.80%
+**** -XX:+UseZGC and 16384 classes ****
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g     -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:+UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+Running chrt -r 1 taskset 0xFF00   perf stat  -B -e  L1-dcache-load-misses,L1-dcache-loads,LLC-load-misses,LLC-loads,dTLB-load-misses,dTLB-loads,instructions,branches   /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/../jdk-v4.2/bin/java  -XX:+UseZGC -XX:+UseLargePages -Xshare:off -Xmx6g -Xms6g -XX:+AlwaysPreTouch -XX:MetaspaceSize=3g -Xlog:gc -Xlog:metaspace* -XX:CompressedClassSpaceSize=3g  -XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders -XX:-UseKLUT   -cp /shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/target/repros8-1.0.jar:/shared/projects/openjdk/analysis/klassinfo-lookuptable-for-gc/microbenchmark/the-test/generated-test-sources/TESTDATA.jar de.stuefe.repros.metaspace.StressGCWithManyClasses -C 16384 -n 67108864 --cycles 50 -y --nowait 
+A (jdk-v4.2) gc times 
+B (jdk-v4.2) gc times 
+C (jdk-v4.2) gc times 
+GC Times, Sum, B to A: %
+GC Times, Sum, C to A: %
+GC Times, Standard Deviation, A: +- (+-%)
+A (jdk-v4.2) perf data: 
+        22,626,798,962      L1-dcache-load-misses     #    2.06% of all L1-dcache accesses  (83.32%)
+     1,097,402,667,680      L1-dcache-loads                                               (83.33%)
+         1,861,962,076      dTLB-load-misses          #   39.05% of all dTLB cache accesses  (83.33%)
+         4,768,694,352      dTLB-loads                                                    (83.35%)
+     2,631,210,608,951      instructions                                                  (83.32%)
+       480,767,172,813      branches                                                      (83.34%)
+B (jdk-v4.2) perf data: 
+        18,668,431,214      L1-dcache-load-misses     #    1.64% of all L1-dcache accesses  (83.31%)
+     1,137,304,795,374      L1-dcache-loads                                               (83.32%)
+         1,883,504,656      dTLB-load-misses          #   28.98% of all dTLB cache accesses  (83.33%)
+         6,500,146,276      dTLB-loads                                                    (83.33%)
+     2,825,000,235,822      instructions                                                  (83.36%)
+       504,210,923,185      branches                                                      (83.35%)
+C (jdk-v4.2) perf data: 
+        26,193,290,255      L1-dcache-load-misses     #    2.41% of all L1-dcache accesses  (83.34%)
+     1,088,767,358,738      L1-dcache-loads                                               (83.31%)
+           777,459,546      dTLB-load-misses          #   15.25% of all dTLB cache accesses  (83.35%)
+         5,097,459,960      dTLB-loads                                                    (83.33%)
+     2,672,671,857,363      instructions                                                  (83.33%)
+       510,416,643,380      branches                                                      (83.33%)
+L1 Misses, B to A: 82.50%
+L1 Misses, C to A: 115.76%
+L1 Loads, B to A: 103.63%
+L1 Loads, C to A: 99.21%
+dTLB Misses, B to A: 101.15%
+dTLB Misses, C to A: 41.75%
+dTLB Loads, B to A: 136.30%
+dTLB Loads, C to A: 106.89%
+Instructions, B to A: 107.36%
+Instructions, C to A: 101.57%
+branches, B to A: 104.87%
+branches, C to A: 106.16%
