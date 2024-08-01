@@ -9,9 +9,7 @@ Various metrics by number of classes
 ## Selected
 
 ### ParallelGC
-![ParallelGC](./auswertung/ParallelGC-gc-pauses.svg) ![ParallelGC](./auswertung/ParallelGC-l1-misses.svg)
-
-![ParallelGC](./auswertung/ParallelGC-tlb-misses.svg) ![ParallelGC](./auswertung/ParallelGC-tlb-loads.svg)
+![ParallelGC](./auswertung/ParallelGC-gc-pauses.svg) ![ParallelGC](./auswertung/ParallelGC-l1-misses.svg) ![ParallelGC](./auswertung/ParallelGC-tlb-misses.svg) ![ParallelGC](./auswertung/ParallelGC-tlb-loads.svg)
 
 ----------------
 
