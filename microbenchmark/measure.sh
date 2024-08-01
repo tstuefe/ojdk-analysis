@@ -19,8 +19,11 @@ if [[ "$#" -eq 1 ]]; then
 	
 fi
 
+SCRIPT=$(realpath "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+
 # The "microbenchmark" dir
-BASE_DIR=${BASE_DIR:-$PWD}
+BASE_DIR=${SCRIPTPATH}
 
 # A +COH
 JDK_A_NAME_DEFAULT="jdk-v4.2"
@@ -178,6 +181,12 @@ function post_process_perf_L1_hits() {
     local L1_LOADS_LINE=`cat "errlog-${LETTER}.txt" | ack ' *[0-9,.]* L1-dcache-loads'`
     echo "    $L1_LOADS_LINE"
 
+	local LLC_MISSES_LINE=`cat "errlog-${LETTER}.txt" | ack ' *[0-9,.]* LLC-load-misses'`
+    echo "    $LLC_MISSES_LINE"
+
+    local LLC_LOADS_LINE=`cat "errlog-${LETTER}.txt" | ack ' *[0-9,.]* LLC-loads'`
+    echo "    $LLC_LOADS_LINE"
+
     local dTLB_MISSES_LINE=`cat "errlog-${LETTER}.txt" | ack ' *[0-9,.]* dTLB-load-misses'`
     echo "    $dTLB_MISSES_LINE"
 
@@ -192,6 +201,9 @@ function post_process_perf_L1_hits() {
 
     echo "$L1_MISSES_LINE" | sed 's/ *\([0-9,.]*\) L1-dcache-load-misses.*/\1/g' | sed 's/[.,]//g' > "perf-l1-misses-${LETTER}.txt"
     echo "$L1_LOADS_LINE" | sed 's/ *\([0-9,.]*\) L1-dcache-loads.*/\1/g' | sed 's/[.,]//g' > "perf-l1-loads-${LETTER}.txt"
+
+    echo "$LLC_MISSES_LINE" | sed 's/ *\([0-9,.]*\) LLC-load-misses.*/\1/g' | sed 's/[.,]//g' > "perf-llc-misses-${LETTER}.txt"
+    echo "$LLC_LOADS_LINE" | sed 's/ *\([0-9,.]*\) LLC-loads.*/\1/g' | sed 's/[.,]//g' > "perf-llc-loads-${LETTER}.txt"
 
     echo "$dTLB_MISSES_LINE" | sed 's/ *\([0-9,.]*\) dTLB-load-misses.*/\1/g' | sed 's/[.,]//g' > "perf-dTLB-misses-${LETTER}.txt"
     echo "$dTLB_LOADS_LINE" | sed 's/ *\([0-9,.]*\) dTLB-loads.*/\1/g' | sed 's/[.,]//g' > "perf-dTLB-loads-${LETTER}.txt"
@@ -217,7 +229,6 @@ function post_process_perf_times_all() {
 	local C_TO_A_l1_misses=`echo "scale=2; ($C_l1_misses * 100) / $A_l1_misses" | bc`
 	echo "L1 Misses, C to A: $C_TO_A_l1_misses%"
 
-
 	local A_l1_loads=`cat perf-l1-loads-A.txt`
 	if [ -z "$A_l1_loads" ]; then return; fi
  	local B_l1_loads=`cat perf-l1-loads-B.txt`
@@ -227,6 +238,23 @@ function post_process_perf_times_all() {
 	local C_TO_A_l1_loads=`echo "scale=2; ($C_l1_loads * 100) / $A_l1_loads" | bc`
 	echo "L1 Loads, C to A: $C_TO_A_l1_loads%"
 
+	local A_llc_misses=`cat perf-llc-misses-A.txt`
+	if [ -z "$A_llc_misses" ]; then return; fi
+ 	local B_llc_misses=`cat perf-llc-misses-B.txt`
+	local B_TO_A_llc_misses=`echo "scale=2; ($B_llc_misses * 100) / $A_llc_misses" | bc`
+	echo "LLC Misses, B to A: $B_TO_A_llc_misses%"
+	local C_llc_misses=`cat perf-llc-misses-C.txt`
+	local C_TO_A_llc_misses=`echo "scale=2; ($C_llc_misses * 100) / $A_llc_misses" | bc`
+	echo "LLC Misses, C to A: $C_TO_A_llc_misses%"
+
+	local A_llc_loads=`cat perf-llc-loads-A.txt`
+	if [ -z "$A_llc_loads" ]; then return; fi
+ 	local B_llc_loads=`cat perf-llc-loads-B.txt`
+	local B_TO_A_llc_loads=`echo "scale=2; ($B_llc_loads * 100) / $A_llc_loads" | bc`
+	echo "LLC Loads, B to A: $B_TO_A_llc_loads%"
+	local C_llc_loads=`cat perf-llc-loads-C.txt`
+	local C_TO_A_llc_loads=`echo "scale=2; ($C_llc_loads * 100) / $A_llc_loads" | bc`
+	echo "LLC Loads, C to A: $C_TO_A_llc_loads%"
 
 	local A_dTLB_misses=`cat perf-dTLB-misses-A.txt`
 	if [ -z "$A_dTLB_misses" ]; then return; fi
@@ -237,7 +265,6 @@ function post_process_perf_times_all() {
 	local C_TO_A_dTLB_misses=`echo "scale=2; ($C_dTLB_misses * 100) / $A_dTLB_misses" | bc`
 	echo "dTLB Misses, C to A: $C_TO_A_dTLB_misses%"
 
-
 	local A_dTLB_loads=`cat perf-dTLB-loads-A.txt`
 	if [ -z "$A_dTLB_loads" ]; then return; fi
  	local B_dTLB_loads=`cat perf-dTLB-loads-B.txt`
@@ -247,7 +274,6 @@ function post_process_perf_times_all() {
 	local C_TO_A_dTLB_loads=`echo "scale=2; ($C_dTLB_loads * 100) / $A_dTLB_loads" | bc`
 	echo "dTLB Loads, C to A: $C_TO_A_dTLB_loads%"
 
-
 	local A_instructions=`cat perf-instructions-A.txt`
 	local B_instructions=`cat perf-instructions-B.txt`
 	local B_TO_A_instructions=`echo "scale=2; ($B_instructions * 100) / $A_instructions" | bc`
@@ -255,7 +281,6 @@ function post_process_perf_times_all() {
 	local C_instructions=`cat perf-instructions-C.txt`
 	local C_TO_A_instructions=`echo "scale=2; ($C_instructions * 100) / $A_instructions" | bc`
 	echo "Instructions, C to A: $C_TO_A_instructions%"
-
 
 	local A_branches=`cat perf-branches-A.txt`
 	local B_branches=`cat perf-branches-B.txt`

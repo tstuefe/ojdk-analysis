@@ -24,6 +24,10 @@ function write_all_files(gc_) {
             delete L1_MISSES
             print_outfile(L1_LOADS, GC, "l1-loads")
             delete L1_LOADS
+            print_outfile(LLC_MISSES, GC, "llc-misses")
+            delete LLC_MISSES
+            print_outfile(LLC_LOADS, GC, "llc-loads")
+            delete LLC_LOADS
             print_outfile(TLB_MISSES, GC, "tlb-misses")
             delete TLB_MISSES
             print_outfile(TLB_LOADS, GC, "tlb-loads")
@@ -68,6 +72,16 @@ function print_outfile(array_, gc_, what_) {
 /[\t ]*[0-9]+[\t ]+L1-dcache-loads/ {
     gsub(",", "") #replace thousand separator from perf output
     L1_LOADS[NUM_CLASSES][ABC]=$1
+}
+
+/[\t ]*[0-9]+[\t ]+LLC-load-misses/ {
+    gsub(",", "") #replace thousand separator from perf output
+    LLC_MISSES[NUM_CLASSES][ABC]=$1
+}
+
+/[\t ]*[0-9]+[\t ]+LLC-loads/ {
+    gsub(",", "") #replace thousand separator from perf output
+    LLC_LOADS[NUM_CLASSES][ABC]=$1
 }
 
 /[\t ]*[0-9]+[\t ]+dTLB-load-misses/ {

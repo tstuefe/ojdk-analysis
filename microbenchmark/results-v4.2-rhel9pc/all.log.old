@@ -1,4 +1,4 @@
-**** -XX:+UseG1GC and 1024 classes ****
+**** G1GC and 1024 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -55,7 +55,7 @@ Instructions, B to A: 102.86%
 Instructions, C to A: 104.36%
 branches, B to A: 98.88%
 branches, C to A: 113.95%
-**** -XX:+UseG1GC and 16 classes ****
+**** G1GC and 16 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -112,7 +112,7 @@ Instructions, B to A: 102.00%
 Instructions, C to A: 104.43%
 branches, B to A: 97.85%
 branches, C to A: 114.95%
-**** -XX:+UseG1GC and 16384 classes ****
+**** G1GC and 16384 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -169,7 +169,7 @@ Instructions, B to A: 101.48%
 Instructions, C to A: 103.91%
 branches, B to A: 97.98%
 branches, C to A: 114.11%
-**** -XX:+UseG1GC and 256 classes ****
+**** G1GC and 256 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -226,7 +226,7 @@ Instructions, B to A: 103.61%
 Instructions, C to A: 104.83%
 branches, B to A: 99.58%
 branches, C to A: 113.88%
-**** -XX:+UseG1GC and 4096 classes ****
+**** G1GC and 4096 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -283,7 +283,7 @@ Instructions, B to A: 102.28%
 Instructions, C to A: 104.54%
 branches, B to A: 99.00%
 branches, C to A: 114.05%
-**** -XX:+UseG1GC and 64 classes ****
+**** G1GC and 64 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -340,7 +340,7 @@ Instructions, B to A: 102.86%
 Instructions, C to A: 104.72%
 branches, B to A: 98.75%
 branches, C to A: 114.34%
-**** -XX:+UseParallelGC and 1024 classes ****
+**** ParallelGC and 1024 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -397,7 +397,7 @@ Instructions, B to A: 103.44%
 Instructions, C to A: 102.16%
 branches, B to A: 101.68%
 branches, C to A: 110.30%
-**** -XX:+UseParallelGC and 16 classes ****
+**** ParallelGC and 16 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -454,7 +454,7 @@ Instructions, B to A: 102.96%
 Instructions, C to A: 102.57%
 branches, B to A: 101.09%
 branches, C to A: 112.10%
-**** -XX:+UseParallelGC and 16384 classes ****
+**** ParallelGC and 16384 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -511,7 +511,7 @@ Instructions, B to A: 102.80%
 Instructions, C to A: 100.75%
 branches, B to A: 101.84%
 branches, C to A: 108.15%
-**** -XX:+UseParallelGC and 256 classes ****
+**** ParallelGC and 256 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -568,7 +568,7 @@ Instructions, B to A: 103.90%
 Instructions, C to A: 102.69%
 branches, B to A: 102.04%
 branches, C to A: 111.60%
-**** -XX:+UseParallelGC and 4096 classes ****
+**** ParallelGC and 4096 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -625,7 +625,7 @@ Instructions, B to A: 103.51%
 Instructions, C to A: 102.36%
 branches, B to A: 101.93%
 branches, C to A: 111.00%
-**** -XX:+UseParallelGC and 64 classes ****
+**** ParallelGC and 64 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -682,7 +682,7 @@ Instructions, B to A: 103.31%
 Instructions, C to A: 102.88%
 branches, B to A: 101.12%
 branches, C to A: 111.64%
-**** -XX:+UseShenandoahGC and 1024 classes ****
+**** ShenandoahGC and 1024 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -739,7 +739,7 @@ Instructions, B to A: 76.41%
 Instructions, C to A: 77.28%
 branches, B to A: 74.40%
 branches, C to A: 84.47%
-**** -XX:+UseShenandoahGC and 16 classes ****
+**** ShenandoahGC and 16 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -796,7 +796,7 @@ Instructions, B to A: 143.51%
 Instructions, C to A: 142.60%
 branches, B to A: 137.97%
 branches, C to A: 148.79%
-**** -XX:+UseShenandoahGC and 16384 classes ****
+**** ShenandoahGC and 16384 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -853,7 +853,7 @@ Instructions, B to A: 527.13%
 Instructions, C to A: 514.88%
 branches, B to A: 476.95%
 branches, C to A: 497.23%
-**** -XX:+UseShenandoahGC and 256 classes ****
+**** ShenandoahGC and 256 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -910,7 +910,7 @@ Instructions, B to A: 102.37%
 Instructions, C to A: 102.72%
 branches, B to A: 98.20%
 branches, C to A: 110.29%
-**** -XX:+UseShenandoahGC and 4096 classes ****
+**** ShenandoahGC and 4096 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
@@ -967,7 +967,7 @@ Instructions, B to A: 140.33%
 Instructions, C to A: 103.62%
 branches, B to A: 135.35%
 branches, C to A: 110.66%
-**** -XX:+UseShenandoahGC and 64 classes ****
+**** ShenandoahGC and 64 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
 count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)

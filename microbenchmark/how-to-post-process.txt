@@ -1,0 +1,5 @@
+- a single measurement: go into the directory, then call `bash ./measure.sh --only-post`
+- recalculate "all.log" for all measurements (careful, this is somewhat lossy): from the "microbenchmark" dir, call `bash measure-all-only-post.sh <result directory containing all.log and all measurement dirs>`
+- recalculate all csv files and plot all graphs: From the root measurement dir (containing all.log), call `bash ../post-process-all-log.sh `
+
+:
