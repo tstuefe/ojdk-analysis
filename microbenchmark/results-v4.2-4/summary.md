@@ -4,28 +4,14 @@
 - **B** Lilliput HEAD + KLUT patch
 - **C** Mainline OpenJDK
 
+- [ParallelGC](#ParallelGC)
+- [G1GC](#g1gc)
+- [SerialGC](#SerialGC)
+- [ShenandoahGC](#ShenandoahGC)
+- [ZGC](#ZGC)
+
+
 Various metrics by number of classes
-
-## Selected
-
-### ParallelGC
-![ParallelGC](./auswertung/ParallelGC-gc-pauses.svg) ![ParallelGC](./auswertung/ParallelGC-l1-misses.svg) ![ParallelGC](./auswertung/ParallelGC-tlb-misses.svg) ![ParallelGC](./auswertung/ParallelGC-tlb-loads.svg)
-
-----------------
-
-### G1GC
-![G1GC](./auswertung/G1GC-gc-pauses.svg) ![G1GC](./auswertung/G1GC-l1-misses.svg)
-
-![G1GC](./auswertung/G1GC-tlb-misses.svg) ![G1GC](./auswertung/G1GC-tlb-loads.svg)
-
-----------------
-
-### SerialGC
-![SerialGC](./auswertung/SerialGC-gc-pauses.svg) ![SerialGC](./auswertung/SerialGC-l1-misses.svg)
-
-![SerialGC](./auswertung/SerialGC-tlb-misses.svg) ![SerialGC](./auswertung/SerialGC-tlb-loads.svg)
-
-----------------
 
 ## All
 
@@ -33,6 +19,8 @@ Various metrics by number of classes
 ![ParallelGC](./auswertung/ParallelGC-gc-pauses.svg) 
 
 ![ParallelGC](./auswertung/ParallelGC-l1-misses.svg) ![ParallelGC](./auswertung/ParallelGC-l1-loads.svg) 
+
+![ParallelGC](./auswertung/ParallelGC-llc-misses.svg) ![ParallelGC](./auswertung/ParallelGC-llc-loads.svg) 
 
 ![ParallelGC](./auswertung/ParallelGC-tlb-misses.svg) ![ParallelGC](./auswertung/ParallelGC-tlb-loads.svg)
 
@@ -43,6 +31,8 @@ Various metrics by number of classes
 
 ![G1GC](./auswertung/G1GC-l1-misses.svg) ![G1GC](./auswertung/G1GC-l1-loads.svg)
 
+![G1GC](./auswertung/G1GC-llc-misses.svg) ![G1GC](./auswertung/G1GC-llc-loads.svg)
+
 ![G1GC](./auswertung/G1GC-tlb-misses.svg) ![G1GC](./auswertung/G1GC-tlb-loads.svg)
 
 ![G1GC](./auswertung/G1GC-instructions.svg) ![G1GC](./auswertung/G1GC-branches.svg)
@@ -52,6 +42,8 @@ Various metrics by number of classes
 
 ![SerialGC](./auswertung/SerialGC-l1-misses.svg) ![SerialGC](./auswertung/SerialGC-l1-loads.svg)
 
+![SerialGC](./auswertung/SerialGC-llc-misses.svg) ![SerialGC](./auswertung/SerialGC-llc-loads.svg)
+
 ![SerialGC](./auswertung/SerialGC-tlb-misses.svg) ![SerialGC](./auswertung/SerialGC-tlb-loads.svg)
 
 ![SerialGC](./auswertung/SerialGC-instructions.svg) ![SerialGC](./auswertung/SerialGC-branches.svg)
@@ -60,7 +52,10 @@ Various metrics by number of classes
 ## Low pause collectors
 
 ### ShenandoahGC
+
 ![ShenandoahGC](./auswertung/ShenandoahGC-l1-misses.svg) ![ShenandoahGC](./auswertung/ShenandoahGC-l1-loads.svg)
+
+![ShenandoahGC](./auswertung/ShenandoahGC-llc-misses.svg) ![ShenandoahGC](./auswertung/ShenandoahGC-llc-loads.svg)
 
 ![ShenandoahGC](./auswertung/ShenandoahGC-tlb-misses.svg) ![ShenandoahGC](./auswertung/ShenandoahGC-tlb-loads.svg)
 
@@ -68,6 +63,8 @@ Various metrics by number of classes
 
 ### ZGC
 ![ZGC](./auswertung/ZGC-l1-misses.svg) ![ZGC](./auswertung/ZGC-l1-loads.svg)
+
+![ZGC](./auswertung/ZGC-llc-misses.svg) ![ZGC](./auswertung/ZGC-llc-loads.svg)
 
 ![ZGC](./auswertung/ZGC-tlb-misses.svg) ![ZGC](./auswertung/ZGC-tlb-loads.svg)
 
