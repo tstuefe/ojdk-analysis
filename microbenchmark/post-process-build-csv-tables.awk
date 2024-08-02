@@ -45,10 +45,13 @@ function write_all_files(gc_) {
 # colname_prefix_   : Column name prefix of what we measured, eg "L1 Misses "
 function print_outfile(array_, gc_, what_) {
     FILENAME="auswertung/" gc_ "-" what_ ".csv"
-    print "Writing " FILENAME
-    print "num_classes,A,B,B-to-A,C,C-to-A"\
-           > FILENAME
+    written_header = 0
     for (num_classes in array_) {
+        if (written_header == 0) {
+            print "Writing " FILENAME
+            print "num_classes,A,B,B-to-A,C,C-to-A" > FILENAME
+            written_header = 1
+        }
         VALA=array_[num_classes]["A"]
         VALB=array_[num_classes]["B"]
         VALC=array_[num_classes]["C"]
