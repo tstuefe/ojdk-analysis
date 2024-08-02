@@ -22,7 +22,7 @@ gawk -f "${SCRIPT_DIR}/post-process-build-csv-tables.awk" < "$ALL_LOG"
 
 for GC in SerialGC ParallelGC G1GC ShenandoahGC ZGC; do
 
-	for what in gc-pauses l1-misses l1-loads tlb-misses tlb-loads instructions branches; do
+	for what in gc-pauses l1-misses l1-loads llc-misses llc-loads tlb-misses tlb-loads instructions branches; do
 		CSV_FILE="$AUSWERTUNG_DIR/${GC}-${what}.csv"
 
 		if [ ! -f "$CSV_FILE" ]; then
@@ -38,6 +38,12 @@ for GC in SerialGC ParallelGC G1GC ShenandoahGC ZGC; do
 					;;
 				"l1-loads")
 					what_nice="L1 Loads"
+					;;
+				"llc-misses") 
+					what_nice="LLC Misses"
+					;;
+				"llc-loads")
+					what_nice="LLC Loads"
 					;;
 				"tlb-misses") 
 					what_nice="TLB Misses"

@@ -796,63 +796,6 @@ Instructions, B to A: 143.51%
 Instructions, C to A: 142.60%
 branches, B to A: 137.97%
 branches, C to A: 148.79%
-**** -XX:+UseShenandoahGC and 16384 classes ****
-Only post processing...
-A (jdk-v4.2) gc times 
-count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
-3	0.235	0.055	0.085424430541464
-B (jdk-v4.2) gc times 
-count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
-201	16.741	0.074	0.067108094283834
-C (jdk-v4.2) gc times 
-count(field-1)	sum(field-1)	median(field-1)	sstdev(field-1)
-201	19.208	0.075	0.076371836190994
-GC Times, Sum, B to A: 7123.82%
-GC Times, Sum, C to A: 8173.61%
-GC Times, Standard Deviation, A: +-0.085424430541464 (+-155.31%)
-A (jdk-v4.2) perf data: 
-         9,253,192,552      L1-dcache-load-misses            #    7.22% of all L1-dcache accesses   (41.11%)
-       128,178,074,319      L1-dcache-loads                                                         (32.61%)
-         4,592,737,280      LLC-load-misses                  #   61.49% of all LL-cache accesses    (29.17%)
-         7,469,208,866      LLC-loads                                                               (28.49%)
-           901,855,007      dTLB-load-misses                 #    0.70% of all dTLB cache accesses  (35.98%)
-       128,429,644,117      dTLB-loads                                                              (29.70%)
-       442,037,277,219      instructions                                                            (42.19%)
-        80,190,689,882      branches                                                                (46.07%)
-B (jdk-v4.2) perf data: 
-        19,482,102,346      L1-dcache-load-misses            #    2.96% of all L1-dcache accesses   (45.99%)
-       657,854,926,458      L1-dcache-loads                                                         (36.57%)
-         6,209,279,423      LLC-load-misses                  #   53.97% of all LL-cache accesses    (34.67%)
-        11,504,344,305      LLC-loads                                                               (30.02%)
-           290,135,607      dTLB-load-misses                 #    0.04% of all dTLB cache accesses  (39.56%)
-       684,182,880,890      dTLB-loads                                                              (34.17%)
-     2,330,126,739,924      instructions                                                            (46.68%)
-       382,470,155,990      branches                                                                (47.78%)
-C (jdk-v4.2) perf data: 
-        38,243,405,537      L1-dcache-load-misses            #    5.64% of all L1-dcache accesses   (44.10%)
-       678,509,412,213      L1-dcache-loads                                                         (40.94%)
-         5,863,201,206      LLC-load-misses                  #   17.79% of all LL-cache accesses    (30.11%)
-        32,959,037,707      LLC-loads                                                               (29.11%)
-           345,798,686      dTLB-load-misses                 #    0.05% of all dTLB cache accesses  (38.97%)
-       676,453,355,018      dTLB-loads                                                              (35.04%)
-     2,275,979,792,984      instructions                                                            (47.55%)
-       398,732,604,300      branches                                                                (43.72%)
-L1 Misses, B to A: 210.54%
-L1 Misses, C to A: 413.29%
-L1 Loads, B to A: 513.23%
-L1 Loads, C to A: 529.34%
-LLC Misses, B to A: 135.19%
-LLC Misses, C to A: 127.66%
-LLC Loads, B to A: 154.02%
-LLC Loads, C to A: 441.26%
-dTLB Misses, B to A: 32.17%
-dTLB Misses, C to A: 38.34%
-dTLB Loads, B to A: 532.72%
-dTLB Loads, C to A: 526.71%
-Instructions, B to A: 527.13%
-Instructions, C to A: 514.88%
-branches, B to A: 476.95%
-branches, C to A: 497.23%
 **** -XX:+UseShenandoahGC and 256 classes ****
 Only post processing...
 A (jdk-v4.2) gc times 
